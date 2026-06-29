@@ -1,5 +1,27 @@
-<!-- BEGIN:nextjs-agent-rules -->
-# This is NOT the Next.js you know
+You are working on Cynthia Cosmétique.
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
-<!-- END:nextjs-agent-rules -->
+This project follows strict luxury UI standards.
+
+Before modifying any interface, always follow the design documentation located in:
+
+.agent/design/
+
+Before creating any React component:
+
+Read
+
+.agent/architecture/components.md
+
+Before creating animations:
+
+Read
+
+.agent/design/animations.md
+
+Before using Three.js:
+
+Read
+
+.agent/tech/react-three-fiber.md
+
+Never violate those specifications.
