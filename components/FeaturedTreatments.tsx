@@ -122,7 +122,7 @@ export function FeaturedTreatments() {
 						external
 						variant="gold"
 						size="lg"
-						className="px-10 py-5 text-sm font-bold shadow-gold hover:shadow-lift"
+						className="animate-pulse-glow px-10 py-5 text-sm font-bold shadow-gold hover:shadow-lift"
 					>
 						Découvrir tous nos soins
 					</Button>

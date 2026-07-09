@@ -93,7 +93,7 @@ export function Hero() {
 							href={waLink()}
 							external
 							size="lg"
-							className="animate-pulse-glow"
+							className="animate-pulse-glow px-10 py-5 text-sm font-bold shadow-gold hover:shadow-lift"
 							icon={<WhatsAppIcon className="h-4 w-4" />}
 						>
 							Réserver maintenant

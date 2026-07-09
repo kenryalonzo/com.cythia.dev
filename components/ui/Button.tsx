@@ -67,9 +67,9 @@ export function Button(props: ButtonAsLink | ButtonAsButton) {
 	);
 
 	const motionProps = {
-		whileHover: { scale: 1.03 },
-		whileTap: { scale: 0.98 },
-		transition: { type: "spring" as const, stiffness: 400, damping: 22 },
+		whileHover: { scale: 1.08, y: -2 },
+		whileTap: { scale: 0.95 },
+		transition: { type: "spring" as const, stiffness: 500, damping: 18 },
 	};
 
 	if (props.href !== undefined) {

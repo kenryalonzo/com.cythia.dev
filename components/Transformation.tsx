@@ -30,15 +30,51 @@ export function Transformation() {
 						strokeWidth="1"
 					/>
 				</svg>
-				{/* Lotus décoratif — haut droit */}
-				<Image
-					src="/assets/images/floor-dore-image.png"
-					alt=""
-					width={260}
-					height={260}
-					style={{ width: "auto", height: "auto" }}
-					className="absolute -bottom-32 right-0 translate-x-1/3 opacity-[0.07] object-contain"
-				/>
+				{/* Lotus décoratif — bas droit avec animation */}
+				<motion.div
+					animate={{
+						y: [0, -8, 0],
+						rotate: [0, 3, 0],
+					}}
+					transition={{
+						duration: 6,
+						repeat: Infinity,
+						ease: "easeInOut",
+					}}
+					className="absolute -bottom-32 right-0 translate-x-1/3"
+				>
+					<Image
+						src="/assets/images/floor-dore-image.png"
+						alt=""
+						width={260}
+						height={260}
+						style={{ width: "auto", height: "auto" }}
+						className="opacity-[0.07] object-contain"
+					/>
+				</motion.div>
+				{/* Lotus décoratif — bas gauche avec animation décalée */}
+				<motion.div
+					animate={{
+						y: [0, -10, 0],
+						rotate: [0, -4, 0],
+					}}
+					transition={{
+						duration: 7,
+						repeat: Infinity,
+						ease: "easeInOut",
+						delay: 1.5,
+					}}
+					className="absolute -bottom-36 left-0 -translate-x-1/3"
+				>
+					<Image
+						src="/assets/images/floor-dore-image.png"
+						alt=""
+						width={220}
+						height={220}
+						style={{ width: "auto", height: "auto" }}
+						className="opacity-[0.05] object-contain"
+					/>
+				</motion.div>
 			</div>
 
 			<div className="container-luxe relative">
