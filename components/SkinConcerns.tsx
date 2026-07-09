@@ -10,24 +10,33 @@ import { waLink } from "@/lib/site";
 type Concern = {
 	iconKey: keyof typeof skinConcernIcons;
 	title: string;
+	description: string;
 };
 
 const concerns: Concern[] = [
 	{
 		iconKey: "acne",
 		title: "Acné & imperfections",
+		description:
+			"Réduisez les boutons, les imperfections et retrouvez une peau nette et saine.",
 	},
 	{
 		iconKey: "spots",
 		title: "Taches & hyperpigmentation",
+		description:
+			"Atténuez les taches brunes et retrouvez un teint uniforme et lumineux.",
 	},
 	{
 		iconKey: "dull",
 		title: "Peau terne & fatiguée",
+		description:
+			"Redonnez éclat, douceur et fraîcheur à votre peau jour après jour.",
 	},
 	{
 		iconKey: "scars",
 		title: "Cicatrices & pores dilatés",
+		description:
+			"Améliorez la texture de votre peau et resserrez vos pores en profondeur.",
 	},
 ];
 
@@ -37,23 +46,25 @@ export function SkinConcerns() {
 			id="soins-visage"
 			className="relative overflow-hidden bg-ivory py-12 md:py-16"
 		>
-			{/* Background image avec overlay clair */}
-			<div className="absolute inset-0">
+			{/* Background image avec mouvement lent */}
+			<div className="absolute inset-0 overflow-hidden">
 				<Image
 					src="/assets/images/background-segond-section.png"
 					alt=""
 					fill
 					sizes="100vw"
-					className="object-cover"
+					className="object-cover animate-slow-pan"
 					aria-hidden
 				/>
-				<div className="absolute inset-0 bg-ivory/70" />
+				<div className="absolute inset-0 bg-ivory/65" />
+				{/* Animation brillante — reflet qui traverse */}
+				<div className="pointer-events-none absolute inset-0 overflow-hidden">
+					<div className="animate-shine absolute inset-0 -ml-full w-[50%] bg-gradient-to-r from-transparent via-white/25 to-transparent" />
+				</div>
 			</div>
 
-			{/* Filaments dorés — subtils, en bas de section */}
-			<div className="absolute inset-x-0 bottom-0 h-1/2">
-				<Filaments intensity="subtle" />
-			</div>
+			{/* Filaments dorés — plus visibles, sur toute la section */}
+			<Filaments intensity="soft" />
 
 			<div className="container-luxe relative">
 				{/* En-tête compact */}
@@ -71,7 +82,7 @@ export function SkinConcerns() {
 								</span>
 							</h2>
 						</div>
-						<p className="max-w-sm text-sm leading-relaxed text-slate-ink/60 md:text-right">
+						<p className="max-w-sm text-base font-medium leading-relaxed text-slate-ink/80 md:text-right">
 							Quel que soit votre souci, nous avons un soin adapté.
 						</p>
 					</div>
@@ -82,7 +93,7 @@ export function SkinConcerns() {
 					<div className="hairline mb-8 h-px" />
 				</Reveal>
 
-				{/* Grid horizontal — 4 colonnes compactes */}
+				{/* Grid — 4 colonnes avec mini description */}
 				<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
 					{concerns.map((c, i) => {
 						const Icon = skinConcernIcons[c.iconKey];
@@ -94,15 +105,32 @@ export function SkinConcerns() {
 									)}
 									target="_blank"
 									rel="noopener noreferrer"
-									whileHover={{ y: -4 }}
-									transition={{ type: "spring", stiffness: 300, damping: 24 }}
-									className="group flex items-center gap-4 rounded-xl bg-ivory/80 p-4 ring-1 ring-slate-line/25 backdrop-blur-sm transition-all duration-400 hover:bg-ivory hover:shadow-soft hover:ring-gold/25"
+									whileHover={{ y: -8, scale: 1.02 }}
+									transition={{ type: "spring", stiffness: 300, damping: 20 }}
+									className="group relative flex h-full flex-col rounded-xl bg-ivory/80 p-5 ring-1 ring-slate-line/25 backdrop-blur-sm transition-shadow duration-500 hover:bg-ivory hover:shadow-card hover:ring-gold/30"
 								>
-									<span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-gold-soft to-gold-soft/40 text-gold-deep ring-1 ring-gold/15 transition-all duration-300 group-hover:ring-gold/30">
+									<span className="flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-to-br from-gold-soft to-gold-soft/40 text-gold-deep ring-1 ring-gold/15 transition-all duration-300 group-hover:scale-110 group-hover:ring-gold/40">
 										<Icon className="h-5 w-5" />
 									</span>
-									<span className="font-display text-sm font-semibold leading-snug text-royal sm:text-base">
+									<span className="mt-4 font-display text-sm font-semibold leading-snug text-royal sm:text-base">
 										{c.title}
+									</span>
+									<p className="mt-2 text-xs leading-relaxed text-slate-ink/60">
+										{c.description}
+									</p>
+									<span className="mt-auto inline-flex h-8 w-8 items-center justify-center self-end rounded-full bg-gold-soft text-gold-deep opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:bg-gold group-hover:text-royal group-hover:opacity-100">
+										<svg
+											viewBox="0 0 24 24"
+											fill="none"
+											stroke="currentColor"
+											strokeWidth="2.5"
+											strokeLinecap="round"
+											strokeLinejoin="round"
+											className="h-3.5 w-3.5"
+											aria-hidden="true"
+										>
+											<path d="M5 12h14M12 5l7 7-7 7" />
+										</svg>
 									</span>
 								</motion.a>
 							</Reveal>
