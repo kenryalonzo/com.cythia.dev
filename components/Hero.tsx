@@ -32,7 +32,7 @@ export function Hero() {
 		<section
 			id="accueil"
 			ref={ref}
-			className="relative overflow-hidden bg-ivory h-dvh min-h-dvh"
+			className="relative overflow-hidden bg-ivory h-[90vh] min-h-[500px]"
 		>
 			{/* Décor — dégradé crème radial + filaments dorés subtils */}
 			<div

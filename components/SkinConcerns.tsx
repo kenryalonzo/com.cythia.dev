@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Filaments } from "@/components/ui/Filaments";
 import { skinConcernIcons } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/Reveal";
 import { waLink } from "@/lib/site";
@@ -47,6 +48,11 @@ export function SkinConcerns() {
 					aria-hidden
 				/>
 				<div className="absolute inset-0 bg-ivory/70" />
+			</div>
+
+			{/* Filaments dorés — subtils, en bas de section */}
+			<div className="absolute inset-x-0 bottom-0 h-1/2">
+				<Filaments intensity="subtle" />
 			</div>
 
 			<div className="container-luxe relative">
