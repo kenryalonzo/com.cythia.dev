@@ -32,7 +32,7 @@ export function Hero() {
 		<section
 			id="accueil"
 			ref={ref}
-			className="relative overflow-hidden bg-ivory pt-28 pb-16 md:pt-32 md:pb-24"
+			className="relative overflow-hidden bg-ivory h-dvh min-h-dvh"
 		>
 			{/* Décor — dégradé crème radial + filaments dorés subtils */}
 			<div
@@ -45,7 +45,7 @@ export function Hero() {
 			/>
 			<Filaments intensity="subtle" />
 
-			<div className="container-luxe relative z-10 grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 xl:gap-16">
+			<div className="container-luxe relative z-10 grid h-full grid-cols-1 items-start gap-6 py-12 md:py-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-8 xl:gap-10">
 				{/* ---------- Colonne texte (gauche) ---------- */}
 				<div className="max-w-xl">
 					<motion.span
@@ -66,7 +66,7 @@ export function Hero() {
 							delay: 0.08,
 							ease: [0.22, 1, 0.36, 1],
 						}}
-						className="mt-6 font-display text-[2.6rem] font-bold leading-[1.05] tracking-tight text-royal sm:text-6xl xl:text-[4rem]"
+						className="mt-4 font-display text-4xl font-bold leading-[1.05] tracking-tight text-royal sm:text-5xl lg:text-6xl xl:text-[4rem]"
 					>
 						Révélez la meilleure version de votre{" "}
 						<span className="text-gradient-gold">peau.</span>
@@ -76,7 +76,7 @@ export function Hero() {
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.7, delay: 0.2 }}
-						className="mt-6 max-w-md text-lg leading-relaxed text-slate-ink/80"
+						className="mt-4 max-w-md text-base leading-relaxed text-slate-ink/80 sm:text-lg"
 					>
 						Soins experts, microneedling, beauté du regard et accompagnement
 						personnalisé à Douala.
@@ -87,7 +87,7 @@ export function Hero() {
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.7, delay: 0.32 }}
-						className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
+						className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center"
 					>
 						<Button
 							href={waLink()}
@@ -107,7 +107,7 @@ export function Hero() {
 						initial={{ opacity: 0, y: 18 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.7, delay: 0.44 }}
-						className="mt-10 flex flex-wrap items-center gap-4"
+						className="mt-6 flex flex-wrap items-center gap-4"
 					>
 						<div className="flex -space-x-3">
 							{avatars.map((a) => (
@@ -139,11 +139,11 @@ export function Hero() {
 					initial={{ opacity: 0, scale: 0.96 }}
 					animate={{ opacity: 1, scale: 1 }}
 					transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-					className="relative mx-auto w-full max-w-md lg:max-w-none"
+					className="relative mx-auto w-full max-w-[220px] sm:max-w-[280px] lg:max-w-sm"
 				>
 					<motion.div
 						style={{ scale: haloScale }}
-						className="absolute -inset-6 -z-10 rounded-[2.5rem] blur-2xl"
+						className="absolute -inset-4 -z-10 rounded-[2rem] blur-xl lg:-inset-6 lg:rounded-[2.5rem] lg:blur-2xl"
 						aria-hidden
 					>
 						<div className="h-full w-full rounded-[2.5rem] bg-gradient-to-tr from-gold/25 via-gold-soft/40 to-royal-soft/30" />
@@ -151,7 +151,7 @@ export function Hero() {
 
 					<motion.div
 						style={{ y: portraitY }}
-						className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] shadow-lift ring-1 ring-white/60"
+						className="relative aspect-[3/4] w-full overflow-hidden rounded-[1.5rem] shadow-lift ring-1 ring-white/60 sm:aspect-[4/5] sm:rounded-[2rem]"
 					>
 						<Image
 							src="/assets/visage-hero.png"
@@ -177,7 +177,7 @@ export function Hero() {
 						initial={{ opacity: 0, y: 18 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6, delay: 0.7 }}
-						className="absolute -bottom-5 -left-5 hidden rounded-2xl bg-ivory/95 p-4 shadow-card backdrop-blur ring-1 ring-slate-line/50 sm:block"
+						className="absolute -bottom-4 -left-4 hidden rounded-xl bg-ivory/95 p-3 shadow-card backdrop-blur ring-1 ring-slate-line/50 sm:block lg:-bottom-5 lg:-left-5 lg:rounded-2xl lg:p-4"
 					>
 						<div className="flex items-center gap-3">
 							<span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-soft text-gold-deep">
