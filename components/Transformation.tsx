@@ -30,6 +30,15 @@ export function Transformation() {
 						strokeWidth="1"
 					/>
 				</svg>
+				{/* Lotus décoratif — haut droit */}
+				<Image
+					src="/assets/images/floor-dore-image.png"
+					alt=""
+					width={260}
+					height={260}
+					style={{ width: "auto", height: "auto" }}
+					className="absolute -bottom-32 right-0 translate-x-1/3 opacity-[0.07] object-contain"
+				/>
 			</div>
 
 			<div className="container-luxe relative">
