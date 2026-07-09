@@ -53,6 +53,7 @@ export function SkinConcerns() {
 					alt=""
 					fill
 					sizes="100vw"
+					loading="eager"
 					className="object-cover animate-slow-pan"
 					aria-hidden
 				/>
