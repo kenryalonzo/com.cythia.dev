@@ -88,7 +88,7 @@ export function Navbar() {
 						href={waLink()}
 						external
 						size="md"
-						className="hidden sm:inline-flex"
+						className="hidden animate-pulse-glow shadow-gold sm:inline-flex"
 						icon={<WhatsAppIcon className="h-4 w-4" />}
 					>
 						Réserver
