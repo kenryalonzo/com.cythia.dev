@@ -3,6 +3,7 @@ import { FeaturedTreatments } from "@/components/FeaturedTreatments";
 import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
 import { SkinConcerns } from "@/components/SkinConcerns";
+import { Testimonials } from "@/components/Testimonials";
 import { Transformation } from "@/components/Transformation";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
 				<Transformation />
 				<FeaturedTreatments />
 				<Expertise />
+				<Testimonials />
 			</main>
 		</>
 	);
