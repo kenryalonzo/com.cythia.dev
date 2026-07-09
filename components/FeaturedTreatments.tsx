@@ -16,26 +16,21 @@ type Treatment = {
 	alt: string;
 };
 
-/*
- * "Nos soins phares" — 4 cartes.
- * Hypothèse : photos de soins non fournies, on réutilise les assets people
- * en noir & blanc doux via un filtre warm pour préserver l'unité visuelle.
- */
 const treatments: Treatment[] = [
 	{
 		name: "Microneedling",
 		description:
 			"Améliore la texture de la peau, réduit les cicatrices et stimule le collagène.",
 		price: "35 000 FCFA",
-		image: "/assets/images/person1.jpg",
+		image: "/assets/images/microneeding.jpg",
 		alt: "Résultat de microneedling sur le visage",
 	},
 	{
-		name: "Notre Signature",
+		name: "Notre Signoche",
 		description:
 			"Nettoie, hydrate et revitalise votre peau en profondeur pour un éclat immédiat.",
 		price: "5 000 FCFA",
-		image: "/assets/images/person02.jpg",
+		image: "/assets/images/massage.png",
 		alt: "Soin du visage signature Cynthia",
 	},
 	{
@@ -43,7 +38,7 @@ const treatments: Treatment[] = [
 		description:
 			"Des sourcils parfaitement dessinés et naturels qui subliment votre regard.",
 		price: "15 000 FCFA",
-		image: "/assets/images/person3.jpg",
+		image: "/assets/images/microshading.webp",
 		alt: "Résultat de microblading des sourcils",
 	},
 	{
@@ -51,34 +46,34 @@ const treatments: Treatment[] = [
 		description:
 			"Un regard intense et glamour grâce à des extensions légères et durables.",
 		price: "7 000 FCFA",
-		image: "/assets/images/person1.jpg",
+		image: "/assets/images/Extension-cils.jpg",
 		alt: "Résultat d'extensions de cils",
 	},
 ];
 
 export function FeaturedTreatments() {
 	return (
-		<section id="soins-phares" className="relative bg-ivory py-24 md:py-32">
+		<section id="soins-phares" className="relative bg-ivory py-10 md:py-14">
 			<div className="container-luxe">
 				<SectionHeading
 					eyebrow="Nos soins phares"
 					title="Des soins experts pour des"
 					highlight="résultats visibles."
 					align="center"
-					className="mb-14"
+					className="mb-8"
 				/>
 
-				{/* Grid 4 colonnes */}
-				<div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+				{/* Grid 4 colonnes — cartes compactes */}
+				<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
 					{treatments.map((t, i) => (
 						<Reveal key={t.name} delay={i * 0.08} className="h-full">
 							<motion.article
-								whileHover={{ y: -6 }}
+								whileHover={{ y: -4 }}
 								transition={{ type: "spring", stiffness: 300, damping: 24 }}
-								className="group relative flex h-full min-h-[26rem] flex-col overflow-hidden rounded-3xl bg-cream shadow-soft ring-1 ring-slate-line/40 transition-shadow duration-500 hover:shadow-card"
+								className="group relative flex h-full flex-col overflow-hidden rounded-2xl bg-cream shadow-soft ring-1 ring-slate-line/30 transition-shadow duration-500 hover:shadow-card"
 							>
-								{/* Image */}
-								<div className="relative aspect-[4/5] w-full overflow-hidden">
+								{/* Image — format plus large */}
+								<div className="relative aspect-[16/10] w-full overflow-hidden">
 									<Image
 										src={t.image}
 										alt={t.alt}
@@ -86,32 +81,32 @@ export function FeaturedTreatments() {
 										sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 90vw"
 										className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
 									/>
-									{/* Voile léger crème en bas pour lisibilité — pas de sombre */}
+									{/* Voile dégradé en bas pour lisibilité du texte */}
 									<div
 										aria-hidden
 										className="pointer-events-none absolute inset-0"
 										style={{
 											background:
-												"linear-gradient(to top, rgba(247,243,234,0.55) 0%, rgba(247,243,234,0) 38%)",
+												"linear-gradient(to top, rgba(247,243,234,0.7) 0%, rgba(247,243,234,0) 50%)",
 										}}
 									/>
 								</div>
 
-								{/* Contenu */}
-								<div className="flex flex-1 flex-col gap-2 p-5 pt-3">
-									<h3 className="font-display text-xl font-semibold text-royal">
+								{/* Contenu compact */}
+								<div className="flex flex-1 flex-col gap-1.5 p-4 pt-2">
+									<h3 className="font-display text-base font-semibold text-royal">
 										{t.name}
 									</h3>
-									<p className="text-sm leading-relaxed text-slate-ink/75">
+									<p className="text-xs leading-relaxed text-slate-ink/65">
 										{t.description}
 									</p>
 
-									<div className="mt-auto flex items-center justify-between pt-4">
-										<span className="font-display text-sm font-semibold text-gold-deep">
+									<div className="mt-auto flex items-center justify-between pt-2">
+										<span className="font-display text-xs font-semibold text-gold-deep">
 											Dès {t.price}
 										</span>
-										<span className="flex h-9 w-9 items-center justify-center rounded-full bg-royal-soft text-royal transition-all duration-300 group-hover:bg-gold group-hover:text-royal">
-											<ArrowUpRight size={16} strokeWidth={2.25} />
+										<span className="flex h-7 w-7 items-center justify-center rounded-full bg-royal-soft text-royal transition-all duration-300 group-hover:bg-gold group-hover:text-royal">
+											<ArrowUpRight size={14} strokeWidth={2.25} />
 										</span>
 									</div>
 								</div>
@@ -121,8 +116,14 @@ export function FeaturedTreatments() {
 				</div>
 
 				{/* CTA centré */}
-				<Reveal className="mt-14 flex justify-center" delay={0.1}>
-					<Button href={waLink()} external variant="royal" size="lg">
+				<Reveal className="mt-8 flex justify-center" delay={0.1}>
+					<Button
+						href={waLink()}
+						external
+						variant="gold"
+						size="lg"
+						className="px-10 py-5 text-sm font-bold shadow-gold hover:shadow-lift"
+					>
 						Découvrir tous nos soins
 					</Button>
 				</Reveal>
