@@ -18,7 +18,7 @@ const base = {
 /* Acné & imperfections — a face profile with spots */
 export function IconAcne(props: SVGProps<SVGSVGElement>) {
 	return (
-		<svg {...base} {...props}>
+		<svg role="img" aria-label="Acné et imperfections" {...base} {...props}>
 			<circle cx="12" cy="12" r="8.5" />
 			<circle cx="9" cy="9.5" r="0.9" fill="currentColor" stroke="none" />
 			<circle cx="14.5" cy="11" r="0.9" fill="currentColor" stroke="none" />
@@ -31,7 +31,12 @@ export function IconAcne(props: SVGProps<SVGSVGElement>) {
 /* Taches & hyperpigmentation — uneven surface with a marked spot */
 export function IconSpots(props: SVGProps<SVGSVGElement>) {
 	return (
-		<svg {...base} {...props}>
+		<svg
+			role="img"
+			aria-label="Taches et hyperpigmentation"
+			{...base}
+			{...props}
+		>
 			<circle cx="12" cy="12" r="8.5" />
 			<path d="M5 13c2.2 1.6 4 2 7 2s4.8-.4 7-2" />
 			<circle cx="12.5" cy="9" r="2" />
@@ -42,7 +47,7 @@ export function IconSpots(props: SVGProps<SVGSVGElement>) {
 /* Peau terne & fatiguée — a droplet crossed by a glow ray */
 export function IconDull(props: SVGProps<SVGSVGElement>) {
 	return (
-		<svg {...base} {...props}>
+		<svg role="img" aria-label="Peau terne et fatiguée" {...base} {...props}>
 			<path d="M12 3.5c2.6 3 4.8 5.4 4.8 8.3a4.8 4.8 0 0 1-9.6 0c0-2.9 2.2-5.3 4.8-8.3Z" />
 			<path d="M9.5 12.2c.3 1.1 1 1.9 2 2.2" />
 		</svg>
@@ -52,7 +57,12 @@ export function IconDull(props: SVGProps<SVGSVGElement>) {
 /* Cicatrices & pores dilatés — a healed line with pore dots */
 export function IconScars(props: SVGProps<SVGSVGElement>) {
 	return (
-		<svg {...base} {...props}>
+		<svg
+			role="img"
+			aria-label="Cicatrices et pores dilatés"
+			{...base}
+			{...props}
+		>
 			<circle cx="12" cy="12" r="8.5" />
 			<path d="M8.5 8.5 15.5 15.5" />
 			<circle cx="8.5" cy="8.5" r="0.6" fill="currentColor" stroke="none" />

@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { Reveal } from "@/components/ui/Reveal";
 import { skinConcernIcons } from "@/components/ui/icons";
+import { Reveal } from "@/components/ui/Reveal";
 import { waLink } from "@/lib/site";
 
 type Concern = {
@@ -45,7 +45,10 @@ const concerns: Concern[] = [
 
 export function SkinConcerns() {
 	return (
-		<section id="soins-visage" className="relative overflow-hidden bg-cream py-24 md:py-32">
+		<section
+			id="soins-visage"
+			className="relative overflow-hidden bg-cream py-24 md:py-32"
+		>
 			{/* Filet doré fluide décoratif à gauche */}
 			<svg
 				role="presentation"
