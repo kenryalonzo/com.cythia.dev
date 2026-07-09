@@ -25,7 +25,7 @@ export function Hero() {
 		target: ref,
 		offset: ["start start", "end start"],
 	});
-	const portraitY = useTransform(scrollYProgress, [0, 1], [0, 80]);
+	const portraitY = useTransform(scrollYProgress, [0, 1], [0, 40]);
 	const haloScale = useTransform(scrollYProgress, [0, 1], [1, 1.12]);
 
 	return (
@@ -45,7 +45,7 @@ export function Hero() {
 			/>
 			<Filaments intensity="subtle" />
 
-			<div className="container-luxe relative z-10 grid h-full grid-cols-1 items-start gap-6 py-12 md:py-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-8 xl:gap-10">
+			<div className="container-luxe relative z-10 grid h-full grid-cols-1 items-start gap-4 py-8 md:py-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-8 xl:gap-10">
 				{/* ---------- Colonne texte (gauche) ---------- */}
 				<div className="max-w-xl">
 					<motion.span
@@ -93,6 +93,7 @@ export function Hero() {
 							href={waLink()}
 							external
 							size="lg"
+							className="animate-pulse-glow"
 							icon={<WhatsAppIcon className="h-4 w-4" />}
 						>
 							Réserver maintenant
@@ -107,7 +108,7 @@ export function Hero() {
 						initial={{ opacity: 0, y: 18 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.7, delay: 0.44 }}
-						className="mt-6 flex flex-wrap items-center gap-4"
+						className="mt-4 flex flex-wrap items-center gap-3"
 					>
 						<div className="flex -space-x-3">
 							{avatars.map((a) => (
@@ -180,8 +181,14 @@ export function Hero() {
 						className="absolute -bottom-4 -left-4 hidden rounded-xl bg-ivory/95 p-3 shadow-card backdrop-blur ring-1 ring-slate-line/50 sm:block lg:-bottom-5 lg:-left-5 lg:rounded-2xl lg:p-4"
 					>
 						<div className="flex items-center gap-3">
-							<span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-soft text-gold-deep">
-								<Stars size={13} />
+							<span className="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full ring-1 ring-gold/30">
+								<Image
+									src="/assets/images/soin-expert.jpg"
+									alt="Soin expert"
+									fill
+									sizes="40px"
+									className="object-cover"
+								/>
 							</span>
 							<div className="leading-tight">
 								<p className="font-display text-base font-semibold text-royal">
@@ -201,14 +208,14 @@ export function Hero() {
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ delay: 1, duration: 0.6 }}
-				className="absolute bottom-7 right-6 z-10 hidden flex-col items-center gap-2 text-gold-deep md:flex"
+				className="absolute bottom-16 right-6 z-10 hidden flex-col items-center gap-2 text-gold-deep md:flex"
 			>
 				<span className="text-[0.65rem] font-semibold uppercase tracking-[0.2em]">
 					Scroll
 				</span>
 				<span className="relative flex h-10 w-6 items-start justify-center rounded-full border border-gold-deep/40 p-1">
 					<motion.span
-						animate={{ y: [0, 12, 0], opacity: [1, 0.3, 1] }}
+						animate={{ y: [0, 8, 0], opacity: [1, 0.3, 1] }}
 						transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
 						className="h-1.5 w-1.5 rounded-full bg-gold-deep"
 					/>

@@ -9,8 +9,8 @@ export default function Home() {
 			<Navbar />
 			<main className="flex flex-col">
 				<Hero />
-				<FeaturedTreatments />
 				<SkinConcerns />
+				<FeaturedTreatments />
 			</main>
 		</>
 	);

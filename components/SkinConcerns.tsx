@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import { skinConcernIcons } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/Reveal";
 import { waLink } from "@/lib/site";
@@ -9,37 +9,24 @@ import { waLink } from "@/lib/site";
 type Concern = {
 	iconKey: keyof typeof skinConcernIcons;
 	title: string;
-	description: string;
 };
 
-/*
- * "Chaque peau a son histoire, chaque problème a sa solution."
- * Fond clair crème, en-tête aligné à gauche, 4 cards.
- */
 const concerns: Concern[] = [
 	{
 		iconKey: "acne",
 		title: "Acné & imperfections",
-		description:
-			"Réduisez les boutons, les imperfections et retrouvez une peau nette et saine.",
 	},
 	{
 		iconKey: "spots",
 		title: "Taches & hyperpigmentation",
-		description:
-			"Atténuez les taches brunes et retrouvez un teint uniforme et lumineux.",
 	},
 	{
 		iconKey: "dull",
 		title: "Peau terne & fatiguée",
-		description:
-			"Redonnez éclat, douceur et fraîcheur à votre peau jour après jour.",
 	},
 	{
 		iconKey: "scars",
 		title: "Cicatrices & pores dilatés",
-		description:
-			"Améliorez la texture de votre peau et resserrez vos pores en profondeur.",
 	},
 ];
 
@@ -47,81 +34,69 @@ export function SkinConcerns() {
 	return (
 		<section
 			id="soins-visage"
-			className="relative overflow-hidden bg-cream py-24 md:py-32"
+			className="relative overflow-hidden bg-ivory py-12 md:py-16"
 		>
-			{/* Filet doré fluide décoratif à gauche */}
-			<svg
-				role="presentation"
-				aria-hidden="true"
-				className="pointer-events-none absolute -left-16 top-1/4 hidden h-[60%] w-[34%] text-gold/30 lg:block"
-				viewBox="0 0 200 400"
-				fill="none"
-			>
-				<path
-					d="M40 20C120 80 60 160 120 220S160 360 60 390"
-					stroke="currentColor"
-					strokeWidth="1.2"
-					strokeLinecap="round"
+			{/* Background image avec overlay clair */}
+			<div className="absolute inset-0">
+				<Image
+					src="/assets/images/background-segond-section.png"
+					alt=""
+					fill
+					sizes="100vw"
+					className="object-cover"
+					aria-hidden
 				/>
-				<path
-					d="M70 10C150 70 90 170 150 230S180 350 90 388"
-					stroke="currentColor"
-					strokeWidth="0.8"
-					strokeLinecap="round"
-					opacity="0.5"
-				/>
-			</svg>
+				<div className="absolute inset-0 bg-ivory/70" />
+			</div>
 
 			<div className="container-luxe relative">
-				{/* En-tête — aligné à gauche */}
-				<div className="mb-14 max-w-2xl">
-					<Reveal direction="none">
-						<span className="eyebrow inline-flex items-center gap-2">
-							<span className="h-px w-6 bg-gold-deep/60" aria-hidden />
-							Votre peau vous parle
-						</span>
-					</Reveal>
-					<Reveal delay={0.06}>
-						<h2 className="mt-4 font-display text-3xl font-bold leading-[1.12] tracking-tight text-royal sm:text-4xl md:text-[2.75rem]">
-							Chaque peau a son histoire,{" "}
-							<span className="text-gradient-gold">
-								chaque problème a sa solution.
+				{/* En-tête compact */}
+				<Reveal direction="none">
+					<div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+						<div>
+							<span className="eyebrow inline-flex items-center gap-2">
+								<span className="h-px w-6 bg-gold-deep/60" aria-hidden />
+								Votre peau vous parle
 							</span>
-						</h2>
-					</Reveal>
-				</div>
+							<h2 className="mt-3 font-display text-2xl font-bold leading-[1.15] tracking-tight text-royal sm:text-3xl md:text-4xl">
+								Chaque peau a son histoire,{" "}
+								<span className="text-gradient-gold">
+									chaque problème a sa solution.
+								</span>
+							</h2>
+						</div>
+						<p className="max-w-sm text-sm leading-relaxed text-slate-ink/60 md:text-right">
+							Quel que soit votre souci, nous avons un soin adapté.
+						</p>
+					</div>
+				</Reveal>
 
-				{/* Grid 4 colonnes — 1 mobile, 2 tablette */}
-				<div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+				{/* Ligne dorée séparatrice */}
+				<Reveal direction="none">
+					<div className="hairline mb-8 h-px" />
+				</Reveal>
+
+				{/* Grid horizontal — 4 colonnes compactes */}
+				<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
 					{concerns.map((c, i) => {
 						const Icon = skinConcernIcons[c.iconKey];
 						return (
-							<Reveal key={c.title} delay={i * 0.08} className="h-full">
+							<Reveal key={c.title} delay={i * 0.06}>
 								<motion.a
 									href={waLink(
 										`Bonjour Cynthia, je m'intéresse au soin : ${c.title}.`,
 									)}
 									target="_blank"
 									rel="noopener noreferrer"
-									whileHover={{ y: -6 }}
+									whileHover={{ y: -4 }}
 									transition={{ type: "spring", stiffness: 300, damping: 24 }}
-									className="group relative flex h-full flex-col overflow-hidden rounded-2xl bg-ivory p-7 shadow-soft ring-1 ring-slate-line/40 transition-shadow duration-500 hover:shadow-card"
+									className="group flex items-center gap-4 rounded-xl bg-ivory/80 p-4 ring-1 ring-slate-line/25 backdrop-blur-sm transition-all duration-400 hover:bg-ivory hover:shadow-soft hover:ring-gold/25"
 								>
-									{/* Icône ligne dorée dans un cercle */}
-									<span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-gold-soft text-gold-deep ring-1 ring-gold/30">
-										<Icon className="h-7 w-7" />
+									<span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-gold-soft to-gold-soft/40 text-gold-deep ring-1 ring-gold/15 transition-all duration-300 group-hover:ring-gold/30">
+										<Icon className="h-5 w-5" />
 									</span>
-
-									<h3 className="mt-6 font-display text-xl font-semibold text-royal">
+									<span className="font-display text-sm font-semibold leading-snug text-royal sm:text-base">
 										{c.title}
-									</h3>
-									<p className="mt-3 text-sm leading-relaxed text-slate-ink/75">
-										{c.description}
-									</p>
-
-									{/* Flèche circulaire dorée — bas droite, apparaît + bg fill au hover */}
-									<span className="absolute bottom-6 right-6 inline-flex h-10 w-10 translate-y-2 items-center justify-center rounded-full bg-royal-soft text-royal opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:bg-gold group-hover:text-royal group-hover:opacity-100">
-										<ArrowUpRight size={18} strokeWidth={2.25} />
 									</span>
 								</motion.a>
 							</Reveal>
