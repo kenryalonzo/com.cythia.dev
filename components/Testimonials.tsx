@@ -62,6 +62,12 @@ export function Testimonials() {
 		[],
 	);
 
+	// Auto-play
+	useEffect(() => {
+		const interval = setInterval(next, 4000);
+		return () => clearInterval(interval);
+	}, [next]);
+
 	useEffect(() => {
 		const onKey = (e: KeyboardEvent) => {
 			if (e.key === "ArrowLeft") prev();

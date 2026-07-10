@@ -96,26 +96,39 @@ const features: Feature[] = [
 
 export function Expertise() {
 	return (
-		<section className="relative overflow-hidden bg-ivory py-6 md:py-8">
+		<section className="relative overflow-hidden bg-royal py-6 md:py-8">
 			<div className="container-luxe">
 				<div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1fr_1.5fr]">
 					{/* Colonne gauche — texte + image de fond */}
 					<Reveal direction="left">
-						<div className="relative overflow-hidden rounded-2xl bg-cream p-6">
-							{/* Image de fond — texture dorée */}
-							<Image
-								src="/assets/images/Expertise-section.png"
-								alt=""
-								fill
-								sizes="(min-width: 1024px) 40vw, 100vw"
-								className="object-cover opacity-40"
-							/>
+						<div className="relative overflow-hidden rounded-2xl bg-royal-light/30 p-6 ring-1 ring-white/10">
+							{/* Image de fond — texture dorée avec animation */}
+							<motion.div
+								animate={{
+									scale: [1, 1.08, 1],
+									x: [0, -8, 0],
+									y: [0, -5, 0],
+								}}
+								transition={{
+									duration: 12,
+									repeat: Infinity,
+									ease: "easeInOut",
+								}}
+								className="absolute inset-0"
+							>
+								<Image
+									src="/assets/images/Expertise-section.png"
+									alt=""
+									fill
+									sizes="(min-width: 1024px) 40vw, 100vw"
+									className="object-cover opacity-30"
+								/>
+							</motion.div>
 							<div className="relative z-10">
-								<span className="eyebrow inline-flex items-center gap-2">
-									<span className="h-px w-6 bg-gold-deep/60" aria-hidden />
+								<h3 className="font-display text-sm font-bold uppercase tracking-[0.15em] text-gold">
 									Pourquoi nous choisir ?
-								</span>
-								<h2 className="mt-3 max-w-sm font-display text-2xl font-bold leading-[1.15] tracking-tight text-royal sm:text-3xl">
+								</h3>
+								<h2 className="mt-3 max-w-sm font-display text-2xl font-bold leading-[1.15] tracking-tight text-white sm:text-3xl">
 									L'expertise et l'attention{" "}
 									<span className="text-gradient-gold">
 										dont votre peau a besoin.
@@ -134,13 +147,13 @@ export function Expertise() {
 									transition={{ type: "spring", stiffness: 300, damping: 24 }}
 									className="flex flex-col items-center text-center"
 								>
-									<span className="flex h-12 w-12 items-center justify-center rounded-full bg-gold-soft/50 text-gold-deep ring-1 ring-gold/20">
+									<span className="flex h-12 w-12 items-center justify-center rounded-full bg-gold/20 text-gold ring-1 ring-gold/30">
 										{f.icon}
 									</span>
-									<h3 className="mt-3 font-display text-sm font-semibold text-royal">
+									<h3 className="mt-3 font-display text-sm font-semibold text-gold">
 										{f.title}
 									</h3>
-									<p className="mt-1.5 text-xs leading-relaxed text-slate-ink/60">
+									<p className="mt-1.5 text-xs leading-relaxed text-white/70">
 										{f.description}
 									</p>
 								</motion.div>
