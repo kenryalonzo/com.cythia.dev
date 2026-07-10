@@ -2,7 +2,6 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
@@ -42,7 +41,7 @@ export function Navbar() {
 					: "border-b border-transparent bg-transparent",
 			)}
 		>
-			<nav className="container-luxe flex h-20 items-center justify-between gap-4">
+			<nav className="container-luxe flex h-24 items-center justify-between gap-4 sm:h-28">
 				{/* Logo */}
 				<a
 					href="#accueil"
@@ -51,13 +50,12 @@ export function Navbar() {
 				>
 					{/* NOTE: logo text is royal+gold; we tint via CSS on white version if needed.
               Using the provided PNG as-is. */}
-					<Image
-						src="/assets/logo-cynthia.png"
+					<img
+						src="/cynthia-logo.svg"
 						alt="Cynthia Cosmétique"
-						width={48}
-						height={48}
-						priority
-						className="h-11 w-11 rounded-full object-cover ring-1 ring-gold-deep/30"
+						width={72}
+						height={72}
+						className="h-24 w-24 sm:h-28 sm:w-28"
 					/>
 				</a>
 
