@@ -42,7 +42,9 @@ const concerns: Concern[] = [
 
 export function SkinConcerns() {
 	return (
-		<section
+		<Reveal
+			as="section"
+			variant="scroll"
 			id="soins-visage"
 			className="relative overflow-hidden bg-ivory py-12 md:py-16"
 		>
@@ -139,6 +141,6 @@ export function SkinConcerns() {
 					})}
 				</div>
 			</div>
-		</section>
+		</Reveal>
 	);
 }

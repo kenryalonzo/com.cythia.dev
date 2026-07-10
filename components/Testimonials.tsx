@@ -106,7 +106,11 @@ export function Testimonials() {
 	};
 
 	return (
-		<section className="relative overflow-hidden bg-ivory py-8 md:py-10">
+		<Reveal
+			as="section"
+			variant="scroll"
+			className="relative overflow-hidden bg-ivory py-8 md:py-10"
+		>
 			<div className="container-luxe">
 				<div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[280px_1fr]">
 					{/* Colonne gauche — titre */}
@@ -193,6 +197,6 @@ export function Testimonials() {
 					</Reveal>
 				</div>
 			</div>
-		</section>
+		</Reveal>
 	);
 }

@@ -6,7 +6,11 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function Transformation() {
 	return (
-		<section className="relative overflow-hidden bg-cream py-8 md:py-12">
+		<Reveal
+			as="section"
+			variant="scroll"
+			className="relative overflow-hidden bg-cream py-8 md:py-12"
+		>
 			{/* Décor — filet doré subtil */}
 			<div aria-hidden className="absolute inset-0">
 				<svg
@@ -205,6 +209,6 @@ export function Transformation() {
 					</Reveal>
 				</div>
 			</div>
-		</section>
+		</Reveal>
 	);
 }

@@ -96,7 +96,11 @@ const features: Feature[] = [
 
 export function Expertise() {
 	return (
-		<section className="relative overflow-hidden bg-royal py-6 md:py-8">
+		<Reveal
+			as="section"
+			variant="scroll"
+			className="relative overflow-hidden bg-royal py-6 md:py-8"
+		>
 			<div className="container-luxe">
 				<div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1fr_1.5fr]">
 					{/* Colonne gauche — texte + image de fond */}
@@ -162,6 +166,6 @@ export function Expertise() {
 					</div>
 				</div>
 			</div>
-		</section>
+		</Reveal>
 	);
 }

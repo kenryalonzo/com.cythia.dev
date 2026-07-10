@@ -54,7 +54,11 @@ const tariffs: Tariff[] = [
 
 export function Explore() {
 	return (
-		<section className="relative overflow-hidden bg-royal py-8 md:py-10">
+		<Reveal
+			as="section"
+			variant="scroll"
+			className="relative overflow-hidden bg-royal py-8 md:py-10"
+		>
 			<div className="container-luxe">
 				{/* En-tête */}
 				<Reveal direction="none">
@@ -146,6 +150,6 @@ export function Explore() {
 					</div>
 				</Reveal>
 			</div>
-		</section>
+		</Reveal>
 	);
 }

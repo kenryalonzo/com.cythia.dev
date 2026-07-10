@@ -76,7 +76,11 @@ export function Footer() {
 	};
 
 	return (
-		<footer className="relative overflow-hidden bg-royal">
+		<Reveal
+			as="footer"
+			variant="scroll"
+			className="relative overflow-hidden bg-royal"
+		>
 			<div className="container-luxe relative py-4 md:py-6">
 				<div className="relative grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1fr_1fr]">
 					{/* Colonne 1 — Logo + baseline + réseaux */}
@@ -252,6 +256,6 @@ export function Footer() {
 					</svg>
 				</motion.button>
 			) : null}
-		</footer>
+		</Reveal>
 	);
 }

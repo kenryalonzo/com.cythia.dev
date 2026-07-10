@@ -40,7 +40,11 @@ export function FAQ() {
 	const [openIndex, setOpenIndex] = useState<number | null>(null);
 
 	return (
-		<section className="relative overflow-hidden bg-ivory py-10 md:py-14">
+		<Reveal
+			as="section"
+			variant="scroll"
+			className="relative overflow-hidden bg-ivory py-10 md:py-14"
+		>
 			<div className="container-luxe">
 				<div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[1fr_1fr]">
 					{/* Colonne gauche — FAQ */}
@@ -157,6 +161,6 @@ export function FAQ() {
 					</Reveal>
 				</div>
 			</div>
-		</section>
+		</Reveal>
 	);
 }

@@ -53,7 +53,12 @@ const treatments: Treatment[] = [
 
 export function FeaturedTreatments() {
 	return (
-		<section id="soins-phares" className="relative bg-ivory py-10 md:py-14">
+		<Reveal
+			as="section"
+			variant="scroll"
+			id="soins-phares"
+			className="relative bg-ivory py-10 md:py-14"
+		>
 			<div className="container-luxe">
 				<SectionHeading
 					eyebrow="Nos soins phares"
@@ -128,6 +133,6 @@ export function FeaturedTreatments() {
 					</Button>
 				</Reveal>
 			</div>
-		</section>
+		</Reveal>
 	);
 }
