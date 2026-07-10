@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { MapPin, MessageCircle, Phone } from "lucide-react";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { navLinks, site, waLink } from "@/lib/site";
 
@@ -60,6 +61,16 @@ const soins = [
 ];
 
 export function Footer() {
+	const [showScrollTop, setShowScrollTop] = useState(false);
+
+	useEffect(() => {
+		const onScroll = () =>
+			setShowScrollTop(window.scrollY > window.innerHeight * 0.8);
+		onScroll();
+		window.addEventListener("scroll", onScroll, { passive: true });
+		return () => window.removeEventListener("scroll", onScroll);
+	}, []);
+
 	const scrollToTop = () => {
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	};
@@ -84,7 +95,7 @@ export function Footer() {
 								{site.baseline}
 							</p>
 							<div className="mt-4 flex gap-2.5">
-								{socials.map((s) => (
+								{socials.map((s, i) => (
 									<motion.a
 										key={s.name}
 										href={s.href}
@@ -94,8 +105,11 @@ export function Footer() {
 										whileTap={{ scale: 0.95 }}
 										aria-label={s.name}
 										className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-white transition-colors duration-300 hover:bg-gold hover:text-royal"
+										style={{ animationDelay: `${i * 0.3}s` }}
 									>
-										{s.icon}
+										<span className="animate-pulse-glow inline-flex h-full w-full items-center justify-center rounded-full">
+											{s.icon}
+										</span>
 									</motion.a>
 								))}
 							</div>
@@ -211,28 +225,33 @@ export function Footer() {
 				</Reveal>
 			</div>
 
-			{/* Retour haut — fixe à droite */}
-			<motion.button
-				type="button"
-				onClick={scrollToTop}
-				whileHover={{ scale: 1.12 }}
-				whileTap={{ scale: 0.95 }}
-				aria-label="Retour en haut"
-				className="animate-pulse-glow fixed bottom-6 right-6 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-gold text-royal shadow-gold"
-			>
-				<svg
-					viewBox="0 0 24 24"
-					fill="none"
-					stroke="currentColor"
-					strokeWidth="2.5"
-					strokeLinecap="round"
-					strokeLinejoin="round"
-					className="h-5 w-5"
-					aria-hidden="true"
+			{/* Retour haut — fixe à droite, visible après le hero */}
+			{showScrollTop ? (
+				<motion.button
+					type="button"
+					onClick={scrollToTop}
+					initial={{ opacity: 0, scale: 0.8 }}
+					animate={{ opacity: 1, scale: 1 }}
+					exit={{ opacity: 0, scale: 0.8 }}
+					whileHover={{ scale: 1.12 }}
+					whileTap={{ scale: 0.95 }}
+					aria-label="Retour en haut"
+					className="animate-pulse-glow fixed bottom-6 right-6 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-gold text-royal shadow-gold"
 				>
-					<path d="M18 15l-6-6-6 6" />
-				</svg>
-			</motion.button>
+					<svg
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						strokeWidth="2.5"
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						className="h-5 w-5"
+						aria-hidden="true"
+					>
+						<path d="M18 15l-6-6-6 6" />
+					</svg>
+				</motion.button>
+			) : null}
 		</footer>
 	);
 }

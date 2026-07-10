@@ -210,17 +210,21 @@ export function Hero() {
 				transition={{ delay: 1, duration: 0.6 }}
 				className="absolute bottom-16 right-6 z-10 hidden flex-col items-center gap-2 text-gold-deep md:flex"
 			>
-				<span className="text-[0.65rem] font-semibold uppercase tracking-[0.2em]">
-					Scroll
+				<span className="animate-pulse-glow text-[0.65rem] font-semibold uppercase tracking-[0.2em]">
+					Découvrir
 				</span>
-				<span className="relative flex h-10 w-6 items-start justify-center rounded-full border border-gold-deep/40 p-1">
+				<span className="relative flex h-10 w-6 items-start justify-center rounded-full border border-gold/50 p-1 shadow-gold">
 					<motion.span
-						animate={{ y: [0, 8, 0], opacity: [1, 0.3, 1] }}
-						transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-						className="h-1.5 w-1.5 rounded-full bg-gold-deep"
+						animate={{
+							y: [0, 10, 0],
+							opacity: [1, 0.2, 1],
+							scale: [1, 0.7, 1],
+						}}
+						transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+						className="h-1.5 w-1.5 rounded-full bg-gold"
 					/>
 				</span>
-				<ChevronDown size={14} className="animate-pulse" />
+				<ChevronDown size={14} className="animate-pulse-glow" />
 			</motion.a>
 		</section>
 	);
