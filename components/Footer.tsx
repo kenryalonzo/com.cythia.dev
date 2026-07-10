@@ -108,7 +108,7 @@ export function Footer() {
 										whileHover={{ scale: 1.15, y: -2 }}
 										whileTap={{ scale: 0.95 }}
 										aria-label={s.name}
-										className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-white transition-colors duration-300 hover:bg-gold hover:text-royal"
+										className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors duration-300 hover:bg-gold hover:text-royal sm:h-8 sm:w-8"
 										style={{ animationDelay: `${i * 0.3}s` }}
 									>
 										<span className="animate-pulse-glow inline-flex h-full w-full items-center justify-center rounded-full">

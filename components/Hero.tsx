@@ -10,8 +10,6 @@ import { Stars } from "@/components/ui/Stars";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { waLink } from "@/lib/site";
 
-/* Social proof avatars (placeholders — single person asset reused with tints).
-   Hypothèse : avatars clients non fournis, on utilise les assets existants. */
 const avatars = [
 	{ src: "/assets/images/person1.jpg", alt: "Cliente satisfaisante" },
 	{ src: "/assets/images/person02.jpg", alt: "Cliente satisfaite" },
@@ -20,7 +18,6 @@ const avatars = [
 
 export function Hero() {
 	const ref = useRef<HTMLElement>(null);
-	// Léger parallax sur le portrait au scroll
 	const { scrollYProgress } = useScroll({
 		target: ref,
 		offset: ["start start", "end start"],
@@ -32,9 +29,8 @@ export function Hero() {
 		<section
 			id="accueil"
 			ref={ref}
-			className="relative overflow-hidden bg-ivory h-[90vh] min-h-[500px]"
+			className="relative overflow-hidden bg-ivory lg:min-h-[500px] lg:h-[90vh]"
 		>
-			{/* Décor — dégradé crème radial + filaments dorés subtils */}
 			<div
 				aria-hidden
 				className="absolute inset-0"
@@ -45,175 +41,206 @@ export function Hero() {
 			/>
 			<Filaments intensity="subtle" />
 
-			<div className="container-luxe relative z-10 grid h-full grid-cols-1 items-start gap-4 py-8 md:py-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-8 xl:gap-10">
-				{/* ---------- Colonne texte (gauche) ---------- */}
-				<div className="max-w-xl">
-					<motion.span
-						initial={{ opacity: 0, y: 16 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.6 }}
-						className="eyebrow inline-flex items-center gap-2.5"
-					>
-						<span className="h-px w-8 bg-gold-deep/60" aria-hidden />
-						L&apos;expertise au service de votre peau
-					</motion.span>
+			<div className="container-luxe relative z-10 pb-6 pt-24 md:pt-20 lg:flex lg:h-full lg:flex-col">
+				<div className="grid grid-cols-[1fr_1.1fr] items-start gap-3 md:gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-8 xl:gap-10">
+					{/* Colonne texte */}
+					<div className="flex flex-col gap-2 md:gap-4 lg:self-start">
+						<motion.span
+							initial={{ opacity: 0, y: 16 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.6 }}
+							className="eyebrow hidden items-center gap-2.5 sm:inline-flex"
+						>
+							<span className="h-px w-8 bg-gold-deep/60" aria-hidden />
+							L&apos;expertise au service de votre peau
+						</motion.span>
 
-					<motion.h1
-						initial={{ opacity: 0, y: 24 }}
-						animate={{ opacity: 1, y: 0 }}
+						<motion.h1
+							initial={{ opacity: 0, y: 24 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{
+								duration: 0.8,
+								delay: 0.08,
+								ease: [0.22, 1, 0.36, 1],
+							}}
+							className="font-display text-xl font-bold leading-[1.08] tracking-tight text-royal sm:text-2xl md:text-4xl lg:text-6xl xl:text-[4rem]"
+						>
+							Révélez la meilleure version de votre{" "}
+							<span className="text-gradient-gold">peau.</span>
+						</motion.h1>
+
+						<motion.p
+							initial={{ opacity: 0, y: 20 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.7, delay: 0.2 }}
+							className="max-w-md text-xs leading-relaxed text-slate-ink/80 sm:text-sm md:text-base lg:text-lg"
+						>
+							Soins experts, microneedling, beauté du regard et accompagnement
+							personnalisé à Douala.
+						</motion.p>
+
+						<motion.div
+							initial={{ opacity: 0, y: 18 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.7, delay: 0.44 }}
+							className="mt-4 flex flex-wrap items-center gap-2 sm:gap-3"
+						>
+							<div className="flex -space-x-2 sm:-space-x-3">
+								{avatars.slice(0, 1).map((a) => (
+									<span
+										key={a.src}
+										className="relative inline-block h-6 w-6 overflow-hidden rounded-full ring-2 ring-ivory shadow-soft sm:h-9 sm:w-9 lg:h-11 lg:w-11"
+									>
+										<Image
+											src={a.src}
+											alt={a.alt}
+											fill
+											sizes="24px"
+											className="object-cover"
+										/>
+									</span>
+								))}
+								{avatars.slice(1).map((a) => (
+									<span
+										key={a.src}
+										className="relative hidden overflow-hidden rounded-full ring-2 ring-ivory shadow-soft sm:inline-block h-9 w-9 lg:h-11 lg:w-11"
+									>
+										<Image
+											src={a.src}
+											alt={a.alt}
+											fill
+											sizes="36px"
+											className="object-cover"
+										/>
+									</span>
+								))}
+							</div>
+							<div className="flex flex-col gap-0.5">
+								<span className="font-display text-[10px] font-semibold text-royal sm:text-sm lg:text-lg">
+									+500 clientes satisfaites
+								</span>
+								<Stars
+									className="scale-[0.4] origin-left sm:scale-75 lg:scale-100"
+									size={10}
+								/>
+							</div>
+						</motion.div>
+					</div>
+
+					{/* Colonne portrait */}
+					<motion.div
+						initial={{ opacity: 0, scale: 0.96 }}
+						animate={{ opacity: 1, scale: 1 }}
 						transition={{
-							duration: 0.8,
-							delay: 0.08,
+							duration: 0.9,
+							delay: 0.15,
 							ease: [0.22, 1, 0.36, 1],
 						}}
-						className="mt-4 font-display text-4xl font-bold leading-[1.05] tracking-tight text-royal sm:text-5xl lg:text-6xl xl:text-[4rem]"
+						className="relative w-full max-w-[180px] sm:max-w-[240px] md:max-w-[300px] lg:max-w-sm lg:translate-x-6"
 					>
-						Révélez la meilleure version de votre{" "}
-						<span className="text-gradient-gold">peau.</span>
-					</motion.h1>
-
-					<motion.p
-						initial={{ opacity: 0, y: 20 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.7, delay: 0.2 }}
-						className="mt-4 max-w-md text-base leading-relaxed text-slate-ink/80 sm:text-lg"
-					>
-						Soins experts, microneedling, beauté du regard et accompagnement
-						personnalisé à Douala.
-					</motion.p>
-
-					{/* Boutons */}
-					<motion.div
-						initial={{ opacity: 0, y: 20 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.7, delay: 0.32 }}
-						className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center"
-					>
-						<Button
-							href={waLink()}
-							external
-							size="lg"
-							className="animate-pulse-glow px-10 py-5 text-sm font-bold shadow-gold hover:shadow-lift"
-							icon={<WhatsAppIcon className="h-4 w-4" />}
+						<motion.div
+							style={{ scale: haloScale }}
+							className="absolute -inset-4 -z-10 rounded-[2rem] blur-xl sm:-inset-6 sm:rounded-[2.5rem] sm:blur-2xl"
+							aria-hidden
 						>
-							Réserver maintenant
-						</Button>
-						<Button href="#soins-phares" variant="outline-gold" size="lg">
-							Découvrir nos soins
-						</Button>
-					</motion.div>
+							<div className="h-full w-full rounded-[2.5rem] bg-gradient-to-tr from-gold/30 via-gold-soft/50 to-royal-soft/20" />
+						</motion.div>
 
-					{/* Preuve sociale */}
-					<motion.div
-						initial={{ opacity: 0, y: 18 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.7, delay: 0.44 }}
-						className="mt-4 flex flex-wrap items-center gap-3"
-					>
-						<div className="flex -space-x-3">
-							{avatars.map((a) => (
-								<span
-									key={a.src}
-									className="relative inline-block h-11 w-11 overflow-hidden rounded-full ring-2 ring-ivory shadow-soft"
-								>
+						<div
+							aria-hidden
+							className="absolute -inset-2 rounded-full border border-gold/15 opacity-60 sm:-inset-3 sm:border-2"
+						/>
+
+						<motion.div
+							style={{ y: portraitY }}
+							className="relative aspect-[3/4] w-full overflow-hidden rounded-[1.2rem] shadow-lift ring-1 ring-white/70 sm:aspect-[4/5] sm:rounded-[1.8rem] lg:rounded-[2rem] lg:ring-2"
+						>
+							<Image
+								src="/assets/visage-hero.png"
+								alt="Femme recevant un soin du visage expert chez Cynthia Cosmétique"
+								fill
+								priority
+								sizes="(min-width: 1024px) 480px, (min-width: 640px) 300px, 180px"
+								className="object-cover"
+							/>
+							<div
+								aria-hidden
+								className="pointer-events-none absolute inset-0"
+								style={{
+									background:
+										"linear-gradient(to top, rgba(247,243,234,0.25), transparent 50%)",
+								}}
+							/>
+						</motion.div>
+
+						<motion.div
+							initial={{ opacity: 0, y: 18 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.6, delay: 0.7 }}
+							className="absolute -bottom-3 -left-1 rounded-lg bg-ivory/95 p-1.5 shadow-card backdrop-blur ring-1 ring-slate-line/50 sm:-bottom-4 sm:-left-2 sm:rounded-xl sm:p-2.5 lg:-bottom-5 lg:-left-5 lg:rounded-2xl lg:p-4"
+						>
+							<div className="flex items-center gap-1.5 sm:gap-2.5 lg:gap-3">
+								<span className="relative flex h-6 w-6 shrink-0 items-center justify-center overflow-hidden rounded-full ring-1 ring-gold/30 sm:h-9 sm:w-9 lg:h-10 lg:w-10">
 									<Image
-										src={a.src}
-										alt={a.alt}
+										src="/assets/images/soin-expert.jpg"
+										alt="Soin expert"
 										fill
-										sizes="44px"
+										sizes="24px"
 										className="object-cover"
 									/>
 								</span>
-							))}
-						</div>
-						<div className="flex flex-col gap-1">
-							<span className="font-display text-lg font-semibold text-royal">
-								+500 clientes satisfaites
-							</span>
-							<Stars />
-						</div>
+								<div className="leading-tight">
+									<p className="font-display text-[10px] font-semibold text-royal sm:text-sm lg:text-base">
+										Soins experts
+									</p>
+									<p className="text-[8px] text-slate-soft sm:text-[11px] lg:text-xs">
+										à Douala
+									</p>
+								</div>
+							</div>
+						</motion.div>
 					</motion.div>
 				</div>
 
-				{/* ---------- Colonne portrait (droite) ---------- */}
+				{/* CTA centré sous les deux colonnes */}
 				<motion.div
-					initial={{ opacity: 0, scale: 0.96 }}
-					animate={{ opacity: 1, scale: 1 }}
-					transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-					className="relative mx-auto w-full max-w-[220px] sm:max-w-[280px] lg:max-w-sm"
+					initial={{ opacity: 0, y: 20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.7, delay: 0.32 }}
+					className="mt-4 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start lg:-mt-24"
 				>
-					<motion.div
-						style={{ scale: haloScale }}
-						className="absolute -inset-4 -z-10 rounded-[2rem] blur-xl lg:-inset-6 lg:rounded-[2.5rem] lg:blur-2xl"
-						aria-hidden
+					<Button
+						href={waLink()}
+						external
+						size="lg"
+						className="animate-pulse-glow px-10 py-5 text-sm font-bold shadow-gold hover:shadow-lift"
+						icon={<WhatsAppIcon className="h-4 w-4" />}
 					>
-						<div className="h-full w-full rounded-[2.5rem] bg-gradient-to-tr from-gold/25 via-gold-soft/40 to-royal-soft/30" />
-					</motion.div>
-
-					<motion.div
-						style={{ y: portraitY }}
-						className="relative aspect-[3/4] w-full overflow-hidden rounded-[1.5rem] shadow-lift ring-1 ring-white/60 sm:aspect-[4/5] sm:rounded-[2rem]"
+						Réserver maintenant
+					</Button>
+					<Button
+						href="#soins-phares"
+						variant="outline-gold"
+						size="lg"
+						className="hidden sm:inline-flex"
 					>
-						<Image
-							src="/assets/visage-hero.png"
-							alt="Femme recevant un soin du visage expert chez Cynthia Cosmétique"
-							fill
-							priority
-							sizes="(min-width: 1024px) 480px, (min-width: 640px) 420px, 90vw"
-							className="object-cover"
-						/>
-						{/* voile ivoire doux pour intégration (pas de sombre) */}
-						<div
-							aria-hidden
-							className="pointer-events-none absolute inset-0"
-							style={{
-								background:
-									"linear-gradient(to top, rgba(247,243,234,0.18), transparent 40%)",
-							}}
-						/>
-					</motion.div>
-
-					{/* Badge flottant — rating */}
-					<motion.div
-						initial={{ opacity: 0, y: 18 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.6, delay: 0.7 }}
-						className="absolute -bottom-4 -left-4 hidden rounded-xl bg-ivory/95 p-3 shadow-card backdrop-blur ring-1 ring-slate-line/50 sm:block lg:-bottom-5 lg:-left-5 lg:rounded-2xl lg:p-4"
-					>
-						<div className="flex items-center gap-3">
-							<span className="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full ring-1 ring-gold/30">
-								<Image
-									src="/assets/images/soin-expert.jpg"
-									alt="Soin expert"
-									fill
-									sizes="40px"
-									className="object-cover"
-								/>
-							</span>
-							<div className="leading-tight">
-								<p className="font-display text-base font-semibold text-royal">
-									Soins experts
-								</p>
-								<p className="text-xs text-slate-soft">à Douala</p>
-							</div>
-						</div>
-					</motion.div>
+						Découvrir nos soins
+					</Button>
 				</motion.div>
 			</div>
 
-			{/* ---------- Indicateur de scroll (bas droite) ---------- */}
 			<motion.a
 				href="#soins-visage"
 				aria-label="Faire défiler vers le bas"
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ delay: 1, duration: 0.6 }}
-				className="absolute bottom-16 right-6 z-10 hidden flex-col items-center gap-2 text-gold-deep md:flex"
+				className="absolute bottom-10 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 text-gold-deep lg:flex lg:bottom-16 lg:right-6 lg:left-auto lg:translate-x-0"
 			>
-				<span className="animate-pulse-glow text-[0.65rem] font-semibold uppercase tracking-[0.2em]">
+				<span className="animate-pulse-glow text-[0.6rem] font-semibold uppercase tracking-[0.2em] lg:text-[0.65rem]">
 					Découvrir
 				</span>
-				<span className="relative flex h-10 w-6 items-start justify-center rounded-full border border-gold/50 p-1 shadow-gold">
+				<span className="relative flex h-8 w-5 items-start justify-center rounded-full border border-gold/50 p-1 shadow-gold lg:h-10 lg:w-6">
 					<motion.span
 						animate={{
 							y: [0, 10, 0],
@@ -224,7 +251,7 @@ export function Hero() {
 						className="h-1.5 w-1.5 rounded-full bg-gold"
 					/>
 				</span>
-				<ChevronDown size={14} className="animate-pulse-glow" />
+				<ChevronDown size={12} className="animate-pulse-glow lg:size-[14px]" />
 			</motion.a>
 		</section>
 	);
