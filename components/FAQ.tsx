@@ -97,8 +97,8 @@ export function FAQ() {
 
 					{/* Colonne droite — CTA + Lotus */}
 					<Reveal direction="right">
-						<div className="relative flex min-h-[300px] items-center overflow-hidden py-10 lg:min-h-[360px]">
-							{/* Lotus en arrière-plan — collé à droite */}
+						<div className="relative flex min-h-[240px] items-center overflow-hidden py-6 md:py-10 lg:min-h-[360px]">
+							{/* Lotus en arrière-plan — collé à droite, caché sur mobile */}
 							<motion.div
 								animate={{
 									y: [0, -8, 0],
@@ -109,7 +109,7 @@ export function FAQ() {
 									repeat: Infinity,
 									ease: "easeInOut",
 								}}
-								className="absolute top-18 right-22 translate-x-1/3"
+								className="absolute top-18 right-22 hidden translate-x-1/3 lg:block"
 							>
 								<Image
 									src="/assets/images/lotus-cote-droit.png"
@@ -122,7 +122,7 @@ export function FAQ() {
 							</motion.div>
 
 							{/* Contenu CTA — z-index élevé pour passer devant */}
-							<div className="relative z-20 ml-4 max-w-[280px]">
+							<div className="relative z-20 max-w-[280px] lg:ml-4">
 								<h2 className="font-display text-3xl font-bold leading-[1.15] tracking-tight text-royal sm:text-4xl">
 									<span className="text-gradient-gold">Prête à révéler</span>
 									<br />

@@ -87,7 +87,7 @@ export function Testimonials() {
 		if (absDiff === 1) {
 			return {
 				scale: 0.82,
-				x: diff > 0 ? 140 : -140,
+				x: diff > 0 ? 100 : -100,
 				z: 20,
 				opacity: 0.7,
 				blur: 1,
@@ -96,13 +96,13 @@ export function Testimonials() {
 		if (absDiff === 2) {
 			return {
 				scale: 0.65,
-				x: diff > 0 ? 240 : -240,
+				x: diff > 0 ? 180 : -180,
 				z: 10,
 				opacity: 0.35,
 				blur: 2,
 			};
 		}
-		return { scale: 0.5, x: diff > 0 ? 300 : -300, z: 0, opacity: 0, blur: 3 };
+		return { scale: 0.5, x: diff > 0 ? 220 : -220, z: 0, opacity: 0, blur: 3 };
 	};
 
 	return (
@@ -148,7 +148,7 @@ export function Testimonials() {
 											damping: 30,
 										}}
 										onClick={() => setActive(i)}
-										className="absolute flex w-[220px] cursor-pointer flex-col items-center rounded-2xl bg-white p-5 shadow-card ring-1 ring-slate-line/15"
+										className="absolute flex w-[180px] cursor-pointer flex-col items-center rounded-2xl bg-white p-4 shadow-card ring-1 ring-slate-line/15 sm:w-[220px] sm:p-5"
 										style={{ transformOrigin: "center center" }}
 									>
 										<span className="relative h-20 w-20 overflow-hidden rounded-full bg-gray-200 ring-3 ring-white shadow-soft">

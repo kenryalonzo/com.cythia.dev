@@ -59,9 +59,6 @@ export function Navbar() {
 						priority
 						className="h-11 w-11 rounded-full object-cover ring-1 ring-gold-deep/30"
 					/>
-					<span className="ml-3 hidden font-display text-xl font-semibold tracking-tight text-royal sm:block">
-						Cynthia
-					</span>
 				</a>
 
 				{/* Centered menu (desktop) */}

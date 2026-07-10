@@ -23,9 +23,7 @@ export const site = {
 
 export const navLinks = [
 	{ label: "Accueil", href: "#accueil" },
-	{ label: "Soins Visage", href: "#soins-visage" },
-	{ label: "Beauté du Regard", href: "#beaute-regard" },
-	{ label: "Formations", href: "#formations" },
+	{ label: "Prestation", href: "#soins-phares" },
 	{ label: "À propos", href: "#a-propos" },
 	{ label: "Contact", href: "#contact" },
 ] as const;

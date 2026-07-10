@@ -119,12 +119,12 @@ export function Transformation() {
 							>
 								{/* Double bordure bleue */}
 								<div className="relative overflow-hidden rounded-[10px] ring-1 ring-royal/20">
-									<div className="relative aspect-[3/4] w-[180px]">
+									<div className="relative aspect-[3/4] w-[120px] sm:w-[160px] md:w-[180px]">
 										<Image
 											src="/assets/images/before-image.png"
 											alt="Avant le soin — peau avec imperfections"
 											fill
-											sizes="180px"
+											sizes="(min-width: 768px) 180px, (min-width: 640px) 160px, 120px"
 											className="object-cover"
 										/>
 										<div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-cream/40 via-transparent to-transparent" />
@@ -183,12 +183,12 @@ export function Transformation() {
 							>
 								{/* Double bordure bleue */}
 								<div className="relative overflow-hidden rounded-[10px] ring-1 ring-royal/20">
-									<div className="relative aspect-[3/4] w-[180px]">
+									<div className="relative aspect-[3/4] w-[120px] sm:w-[160px] md:w-[180px]">
 										<Image
 											src="/assets/images/after-image.png"
 											alt="Après le soin — peau saine et éclatante"
 											fill
-											sizes="180px"
+											sizes="(min-width: 768px) 180px, (min-width: 640px) 160px, 120px"
 											className="object-cover"
 										/>
 										<div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-cream/40 via-transparent to-transparent" />
