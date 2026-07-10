@@ -151,7 +151,7 @@ export function Testimonials() {
 											scale: style.scale,
 											zIndex: style.z,
 											opacity: style.opacity,
-											filter: `blur(${style.blur}px)`,
+											filter: `blur(${Math.max(0, style.blur)}px)`,
 										}}
 										transition={{
 											type: "spring",

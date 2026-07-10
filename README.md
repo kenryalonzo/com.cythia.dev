@@ -1,36 +1,150 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+# Cynthia Cosmétique
 
-First, run the development server:
+**L'expertise au service de votre peau et de votre beauté naturelle.**
+
+Site vitrine premium pour un institut de beauté haut de gamme basé à Douala, Cameroun.
+
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org)
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)](https://react.dev)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-06B6D4?logo=tailwindcss)](https://tailwindcss.com)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript)](https://typescriptlang.org)
+
+</div>
+
+---
+
+![Hero Section — Cynthia Cosmétique](public/assets/images/capture-hero-section.png)
+
+---
+
+## ✨ Fonctionnalités
+
+- **Design premium** — Charte graphique soignée (or luxury, bleu royal, ivoire)
+- **Animations fluides** — Framer Motion avec easing luxe `cubic-bezier(0.22, 1, 0.36, 1)`
+- **Chargement intelligent** — Code splitting dynamique, animations de loading en cascade
+- **Responsive** — Mobile-first, adapté à tous les écrans
+- **Accessibilité** — Labels ARIA, `:focus-visible`, `prefers-reduced-motion`
+- **SEO** — Metadata, Open Graph, JSON-LD structuré (BeautySalon)
+- **Léger** — Zéro dépendance inutile, bundle optimisé
+
+## 🛠 Stack technique
+
+| Technologie | Rôle |
+|---|---|
+| Next.js 16 | Framework React (App Router, Turbopack) |
+| React 19 | UI library |
+| Tailwind CSS v4 | Styling (design tokens via `@theme`) |
+| Framer Motion | Animations & interactions |
+| TypeScript 5 | Typage statique |
+| Biome | Lint & format |
+| Lucide React | Iconographie |
+
+## 🚀 Démarrage rapide
 
 ```bash
+# Cloner le dépôt
+git clone https://github.com/votre-user/cynthia.git
+cd cynthia
+
+# Installer les dépendances
+npm install
+
+# Lancer le serveur de développement
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrir [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📦 Scripts disponibles
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev       # Serveur de développement (Turbopack)
+npm run build     # Build de production
+npm run start     # Lancer le build de production
+npm run lint      # Vérifier le code (Biome)
+npm run lint:fix  # Corriger automatiquement
+npm run format    # Formater le code
+```
 
-## Learn More
+## 🎨 Charte graphique
 
-To learn more about Next.js, take a look at the following resources:
+### Palette
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Rôle | HEX | Usage |
+|---|---|---|
+| Bleu Royal | `#093485` | Structure, titres, navigation |
+| Or Luxury | `#FDCF02` | Accent, CTA, highlights (≤10%) |
+| Or Profond | `#C9A227` | Texte doré sur fond clair |
+| Ivoire | `#FAFAF8` | Fond principal |
+| Crème | `#F7F3EA` | Sections chaudes, cartes |
+| Ardoise | `#4A5568` | Corps de texte |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Règle absolue
 
-## Deploy on Vercel
+> **Le noir (#000) est proscrit. Aucune zone sombre.**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Polices
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Display** — Playfair Display (serif, éditorial)
+- **Interface** — Inter (sans-serif, navigation, body)
+
+## 📁 Structure du projet
+
+```
+cynthia/
+├── app/
+│   ├── globals.css          # Design tokens + utilities
+│   ├── layout.tsx           # Root layout (fonts, metadata, JSON-LD)
+│   ├── page.tsx             # Home — sections dynamiques
+│   ├── not-found.tsx        # Page 404
+│   ├── a-propos/page.tsx    # À propos
+│   ├── contact/page.tsx     # Contact
+│   └── prestation/page.tsx  # Prestations
+├── components/
+│   ├── ui/                  # Primitives réutilisables
+│   │   ├── Button.tsx
+│   │   ├── Filaments.tsx
+│   │   ├── Reveal.tsx
+│   │   ├── SectionHeading.tsx
+│   │   ├── Stars.tsx
+│   │   └── WhatsAppIcon.tsx
+│   ├── Navbar.tsx
+│   ├── Hero.tsx
+│   ├── Loader.tsx           # Splash screen SVG animé
+│   ├── FeaturedTreatments.tsx
+│   ├── SkinConcerns.tsx
+│   ├── Transformation.tsx
+│   ├── Expertise.tsx
+│   ├── Testimonials.tsx
+│   ├── Explore.tsx
+│   ├── FAQ.tsx
+│   └── Footer.tsx
+├── lib/
+│   ├── site.ts              # Config & contenu
+│   └── utils.ts             # cn() utility
+└── public/
+    └── assets/images/       # Images du site
+```
+
+## 🌍 Pages
+
+| Route | Description |
+|---|---|
+| `/` | Accueil — Hero, soins, expertise, témoignages, FAQ |
+| `/prestation` | Catalogue de prestations |
+| `/a-propos` | Histoire & expertise |
+| `*` | Page 404 avec animation 404 dorée |
+
+## 📄 Licence
+
+Projet privé — Cynthia Cosmétique. Tous droits réservés.
+
+---
+
+<div align="center">
+
+Développé avec passion pour **Cynthia Cosmétique**
+
+</div>
