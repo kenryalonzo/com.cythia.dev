@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import Script from "next/script";
+import { LoaderProvider } from "@/components/LoaderProvider";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -86,7 +87,7 @@ export default function RootLayout({
 			className={`${playfair.variable} ${inter.variable} h-full antialiased`}
 		>
 			<body className="min-h-full flex flex-col bg-ivory">
-				{children}
+				<LoaderProvider>{children}</LoaderProvider>
 				<Script id="scroll-restore" strategy="beforeInteractive">
 					{`if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; } window.scrollTo(0, 0);`}
 				</Script>

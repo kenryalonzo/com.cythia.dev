@@ -17,26 +17,26 @@ const universes: Universe[] = [
 		title: "Soins du visage",
 		description: "Nettoyer, traiter et sublimer votre peau.",
 		image: "/assets/images/soin-visage.jpg",
-		href: "#soins-visage",
+		href: "/prestation",
 	},
 	{
 		title: "Beauté du regard",
 		description: "Sourcils parfaits, cils de rêve et regard sublimé.",
 		image: "/assets/images/beaute-au-regard.jpg",
-		href: "#beaute-regard",
+		href: "/prestation",
 	},
 	{
 		title: "Formations",
 		description:
 			"Apprenez un métier d'avenir avec nos formations certifiantes.",
 		image: "/assets/images/formation-soin.jpg",
-		href: "#formations",
+		href: "/prestation",
 	},
 	{
 		title: "À propos",
 		description: "Découvrez notre histoire, notre mission et nos valeurs.",
 		image: "/assets/images/candylip.webp",
-		href: "#a-propos",
+		href: "/a-propos",
 	},
 ];
 

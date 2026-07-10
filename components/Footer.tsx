@@ -53,11 +53,11 @@ const socials = [
 ];
 
 const soins = [
-	{ label: "Microneedling", href: "#soins-phares" },
-	{ label: "Soin Signature", href: "#soins-phares" },
-	{ label: "Microblading", href: "#soins-phares" },
-	{ label: "Extensions de cils", href: "#soins-phares" },
-	{ label: "Tous les soins", href: "#soins-visage" },
+	{ label: "Microneedling", href: "/prestation" },
+	{ label: "Soin Signature", href: "/prestation" },
+	{ label: "Microblading", href: "/prestation" },
+	{ label: "Extensions de cils", href: "/prestation" },
+	{ label: "Tous les soins", href: "/prestation" },
 ];
 
 export function Footer() {

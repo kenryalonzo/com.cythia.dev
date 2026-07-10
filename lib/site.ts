@@ -22,10 +22,10 @@ export const site = {
 } as const;
 
 export const navLinks = [
-	{ label: "Accueil", href: "#accueil" },
-	{ label: "Prestation", href: "#soins-phares" },
-	{ label: "À propos", href: "#a-propos" },
-	{ label: "Contact", href: "#contact" },
+	{ label: "Accueil", href: "/" },
+	{ label: "Prestation", href: "/prestation" },
+	{ label: "À propos", href: "/a-propos" },
+	{ label: "Contact", href: "/contact" },
 ] as const;
 
 /** Builds a wa.me link with a prefilled message. */

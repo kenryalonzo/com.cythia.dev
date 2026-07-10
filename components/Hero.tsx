@@ -219,7 +219,7 @@ export function Hero() {
 						Réserver maintenant
 					</Button>
 					<Button
-						href="#soins-phares"
+						href="/prestation"
 						variant="outline-gold"
 						size="lg"
 						className="hidden sm:inline-flex"
