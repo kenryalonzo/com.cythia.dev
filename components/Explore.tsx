@@ -58,10 +58,9 @@ export function Explore() {
 			<div className="container-luxe">
 				{/* En-tête */}
 				<Reveal direction="none">
-					<span className="eyebrow inline-flex items-center gap-2 text-gold-deep">
-						<span className="h-px w-6 bg-gold/60" aria-hidden />
+					<h2 className="font-display text-xl font-bold tracking-tight text-gold sm:text-2xl">
 						Explorez nos univers
-					</span>
+					</h2>
 				</Reveal>
 
 				{/* Grille 4 cartes */}
@@ -86,7 +85,7 @@ export function Explore() {
 									{/* Overlay doré pour lisibilité */}
 									<div
 										aria-hidden
-										className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gold-deep/70 via-gold/30 to-transparent"
+										className={`pointer-events-none absolute inset-0 ${i === 0 || i === 2 ? "bg-gradient-to-b from-gold-deep/70 via-gold/30 to-transparent" : "bg-gradient-to-t from-gold-deep/70 via-gold/30 to-transparent"}`}
 									/>
 
 									{/* Contenu */}
