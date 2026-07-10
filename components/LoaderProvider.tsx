@@ -11,9 +11,7 @@ export function LoaderProvider({ children }: { children: React.ReactNode }) {
 	return (
 		<>
 			{!loaded ? <Loader onComplete={handleComplete} /> : null}
-			<div style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.4s ease" }}>
-				{children}
-			</div>
+			{children}
 		</>
 	);
 }
