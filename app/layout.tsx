@@ -7,14 +7,14 @@ const playfair = Playfair_Display({
 	variable: "--font-playfair",
 	subsets: ["latin"],
 	display: "swap",
-	weight: ["400", "500", "600", "700", "800"],
+	weight: ["400", "600", "700"],
 });
 
 const inter = Inter({
 	variable: "--font-inter",
 	subsets: ["latin"],
 	display: "swap",
-	weight: ["300", "400", "500", "600", "700"],
+	weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -58,6 +58,25 @@ export const metadata: Metadata = {
 	},
 };
 
+const jsonLd = {
+	"@context": "https://schema.org",
+	"@type": "BeautySalon",
+	name: "Cynthia Cosmétique",
+	description:
+		"Soins experts du visage, microneedling, beauté du regard et accompagnement personnalisé à Douala.",
+	url: "https://cynthia-cosmetique.com",
+	telephone: "+237696565756",
+	address: {
+		"@type": "PostalAddress",
+		streetAddress: "Malepe Cour Suprême (Domino Market)",
+		addressLocality: "Douala",
+		addressCountry: "CM",
+	},
+	openingHours: "Mo-Sa 08:00-19:00",
+	image: "/assets/logo-cynthia.png",
+	priceRange: "$$",
+};
+
 export default function RootLayout({
 	children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -67,10 +86,15 @@ export default function RootLayout({
 			className={`${playfair.variable} ${inter.variable} h-full antialiased`}
 		>
 			<body className="min-h-full flex flex-col bg-ivory">
+				{children}
 				<Script id="scroll-restore" strategy="beforeInteractive">
 					{`if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; } window.scrollTo(0, 0);`}
 				</Script>
-				{children}
+				<script
+					type="application/ld+json"
+					/* biome-ignore lint/security/noDangerouslySetInnerHtml: static JSON-LD */
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+				/>
 			</body>
 		</html>
 	);

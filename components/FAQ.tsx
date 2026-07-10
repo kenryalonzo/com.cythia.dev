@@ -43,7 +43,7 @@ export function FAQ() {
 		<Reveal
 			as="section"
 			variant="scroll"
-			className="relative overflow-hidden bg-ivory py-10 md:py-14"
+			className="relative overflow-hidden bg-ivory py-10 md:py-14 section-below-fold"
 		>
 			<div className="container-luxe">
 				<div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[1fr_1fr]">

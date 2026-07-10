@@ -57,7 +57,7 @@ export function Explore() {
 		<Reveal
 			as="section"
 			variant="scroll"
-			className="relative overflow-hidden bg-royal py-8 md:py-10"
+			className="relative overflow-hidden bg-royal py-8 md:py-10 section-below-fold"
 		>
 			<div className="container-luxe">
 				{/* En-tête */}

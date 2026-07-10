@@ -79,7 +79,7 @@ export function Footer() {
 		<Reveal
 			as="footer"
 			variant="scroll"
-			className="relative overflow-hidden bg-royal"
+			className="relative overflow-hidden bg-royal section-below-fold"
 		>
 			<div className="container-luxe relative py-6 md:py-8">
 				<div className="relative grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1fr_1fr] lg:gap-8">

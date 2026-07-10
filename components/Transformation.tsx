@@ -9,10 +9,10 @@ export function Transformation() {
 		<Reveal
 			as="section"
 			variant="scroll"
-			className="relative overflow-hidden bg-cream py-8 md:py-12"
+			className="relative overflow-hidden bg-cream py-8 md:py-12 section-below-fold"
 		>
 			{/* Décor — filet doré subtil */}
-			<div aria-hidden className="absolute inset-0">
+			<div aria-hidden className="absolute inset-0 overflow-hidden">
 				<svg
 					role="presentation"
 					aria-hidden="true"
@@ -45,14 +45,13 @@ export function Transformation() {
 						repeat: Infinity,
 						ease: "easeInOut",
 					}}
-					className="absolute -bottom-32 right-0 translate-x-1/3"
+					className="absolute -bottom-32 right-0 h-[260px] w-[260px] translate-x-1/3"
 				>
 					<Image
 						src="/assets/images/floor-dore-image.png"
 						alt=""
-						width={260}
-						height={260}
-						style={{ width: "auto", height: "auto" }}
+						fill
+						sizes="260px"
 						className="opacity-[0.07] object-contain"
 					/>
 				</motion.div>
@@ -68,14 +67,13 @@ export function Transformation() {
 						ease: "easeInOut",
 						delay: 1.5,
 					}}
-					className="absolute -bottom-34 left-0 -translate-x-1/4"
+					className="absolute -bottom-34 left-0 h-[300px] w-[300px] -translate-x-1/4"
 				>
 					<Image
 						src="/assets/images/floor-dore-image.png"
 						alt=""
-						width={300}
-						height={300}
-						style={{ width: "auto", height: "auto" }}
+						fill
+						sizes="300px"
 						className="opacity-[0.05] object-contain"
 					/>
 				</motion.div>
@@ -153,9 +151,8 @@ export function Transformation() {
 								<Image
 									src="/assets/images/floor-dore-image.png"
 									alt="Lotus doré — notre approche"
-									width={96}
-									height={96}
-									style={{ width: "auto", height: "auto" }}
+									fill
+									sizes="96px"
 									className="relative z-10 object-contain"
 								/>
 							</motion.div>

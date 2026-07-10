@@ -99,7 +99,7 @@ export function Expertise() {
 		<Reveal
 			as="section"
 			variant="scroll"
-			className="relative overflow-hidden bg-royal py-6 md:py-8"
+			className="relative overflow-hidden bg-royal py-6 md:py-8 section-below-fold"
 		>
 			<div className="container-luxe">
 				<div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1fr_1.5fr]">

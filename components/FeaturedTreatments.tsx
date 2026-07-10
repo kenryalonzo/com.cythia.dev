@@ -57,7 +57,7 @@ export function FeaturedTreatments() {
 			as="section"
 			variant="scroll"
 			id="soins-phares"
-			className="relative bg-ivory py-10 md:py-14"
+			className="relative bg-ivory py-10 md:py-14 section-below-fold"
 		>
 			<div className="container-luxe">
 				<SectionHeading

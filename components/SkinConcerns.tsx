@@ -46,7 +46,7 @@ export function SkinConcerns() {
 			as="section"
 			variant="scroll"
 			id="soins-visage"
-			className="relative overflow-hidden bg-ivory py-12 md:py-16"
+			className="relative overflow-hidden bg-ivory py-12 md:py-16 section-below-fold"
 		>
 			{/* Background image avec mouvement lent */}
 			<div className="absolute inset-0 overflow-hidden">

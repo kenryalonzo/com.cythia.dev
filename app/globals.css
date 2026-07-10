@@ -164,6 +164,7 @@
 
 	.animate-pulse-glow {
 		animation: pulse-glow 1.2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+		will-change: transform, box-shadow;
 	}
 
 	/* Shine sweep — light reflection across a surface */
@@ -193,6 +194,18 @@
 
 	.animate-slow-pan {
 		animation: slow-pan 12s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+	}
+
+	/* Content-visibility: skip rendering for below-fold sections */
+	.section-below-fold {
+		content-visibility: auto;
+		contain-intrinsic-size: 1px 500px;
+	}
+
+	/* Promote animated elements to their own GPU layer */
+	.gpu-layer {
+		will-change: transform;
+		transform: translateZ(0);
 	}
 
 	/* Reduced motion: honor user preference. Low specificity so app styles can override. */

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 
 type Testimonial = {
@@ -77,39 +77,50 @@ export function Testimonials() {
 		return () => window.removeEventListener("keydown", onKey);
 	}, [next, prev]);
 
-	const getCardStyle = (index: number) => {
-		const diff = index - active;
-		const absDiff = Math.abs(diff);
-
-		if (absDiff === 0) {
-			return { scale: 1, x: 0, z: 30, opacity: 1, blur: 0 };
+	const cardStyles = useMemo(() => {
+		const result: Record<
+			number,
+			{ scale: number; x: number; z: number; opacity: number; blur: number }
+		> = {};
+		for (let i = 0; i < testimonials.length; i++) {
+			const diff = i - active;
+			const absDiff = Math.abs(diff);
+			if (absDiff === 0) {
+				result[i] = { scale: 1, x: 0, z: 30, opacity: 1, blur: 0 };
+			} else if (absDiff === 1) {
+				result[i] = {
+					scale: 0.82,
+					x: diff > 0 ? 100 : -100,
+					z: 20,
+					opacity: 0.7,
+					blur: 1,
+				};
+			} else if (absDiff === 2) {
+				result[i] = {
+					scale: 0.65,
+					x: diff > 0 ? 180 : -180,
+					z: 10,
+					opacity: 0.35,
+					blur: 2,
+				};
+			} else {
+				result[i] = {
+					scale: 0.5,
+					x: diff > 0 ? 220 : -220,
+					z: 0,
+					opacity: 0,
+					blur: 3,
+				};
+			}
 		}
-		if (absDiff === 1) {
-			return {
-				scale: 0.82,
-				x: diff > 0 ? 100 : -100,
-				z: 20,
-				opacity: 0.7,
-				blur: 1,
-			};
-		}
-		if (absDiff === 2) {
-			return {
-				scale: 0.65,
-				x: diff > 0 ? 180 : -180,
-				z: 10,
-				opacity: 0.35,
-				blur: 2,
-			};
-		}
-		return { scale: 0.5, x: diff > 0 ? 220 : -220, z: 0, opacity: 0, blur: 3 };
-	};
+		return result;
+	}, [active]);
 
 	return (
 		<Reveal
 			as="section"
 			variant="scroll"
-			className="relative overflow-hidden bg-ivory py-8 md:py-10"
+			className="relative overflow-hidden bg-ivory py-8 md:py-10 section-below-fold"
 		>
 			<div className="container-luxe">
 				<div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[280px_1fr]">
@@ -131,7 +142,7 @@ export function Testimonials() {
 						{/* Carrousel coverflow */}
 						<div className="relative flex h-[240px] items-center justify-center overflow-hidden">
 							{testimonials.map((t, i) => {
-								const style = getCardStyle(i);
+								const style = cardStyles[i];
 								return (
 									<motion.article
 										key={t.name}
