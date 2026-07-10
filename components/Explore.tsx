@@ -114,14 +114,14 @@ export function Explore() {
 
 				{/* Barre de tarifs */}
 				<Reveal direction="none" className="mt-5">
-					<div className="flex flex-col gap-4 rounded-2xl bg-ivory p-5 ring-1 ring-white/10 sm:flex-row sm:items-center sm:justify-between">
+					<div className="flex flex-col items-center gap-4 rounded-2xl bg-ivory p-5 ring-1 ring-white/10 sm:flex-row sm:items-center sm:justify-between">
 						{/* Label */}
 						<span className="eyebrow text-[10px] text-gold-deep">
 							Des tarifs transparents
 						</span>
 
 						{/* Tarifs */}
-						<div className="flex flex-wrap items-center gap-5">
+						<div className="flex flex-wrap justify-center items-center gap-5">
 							{tariffs.map((t) => (
 								<div key={t.name} className="flex flex-col items-center">
 									<span className="text-xs font-medium text-royal">

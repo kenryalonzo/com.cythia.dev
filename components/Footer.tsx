@@ -81,24 +81,24 @@ export function Footer() {
 			variant="scroll"
 			className="relative overflow-hidden bg-royal"
 		>
-			<div className="container-luxe relative py-4 md:py-6">
-				<div className="relative grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1fr_1fr]">
+			<div className="container-luxe relative py-6 md:py-8">
+				<div className="relative grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1fr_1fr] lg:gap-8">
 					{/* Colonne 1 — Logo + baseline + réseaux */}
 					<Reveal direction="none">
-						<div>
+						<div className="flex flex-col items-center sm:items-start">
 							<div className="flex items-center gap-3">
 								<Image
 									src="/assets/logo-cynthia.png"
 									alt={site.brand}
-									width={60}
-									height={60}
-									className="h-14 w-14 rounded-full ring-2 ring-gold/30"
+									width={48}
+									height={48}
+									className="h-12 w-12 rounded-full ring-2 ring-gold/30 sm:h-14 sm:w-14"
 								/>
 							</div>
-							<p className="mt-3 max-w-[220px] text-xs leading-relaxed text-white/60">
+							<p className="mt-3 max-w-[220px] text-center text-xs leading-relaxed text-white/60 sm:text-left">
 								{site.baseline}
 							</p>
-							<div className="mt-4 flex gap-2.5">
+							<div className="mt-4 flex justify-center gap-3 sm:justify-start sm:gap-2.5">
 								{socials.map((s, i) => (
 									<motion.a
 										key={s.name}
@@ -122,99 +122,107 @@ export function Footer() {
 
 					{/* Colonne 2 — Navigation */}
 					<Reveal direction="none">
-						<h3 className="font-display text-xs font-semibold uppercase tracking-[0.12em] text-gold">
-							Navigation
-						</h3>
-						<ul className="mt-2.5 space-y-1.5">
-							{navLinks.map((link) => (
-								<li key={link.href}>
-									<a
-										href={link.href}
-										className="text-sm text-white/65 transition-colors duration-300 hover:text-gold"
-									>
-										{link.label}
-									</a>
-								</li>
-							))}
-						</ul>
+						<div className="flex flex-col items-center sm:items-start">
+							<h3 className="font-display text-xs font-semibold uppercase tracking-[0.12em] text-gold">
+								Navigation
+							</h3>
+							<ul className="mt-2.5 space-y-1.5 text-center sm:text-left">
+								{navLinks.map((link) => (
+									<li key={link.href}>
+										<a
+											href={link.href}
+											className="text-sm text-white/65 transition-colors duration-300 hover:text-gold"
+										>
+											{link.label}
+										</a>
+									</li>
+								))}
+							</ul>
+						</div>
 					</Reveal>
 
 					{/* Colonne 3 — Soins */}
 					<Reveal direction="none">
-						<h3 className="font-display text-xs font-semibold uppercase tracking-[0.12em] text-gold">
-							Soins
-						</h3>
-						<ul className="mt-2.5 space-y-1.5">
-							{soins.map((s) => (
-								<li key={s.label}>
-									<a
-										href={s.href}
-										className="text-sm text-white/65 transition-colors duration-300 hover:text-gold"
-									>
-										{s.label}
-									</a>
-								</li>
-							))}
-						</ul>
+						<div className="flex flex-col items-center sm:items-start">
+							<h3 className="font-display text-xs font-semibold uppercase tracking-[0.12em] text-gold">
+								Soins
+							</h3>
+							<ul className="mt-2.5 space-y-1.5 text-center sm:text-left">
+								{soins.map((s) => (
+									<li key={s.label}>
+										<a
+											href={s.href}
+											className="text-sm text-white/65 transition-colors duration-300 hover:text-gold"
+										>
+											{s.label}
+										</a>
+									</li>
+								))}
+							</ul>
+						</div>
 					</Reveal>
 
 					{/* Colonne 4 — Informations */}
 					<Reveal direction="none">
-						<h3 className="font-display text-xs font-semibold uppercase tracking-[0.12em] text-gold">
-							Informations
-						</h3>
-						<ul className="mt-2.5 space-y-2">
-							<li>
-								<span className="inline-flex items-start gap-2 text-sm text-white/65">
-									<MapPin size={14} className="mt-0.5 shrink-0" />
-									<span>
-										{site.address}
-										<br />({site.city})
+						<div className="flex flex-col items-center sm:items-start">
+							<h3 className="font-display text-xs font-semibold uppercase tracking-[0.12em] text-gold">
+								Informations
+							</h3>
+							<ul className="mt-2.5 space-y-2 text-center sm:text-left">
+								<li>
+									<span className="inline-flex items-center gap-2 text-sm text-white/65 sm:items-start">
+										<MapPin size={14} className="shrink-0 sm:mt-0.5" />
+										<span>
+											{site.address}
+											<br />({site.city})
+										</span>
 									</span>
-								</span>
-							</li>
-							<li>
-								<a
-									href={`tel:${site.phoneRaw}`}
-									className="inline-flex items-start gap-2 text-sm text-white/65 transition-colors hover:text-gold"
-								>
-									<Phone size={14} className="mt-0.5 shrink-0" />
-									{site.phone}
-								</a>
-							</li>
-							<li>
-								<a
-									href={waLink(
-										"Bonjour Cynthia, je souhaite réserver un soin.",
-									)}
-									target="_blank"
-									rel="noopener noreferrer"
-									className="inline-flex items-start gap-2 text-sm text-white/65 transition-colors hover:text-gold"
-								>
-									<MessageCircle size={14} className="mt-0.5 shrink-0" />
-									Réservation via WhatsApp
-								</a>
-							</li>
-						</ul>
+								</li>
+								<li>
+									<a
+										href={`tel:${site.phoneRaw}`}
+										className="inline-flex items-center gap-2 text-sm text-white/65 transition-colors hover:text-gold sm:items-start"
+									>
+										<Phone size={14} className="shrink-0" />
+										{site.phone}
+									</a>
+								</li>
+								<li>
+									<a
+										href={waLink(
+											"Bonjour Cynthia, je souhaite réserver un soin.",
+										)}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="inline-flex items-center gap-2 text-sm text-white/65 transition-colors hover:text-gold sm:items-start"
+									>
+										<MessageCircle size={14} className="shrink-0" />
+										Réservation via WhatsApp
+									</a>
+								</li>
+							</ul>
+						</div>
 					</Reveal>
 
 					{/* Colonne 5 — Horaires */}
 					<Reveal direction="none">
-						<h3 className="font-display text-xs font-semibold uppercase tracking-[0.12em] text-gold">
-							Horaires
-						</h3>
-						<ul className="mt-2.5 space-y-1.5 text-sm text-white/65">
-							<li>
-								Lundi - Samedi
-								<br />
-								<span className="text-white/80">08h00 - 19h00</span>
-							</li>
-							<li>
-								Dimanche
-								<br />
-								<span className="text-white/80">Fermé</span>
-							</li>
-						</ul>
+						<div className="flex flex-col items-center sm:items-start">
+							<h3 className="font-display text-xs font-semibold uppercase tracking-[0.12em] text-gold">
+								Horaires
+							</h3>
+							<ul className="mt-2.5 space-y-1.5 text-center text-sm text-white/65 sm:text-left">
+								<li>
+									Lundi - Samedi
+									<br />
+									<span className="text-white/80">08h00 - 19h00</span>
+								</li>
+								<li>
+									Dimanche
+									<br />
+									<span className="text-white/80">Fermé</span>
+								</li>
+							</ul>
+						</div>
 					</Reveal>
 				</div>
 

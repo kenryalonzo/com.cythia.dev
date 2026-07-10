@@ -97,7 +97,7 @@ export function FAQ() {
 
 					{/* Colonne droite — CTA + Lotus */}
 					<Reveal direction="right">
-						<div className="relative flex min-h-[240px] items-center overflow-hidden py-6 md:py-10 lg:min-h-[360px]">
+						<div className="relative flex min-h-[240px] items-center justify-center overflow-hidden py-6 md:py-10 lg:justify-start lg:min-h-[360px]">
 							{/* Lotus en arrière-plan — collé à droite, caché sur mobile */}
 							<motion.div
 								animate={{
@@ -122,7 +122,7 @@ export function FAQ() {
 							</motion.div>
 
 							{/* Contenu CTA — z-index élevé pour passer devant */}
-							<div className="relative z-20 max-w-[280px] lg:ml-4">
+							<div className="relative z-20 max-w-[280px] text-center lg:ml-4 lg:text-left">
 								<h2 className="font-display text-3xl font-bold leading-[1.15] tracking-tight text-royal sm:text-4xl">
 									<span className="text-gradient-gold">Prête à révéler</span>
 									<br />
@@ -135,7 +135,7 @@ export function FAQ() {
 									<br />
 									et commencez votre transformation.
 								</p>
-								<div className="mt-6">
+								<div className="mt-6 lg:text-left">
 									<Button
 										href={waLink()}
 										external
