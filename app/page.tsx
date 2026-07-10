@@ -2,6 +2,7 @@ import { Expertise } from "@/components/Expertise";
 import { Explore } from "@/components/Explore";
 import { FAQ } from "@/components/FAQ";
 import { FeaturedTreatments } from "@/components/FeaturedTreatments";
+import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
 import { SkinConcerns } from "@/components/SkinConcerns";
@@ -22,6 +23,7 @@ export default function Home() {
 				<Explore />
 				<FAQ />
 			</main>
+			<Footer />
 		</>
 	);
 }
