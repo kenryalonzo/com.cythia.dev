@@ -1,5 +1,6 @@
 import { Expertise } from "@/components/Expertise";
 import { Explore } from "@/components/Explore";
+import { FAQ } from "@/components/FAQ";
 import { FeaturedTreatments } from "@/components/FeaturedTreatments";
 import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
@@ -19,6 +20,7 @@ export default function Home() {
 				<Expertise />
 				<Testimonials />
 				<Explore />
+				<FAQ />
 			</main>
 		</>
 	);
