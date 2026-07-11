@@ -2,197 +2,232 @@
 
 import { motion } from "framer-motion";
 import { CalendarCheck } from "lucide-react";
-import { site } from "@/lib/site";
+import { waLink } from "@/lib/site";
 
 export function BookingBanner() {
 	return (
 		<section
-			id="reservation"
+			aria-label="Réserver maintenant"
 			className="relative overflow-hidden"
-			style={{ background: "linear-gradient(135deg, #071f5c 0%, #093485 45%, #0a3a90 100%)" }}
+			style={{
+				background:
+					"linear-gradient(110deg, #060f2e 0%, #0a1d5a 40%, #071840 100%)",
+				minHeight: "280px",
+			}}
 		>
-			{/* ─── Particules dorées flottantes ─── */}
-			{[...Array(6)].map((_, i) => (
-				<motion.div
-					key={i}
-					className="pointer-events-none absolute rounded-full bg-gold/20"
-					style={{
-						width: `${[4, 6, 3, 5, 4, 6][i]}px`,
-						height: `${[4, 6, 3, 5, 4, 6][i]}px`,
-						left: `${[15, 28, 42, 58, 72, 85][i]}%`,
-						top: `${[20, 70, 40, 25, 65, 45][i]}%`,
-					}}
-					animate={{
-						y: [0, -12, 0],
-						opacity: [0.3, 0.8, 0.3],
-					}}
-					transition={{
-						duration: 3 + i * 0.5,
-						repeat: Infinity,
-						ease: "easeInOut",
-						delay: i * 0.4,
-					}}
-				/>
-			))}
-
-			{/* ─── Lueur dorée ambiante gauche ─── */}
-			<div
-				className="pointer-events-none absolute -left-10 top-1/2 h-[300px] w-[300px] -translate-y-1/2 rounded-full opacity-20"
-				style={{
-					background: "radial-gradient(circle, rgba(253,207,2,0.5) 0%, transparent 70%)",
-					filter: "blur(40px)",
-				}}
-			/>
-
-			{/* ─── Lueur dorée ambiante droite ─── */}
-			<div
-				className="pointer-events-none absolute -right-10 top-1/2 h-[250px] w-[250px] -translate-y-1/2 rounded-full opacity-10"
-				style={{
-					background: "radial-gradient(circle, rgba(253,207,2,0.4) 0%, transparent 70%)",
-					filter: "blur(50px)",
-				}}
-			/>
-
-			<div className="container-luxe relative mx-auto flex h-[120px] max-w-[1200px] items-center px-6 sm:h-[130px] md:h-[140px] lg:h-[110px]">
-				{/* ─── GAUCHE : Lotus doré animé ─── */}
-				<div className="relative hidden shrink-0 items-center justify-center lg:flex" style={{ width: "160px" }}>
-					{/* Halo de lueur pulsante */}
+			{/* ─── Sparkles dorés très subtils ─── */}
+			{[...Array(16)].map((_, i) => {
+				const lefts = [22, 35, 48, 58, 65, 72, 78, 84, 88, 91, 94, 96, 40, 55, 70, 82];
+				const tops  = [18, 60, 30, 72, 14, 48, 22, 68, 38, 75, 50, 28, 82, 8, 58, 42];
+				const sizes = [1, 1, 1.5, 1, 1, 1, 1.5, 1, 1, 1, 1.5, 1, 1, 1, 1, 1.5];
+				return (
 					<motion.div
+						key={i}
+						className="pointer-events-none absolute"
+						style={{
+							width: `${sizes[i]}px`,
+							height: `${sizes[i] * 5}px`,
+							left: `${lefts[i]}%`,
+							top: `${tops[i]}%`,
+							background: `linear-gradient(to bottom, rgba(253,207,2,0.5), rgba(201,162,39,0.15))`,
+							borderRadius: "1px",
+						}}
 						animate={{
-							scale: [1, 1.5, 1],
-							opacity: [0.3, 0, 0.3],
+							opacity: [0.1, 0.4, 0.1],
+							rotate: [0, 180, 360],
 						}}
-						transition={{ duration: 3, repeat: Infinity, ease: "easeOut" }}
-						className="absolute rounded-full"
-						style={{
-							width: "180px",
-							height: "180px",
-							background: "radial-gradient(circle, rgba(253,207,2,0.4) 0%, transparent 70%)",
+						transition={{
+							opacity: { duration: 2.8 + i * 0.3, repeat: Infinity, ease: "easeInOut", delay: i * 0.2 },
+							rotate: { duration: 10 + i * 0.6, repeat: Infinity, ease: "linear" },
 						}}
 					/>
-					<motion.div
-						animate={{
-							scale: [1, 1.3, 1],
-							opacity: [0.4, 0, 0.4],
-						}}
-						transition={{ duration: 3, repeat: Infinity, ease: "easeOut", delay: 0.5 }}
-						className="absolute rounded-full"
-						style={{
-							width: "140px",
-							height: "140px",
-							background: "radial-gradient(circle, rgba(201,162,39,0.5) 0%, transparent 70%)",
-						}}
-					/>
+				);
+			})}
 
-					{/* Anneaux concentriques */}
-					<motion.div
-						animate={{ rotate: 360 }}
-						transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-						className="absolute"
-						style={{
-							width: "120px",
-							height: "120px",
-							border: "1px solid rgba(253,207,2,0.15)",
-							borderRadius: "50%",
-						}}
-					/>
-					<div
-						className="absolute"
-						style={{
-							width: "90px",
-							height: "90px",
-							border: "1px solid rgba(253,207,2,0.1)",
-							borderRadius: "50%",
-						}}
-					/>
+			<div className="relative flex items-center" style={{ minHeight: "280px" }}>
+				{/* ─── LOTUS GAUCHE — grand, visible, avec ondulations ─── */}
+				<div
+					className="pointer-events-none absolute left-0 top-1/2"
+					style={{ width: "320px", height: "320px", marginTop: "-100px" }}
+					aria-hidden
+				>
+					{/* Anneaux ondulants */}
+					{[
+						{ size: 280, dur: 3.2, delay: 0, opacity: 0.22 },
+						{ size: 220, dur: 2.8, delay: 0.5, opacity: 0.30 },
+						{ size: 170, dur: 2.4, delay: 1.0, opacity: 0.38 },
+						{ size: 120, dur: 2.0, delay: 1.5, opacity: 0.48 },
+					].map((ring, i) => (
+						<motion.div
+							key={i}
+							className="absolute left-1/2 top-1/2 rounded-full"
+							style={{
+								width: ring.size,
+								height: ring.size,
+								marginLeft: -ring.size / 2,
+								marginTop: -ring.size / 2,
+								border: `1.5px solid rgba(253,207,2,${ring.opacity})`,
+								background: "transparent",
+							}}
+							animate={{
+								scale: [0.9, 1.1, 0.9],
+								opacity: [ring.opacity * 0.5, ring.opacity, ring.opacity * 0.5],
+							}}
+							transition={{
+								duration: ring.dur,
+								repeat: Infinity,
+								ease: "easeInOut",
+								delay: ring.delay,
+							}}
+						/>
+					))}
 
 					{/* Lotus flottant */}
 					<motion.img
 						src="/assets/images/right-lotus-blue-section.png"
-						alt="Lotus doré"
+						alt="Lotus Cynthia"
+						className="absolute left-1/2 top-1/2"
+						style={{
+							width: "260px",
+							height: "auto",
+							marginLeft: "-130px",
+							marginTop: "-130px",
+							filter:
+								"drop-shadow(0 0 25px rgba(253,207,2,0.6)) drop-shadow(0 0 50px rgba(201,162,39,0.3))",
+						}}
 						animate={{
 							y: [0, -8, 0],
 							rotate: [0, 1.5, 0, -1.5, 0],
 						}}
 						transition={{
-							y: { duration: 3.5, repeat: Infinity, ease: "easeInOut" },
-							rotate: { duration: 6, repeat: Infinity, ease: "easeInOut" },
-						}}
-						className="relative z-10"
-						style={{
-							width: "140px",
-							height: "auto",
-							filter: "drop-shadow(0 0 20px rgba(253,207,2,0.5)) drop-shadow(0 0 40px rgba(201,162,39,0.3))",
+							y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+							rotate: { duration: 7, repeat: Infinity, ease: "easeInOut" },
 						}}
 					/>
+
+					{/* Reflet du lotus */}
+					<div
+						style={{
+							position: "absolute",
+							left: "50%",
+							top: "72%",
+							marginLeft: "-130px",
+							width: "260px",
+							height: "80px",
+							overflow: "hidden",
+							maskImage: "linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, transparent 90%)",
+							WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, transparent 90%)",
+						}}
+					>
+						<img
+							src="/assets/images/right-lotus-blue-section.png"
+							alt=""
+							aria-hidden
+							style={{
+								width: "260px",
+								height: "auto",
+								transform: "scaleY(-1)",
+								opacity: 0.1,
+								filter: "drop-shadow(0 0 15px rgba(253,207,2,0.2))",
+							}}
+						/>
+					</div>
 				</div>
 
-				{/* ─── CENTRE : Texte ─── */}
-				<div className="flex flex-1 flex-col justify-center px-4 lg:px-8">
-					<motion.p
-						initial={{ opacity: 0, y: 8 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true }}
-						transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-						className="font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-gold/80"
-					>
-						Préférez-vous réserver directement ?
-					</motion.p>
-					<motion.h2
-						initial={{ opacity: 0, y: 12 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true }}
-						transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-						className="mt-1 font-display font-bold leading-[1.1] text-white"
-						style={{ fontSize: "clamp(1.1rem, 2.5vw, 1.6rem)" }}
-					>
-						Prenez rendez-vous en ligne
-						<br />
-						<span style={{ color: "#FAFAF8" }}>en quelques clics.</span>
-					</motion.h2>
-				</div>
-
-				{/* ─── Séparateur vertical doré ─── */}
-				<div className="mx-4 hidden h-16 w-px shrink-0 bg-gradient-to-b from-transparent via-gold/40 to-transparent lg:block" />
-
-				{/* ─── DROITE : CTA + sous-texte ─── */}
-				<motion.div
-					initial={{ opacity: 0, x: 20 }}
-					whileInView={{ opacity: 1, x: 0 }}
-					viewport={{ once: true }}
-					transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-					className="flex shrink-0 flex-col items-center gap-2"
+				{/* ─── CONTENU ─── */}
+				<div
+					className="container-luxe relative mx-auto flex w-full items-center gap-8"
+					style={{ paddingLeft: "260px" }}
 				>
+					{/* Texte centré */}
+					<div className="flex-1 py-10 text-center">
+						<motion.p
+							initial={{ opacity: 0, y: 6 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true }}
+							transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+							className="font-sans text-[11px] font-semibold uppercase tracking-[0.22em] text-gold/80"
+						>
+							Préférez-vous réserver directement ?
+						</motion.p>
+						<motion.h2
+							initial={{ opacity: 0, y: 10 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true }}
+							transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+							className="mt-3 font-display font-bold text-white"
+							style={{ fontSize: "clamp(1.3rem, 3vw, 1.85rem)", lineHeight: 1.15 }}
+						>
+							Prenez rendez-vous en ligne
+							<br />
+							en quelques clics.
+						</motion.h2>
+					</div>
+
+					{/* Séparateur vertical doré */}
+					<div
+						className="hidden shrink-0 self-stretch lg:block"
+						style={{
+							width: "1px",
+							background:
+								"linear-gradient(to bottom, transparent, rgba(201,162,39,0.45) 25%, rgba(201,162,39,0.45) 75%, transparent)",
+						}}
+					/>
+
+					{/* CTA droite */}
+					<motion.div
+						initial={{ opacity: 0, x: 16 }}
+						whileInView={{ opacity: 1, x: 0 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+						className="hidden shrink-0 flex-col items-center gap-3 lg:flex"
+						style={{ minWidth: "220px" }}
+					>
+						<motion.a
+							href={waLink("Bonjour, je souhaite prendre rendez-vous en ligne.")}
+							target="_blank"
+							rel="noopener noreferrer"
+							animate={{
+								boxShadow: [
+									"0 4px 20px rgba(253,207,2,.30)",
+									"0 4px 20px rgba(253,207,2,.30), 0 0 0 8px rgba(253,207,2,0.10)",
+									"0 4px 20px rgba(253,207,2,.30)",
+								],
+							}}
+							transition={{ duration: 1.4, repeat: Infinity, ease: "easeOut" }}
+							whileHover={{ scale: 1.04, y: -2 }}
+							whileTap={{ scale: 0.97 }}
+							className="inline-flex items-center gap-2.5 rounded-full border border-gold/20 px-7 py-3.5 font-sans text-[12px] font-bold uppercase tracking-[0.1em] text-royal transition-all"
+							style={{
+								background: "linear-gradient(135deg, #FDCF02 0%, #e8b800 100%)",
+								whiteSpace: "nowrap",
+							}}
+						>
+							<CalendarCheck size={15} strokeWidth={2.5} />
+							Réserver maintenant
+						</motion.a>
+
+						<p className="max-w-[200px] text-center font-sans leading-snug text-white/45" style={{ fontSize: "11px" }}>
+							Choisissez votre soin, votre date,
+							<br />
+							et laissez-nous prendre soin de vous.
+						</p>
+					</motion.div>
+
+					{/* Version mobile du CTA */}
 					<motion.a
-						href={site.whatsapp}
+						href={waLink("Bonjour, je souhaite prendre rendez-vous en ligne.")}
 						target="_blank"
 						rel="noopener noreferrer"
-						animate={{
-							boxShadow: [
-								"0 4px 20px rgba(253,207,2,.30)",
-								"0 4px 20px rgba(253,207,2,.30), 0 0 0 8px rgba(253,207,2,0.15)",
-								"0 4px 20px rgba(253,207,2,.30)",
-							],
-						}}
-						transition={{ duration: 1.4, repeat: Infinity, ease: "easeOut" }}
-						whileHover={{ scale: 1.04, y: -1 }}
+						whileHover={{ scale: 1.03 }}
 						whileTap={{ scale: 0.97 }}
-						className="flex items-center gap-2.5 rounded-full px-6 py-3 font-sans text-[12px] font-bold uppercase tracking-[0.08em] text-royal transition-all"
-						style={{
-							background: "linear-gradient(135deg, #FDCF02 0%, #C9A227 100%)",
-							whiteSpace: "nowrap",
-						}}
+						className="mt-2 inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-sans text-[11px] font-bold uppercase tracking-[0.08em] text-royal lg:hidden"
+						style={{ background: "linear-gradient(135deg, #FDCF02 0%, #e8b800 100%)" }}
 					>
-						<CalendarCheck size={16} strokeWidth={2} />
-						Réserver maintenant
+						<CalendarCheck size={14} strokeWidth={2.5} />
+						Réserver
 					</motion.a>
-
-					<p className="max-w-[200px] text-center font-sans text-[10px] leading-relaxed text-white/50">
-						Choisissez votre soin, votre date,
-						<br />
-						et laissez-nous prendre soin de vous.
-					</p>
-				</motion.div>
+				</div>
 			</div>
 		</section>
 	);

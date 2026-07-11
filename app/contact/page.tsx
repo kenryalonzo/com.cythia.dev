@@ -45,11 +45,11 @@ export default function ContactPage() {
 					</div>
 				</Reveal>
 
-				{/* Section 2 — Bannière de réservation rapide */}
-				<BookingBanner />
-
-				{/* Section 3 — Formulaire + Coordonnées */}
+				{/* Section 2 — Formulaire + Coordonnées */}
 				<ContactSection />
+
+				{/* Section 3 — Bannière réservation rapide */}
+				<BookingBanner />
 			</main>
 			<Footer />
 		</>

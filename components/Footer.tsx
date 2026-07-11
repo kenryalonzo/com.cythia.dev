@@ -79,8 +79,15 @@ export function Footer() {
 		<Reveal
 			as="footer"
 			variant="scroll"
-			className="relative overflow-hidden bg-royal section-below-fold"
+			className="relative overflow-hidden section-below-fold"
 		>
+			<div
+				className="absolute inset-0"
+				style={{
+					background:
+						"linear-gradient(110deg, #060f2e 0%, #0a1d5a 40%, #071840 100%)",
+				}}
+			/>
 			<div className="container-luxe relative py-6 md:py-8">
 				<div className="relative grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1fr_1fr] lg:gap-8">
 					{/* Colonne 1 — Logo + baseline + réseaux */}
