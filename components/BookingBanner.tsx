@@ -12,10 +12,9 @@ export function BookingBanner() {
 			style={{
 				background:
 					"linear-gradient(110deg, #060f2e 0%, #0a1d5a 40%, #071840 100%)",
-				minHeight: "280px",
 			}}
 		>
-			{/* ─── Sparkles dorés très subtils ─── */}
+			{/* ─── Sparkles dorés ─── */}
 			{[...Array(16)].map((_, i) => {
 				const lefts = [22, 35, 48, 58, 65, 72, 78, 84, 88, 91, 94, 96, 40, 55, 70, 82];
 				const tops  = [18, 60, 30, 72, 14, 48, 22, 68, 38, 75, 50, 28, 82, 8, 58, 42];
@@ -44,10 +43,10 @@ export function BookingBanner() {
 				);
 			})}
 
-			<div className="relative flex items-center" style={{ minHeight: "280px" }}>
-				{/* ─── LOTUS GAUCHE — grand, visible, avec ondulations ─── */}
+			<div className="relative flex items-center py-10 sm:min-h-[200px] lg:min-h-[260px]">
+				{/* ─── LOTUS GAUCHE — visible sur lg, masqué mobile ─── */}
 				<div
-					className="pointer-events-none absolute left-0 top-1/2"
+					className="pointer-events-none absolute left-0 top-1/2 hidden lg:block"
 					style={{ width: "320px", height: "320px", marginTop: "-100px" }}
 					aria-hidden
 				>
@@ -105,7 +104,7 @@ export function BookingBanner() {
 						}}
 					/>
 
-					{/* Reflet du lotus */}
+					{/* Reflet */}
 					<div
 						style={{
 							position: "absolute",
@@ -135,18 +134,15 @@ export function BookingBanner() {
 				</div>
 
 				{/* ─── CONTENU ─── */}
-				<div
-					className="container-luxe relative mx-auto flex w-full items-center gap-8"
-					style={{ paddingLeft: "260px" }}
-				>
+				<div className="container-luxe relative mx-auto flex w-full flex-col items-center gap-4 px-4 sm:flex-row sm:items-center sm:gap-8 sm:px-6 lg:pl-[260px]">
 					{/* Texte centré */}
-					<div className="flex-1 py-10 text-center">
+					<div className="flex-1 text-center sm:py-6 lg:py-8">
 						<motion.p
 							initial={{ opacity: 0, y: 6 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
 							transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-							className="font-sans text-[11px] font-semibold uppercase tracking-[0.22em] text-gold/80"
+							className="font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-gold/80 sm:text-[11px]"
 						>
 							Préférez-vous réserver directement ?
 						</motion.p>
@@ -155,8 +151,8 @@ export function BookingBanner() {
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
 							transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-							className="mt-3 font-display font-bold text-white"
-							style={{ fontSize: "clamp(1.3rem, 3vw, 1.85rem)", lineHeight: 1.15 }}
+							className="mt-2 font-display text-lg font-bold leading-tight text-white sm:text-xl lg:mt-3 lg:text-2xl"
+							style={{ lineHeight: 1.15 }}
 						>
 							Prenez rendez-vous en ligne
 							<br />
@@ -164,7 +160,7 @@ export function BookingBanner() {
 						</motion.h2>
 					</div>
 
-					{/* Séparateur vertical doré */}
+					{/* Séparateur vertical doré — desktop */}
 					<div
 						className="hidden shrink-0 self-stretch lg:block"
 						style={{
@@ -174,7 +170,7 @@ export function BookingBanner() {
 						}}
 					/>
 
-					{/* CTA droite */}
+					{/* CTA desktop */}
 					<motion.div
 						initial={{ opacity: 0, x: 16 }}
 						whileInView={{ opacity: 1, x: 0 }}
@@ -207,21 +203,21 @@ export function BookingBanner() {
 							Réserver maintenant
 						</motion.a>
 
-						<p className="max-w-[200px] text-center font-sans leading-snug text-white/45" style={{ fontSize: "11px" }}>
+						<p className="max-w-[200px] text-center font-sans text-[11px] leading-snug text-white/45">
 							Choisissez votre soin, votre date,
 							<br />
 							et laissez-nous prendre soin de vous.
 						</p>
 					</motion.div>
 
-					{/* Version mobile du CTA */}
+					{/* CTA mobile */}
 					<motion.a
 						href={waLink("Bonjour, je souhaite prendre rendez-vous en ligne.")}
 						target="_blank"
 						rel="noopener noreferrer"
 						whileHover={{ scale: 1.03 }}
 						whileTap={{ scale: 0.97 }}
-						className="mt-2 inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-sans text-[11px] font-bold uppercase tracking-[0.08em] text-royal lg:hidden"
+						className="inline-flex items-center gap-2 rounded-full px-6 py-3 font-sans text-[11px] font-bold uppercase tracking-[0.08em] text-royal sm:hidden"
 						style={{ background: "linear-gradient(135deg, #FDCF02 0%, #e8b800 100%)" }}
 					>
 						<CalendarCheck size={14} strokeWidth={2.5} />

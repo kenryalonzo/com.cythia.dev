@@ -147,13 +147,13 @@ export function ContactSection() {
 										type="text"
 										required
 										placeholder="Nom complet"
-										className="w-full rounded-lg border border-gold/30 bg-white px-4 py-2.5 font-sans text-[13px] text-royal shadow-sm placeholder:text-slate-ink/40 transition-all focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 hover:border-gold/50"
+										className="w-full rounded-lg border border-gold/30 bg-white px-4 py-2.5 font-sans text-base text-royal shadow-sm placeholder:text-slate-ink/40 transition-all focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 hover:border-gold/50"
 									/>
 									<input
 										name="phone"
 										type="tel"
 										placeholder="Téléphone"
-										className="w-full rounded-lg border border-gold/30 bg-white px-4 py-2.5 font-sans text-[13px] text-royal shadow-sm placeholder:text-slate-ink/40 transition-all focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 hover:border-gold/50"
+										className="w-full rounded-lg border border-gold/30 bg-white px-4 py-2.5 font-sans text-base text-royal shadow-sm placeholder:text-slate-ink/40 transition-all focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 hover:border-gold/50"
 									/>
 								</div>
 								<div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2">
@@ -162,13 +162,13 @@ export function ContactSection() {
 										type="email"
 										required
 										placeholder="Email"
-										className="w-full rounded-lg border border-gold/30 bg-white px-4 py-2.5 font-sans text-[13px] text-royal shadow-sm placeholder:text-slate-ink/40 transition-all focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 hover:border-gold/50"
+										className="w-full rounded-lg border border-gold/30 bg-white px-4 py-2.5 font-sans text-base text-royal shadow-sm placeholder:text-slate-ink/40 transition-all focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 hover:border-gold/50"
 									/>
 									<div className="relative">
 										<select
 											name="service"
 											required
-											className="w-full appearance-none rounded-lg border border-gold/30 bg-white px-4 py-2.5 pr-8 font-sans text-[13px] text-slate-ink/60 shadow-sm transition-all focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 hover:border-gold/50"
+											className="w-full appearance-none rounded-lg border border-gold/30 bg-white px-4 py-2.5 pr-8 font-sans text-base text-slate-ink/60 shadow-sm transition-all focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 hover:border-gold/50"
 										>
 											<option value="">Sujet</option>
 											{services.map((s) => (
@@ -186,7 +186,7 @@ export function ContactSection() {
 									name="message"
 									rows={3}
 									placeholder="Votre message"
-									className="w-full resize-none rounded-lg border border-gold/30 bg-white px-4 py-2.5 font-sans text-[13px] text-royal shadow-sm placeholder:text-slate-ink/40 transition-all focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 hover:border-gold/50"
+									className="w-full resize-none rounded-lg border border-gold/30 bg-white px-4 py-2.5 font-sans text-base text-royal shadow-sm placeholder:text-slate-ink/40 transition-all focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 hover:border-gold/50"
 								/>
 
 								<motion.button

@@ -11,10 +11,10 @@ export function MapLocationSection() {
 						className="relative overflow-hidden"
 						style={{
 							borderRadius: "1.25rem",
-							minHeight: "240px",
+							minHeight: "320px",
 						}}
 					>
-						{/* Fond navy derrière la carte */}
+						{/* Fond navy */}
 						<div
 							className="absolute inset-0"
 							style={{
@@ -23,8 +23,8 @@ export function MapLocationSection() {
 							}}
 						/>
 
-						{/* ─── Carte OpenStreetMap embed ─── */}
-						<div className="relative min-h-[240px]">
+						{/* Carte Google Maps */}
+						<div className="relative min-h-[320px]">
 							<iframe
 								src="https://maps.google.com/maps?q=Cynthia+Cosmetique+Bonapriso+Douala&t=&z=16&ie=UTF8&iwloc=&output=embed"
 								style={{
@@ -33,15 +33,15 @@ export function MapLocationSection() {
 									width: "100%",
 									height: "100%",
 									border: 0,
-								filter: "saturate(0.3) brightness(0.7) contrast(1.05) sepia(0.2) hue-rotate(190deg)",
-								opacity: 0.85,
+									filter: "saturate(0.3) brightness(0.7) contrast(1.05) sepia(0.2) hue-rotate(190deg)",
+									opacity: 0.85,
 								}}
 								loading="lazy"
 								referrerPolicy="no-referrer-when-downgrade"
 								title="Carte Cynthia Cosmétique"
 							/>
 
-							{/* Overlay doré subtil pour teinter la carte */}
+							{/* Overlay doré */}
 							<div
 								className="pointer-events-none absolute inset-0"
 								style={{
@@ -50,8 +50,8 @@ export function MapLocationSection() {
 								}}
 							/>
 
-							{/* ─── Carte adresse blanche (gauche) ─── */}
-							<div className="absolute left-4 top-4 z-10 w-[260px] rounded-2xl bg-white p-5 shadow-card">
+							{/* ─── Carte adresse (gauche) ─── */}
+							<div className="absolute left-2 top-2 z-10 max-w-[calc(100%-16px)] rounded-2xl bg-white p-4 shadow-card sm:left-5 sm:top-5 sm:max-w-[290px] sm:p-5">
 								<div className="flex items-start gap-3">
 									<div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold-deep/12 text-gold-deep">
 										<svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -70,6 +70,26 @@ export function MapLocationSection() {
 										</p>
 									</div>
 								</div>
+
+								<div className="mt-4 space-y-2.5 border-t border-slate-line/15 pt-3">
+									<div className="flex items-center gap-2.5">
+										<div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-royal/8 text-royal">
+											<svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+												<path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+											</svg>
+										</div>
+										<span className="font-sans text-[13px] text-royal">+237 6 95 94 84 58</span>
+									</div>
+									<div className="flex items-center gap-2.5">
+										<div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-royal/8 text-royal">
+											<svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+												<path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+											</svg>
+										</div>
+										<span className="font-sans text-[13px] text-royal">Lun - Sam : 9h00 - 19h00</span>
+									</div>
+								</div>
+
 								<a
 									href="https://maps.google.com/?q=Malepe+Cour+Supreme+Domino+Market+Douala"
 									target="_blank"
@@ -84,8 +104,8 @@ export function MapLocationSection() {
 							</div>
 
 							{/* ─── Carte parking (droite) ─── */}
-							<div className="absolute bottom-4 right-4 z-10 flex gap-3">
-								<div className="rounded-2xl bg-white/10 px-5 py-4 backdrop-blur-sm ring-1 ring-white/10">
+							<div className="absolute bottom-2 right-2 z-10 hidden gap-2.5 sm:bottom-5 sm:right-5 sm:flex">
+								<div className="rounded-2xl bg-white/10 px-4 py-3.5 backdrop-blur-sm ring-1 ring-white/10 sm:px-5 sm:py-4">
 									<div className="flex items-start gap-2.5">
 										<div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold-deep/12 text-gold-deep">
 											<svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -102,7 +122,7 @@ export function MapLocationSection() {
 										</div>
 									</div>
 								</div>
-								<div className="hidden w-16 shrink-0 overflow-hidden rounded-xl lg:block">
+								<div className="hidden w-16 shrink-0 overflow-hidden rounded-xl sm:block">
 									<img
 										src="/assets/images/bureau-cynthia.png"
 										alt="Entrée Cynthia Cosmétique"
