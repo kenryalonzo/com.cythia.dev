@@ -11,6 +11,8 @@ type SectionHeadingProps = {
 	className?: string;
 	/** Title element for SEO hierarchy (h2 default on sections). */
 	as?: "h2" | "h3";
+	/** Override heading size. */
+	size?: "sm" | "md" | "lg" | "xl";
 };
 
 /**
@@ -25,7 +27,14 @@ export function SectionHeading({
 	align = "center",
 	className,
 	as = "h2",
+	size = "md",
 }: SectionHeadingProps) {
+	const sizes = {
+		sm: "text-2xl sm:text-3xl",
+		md: "text-3xl sm:text-4xl",
+		lg: "text-4xl sm:text-5xl",
+		xl: "text-5xl sm:text-6xl",
+	};
 	const Tag = as;
 	return (
 		<div
@@ -49,7 +58,8 @@ export function SectionHeading({
 			<Reveal delay={0.05}>
 				<Tag
 					className={cn(
-						"max-w-2xl text-balance",
+						"max-w-2xl text-balance font-display font-bold tracking-tight text-royal",
+						sizes[size],
 						align === "center" ? "mx-auto" : "",
 					)}
 				>

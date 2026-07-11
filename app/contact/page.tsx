@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
-import { UnderConstruction } from "@/components/UnderConstruction";
 
 export const metadata: Metadata = {
 	title: "Contact",
@@ -20,10 +20,7 @@ export default function ContactPage() {
 		<>
 			<Navbar />
 			<main className="flex flex-1 flex-col">
-				<UnderConstruction
-					title="Contact"
-					subtitle="Notre formulaire de contact et nos coordonnées complètes arrivent bientôt. En attendant, vous pouvez nous joindre directement via WhatsApp."
-				/>
+				<ContactForm />
 			</main>
 			<Footer />
 		</>
