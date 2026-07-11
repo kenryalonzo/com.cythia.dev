@@ -9,143 +9,157 @@ type AsType = "div" | "section" | "footer" | "li" | "span";
 const offset = 28;
 
 const variantsFor = (dir: Direction): Record<string, Variant> => ({
-	hidden: {
-		opacity: 0,
-		y: dir === "up" ? offset : dir === "down" ? -offset : 0,
-		x: dir === "left" ? offset : dir === "right" ? -offset : 0,
-	},
-	visible: {
-		opacity: 1,
-		x: 0,
-		y: 0,
-		transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0 },
-	},
+  hidden: {
+    opacity: 0,
+    y: dir === "up" ? offset : dir === "down" ? -offset : 0,
+    x: dir === "left" ? offset : dir === "right" ? -offset : 0,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0 },
+  },
 });
 
 type RevealProps = {
-	children: ReactNode;
-	direction?: Direction;
-	delay?: number;
-	className?: string;
-	as?: AsType;
-	id?: string;
-	once?: boolean;
-	amount?: number;
-	/** "once" = fade-in one shot ; "scroll" = apparition + disparition continue */
-	variant?: "once" | "scroll";
+  children: ReactNode;
+  direction?: Direction;
+  delay?: number;
+  className?: string;
+  as?: AsType;
+  id?: string;
+  once?: boolean;
+  amount?: number;
+  /** "once" = fade-in one shot ; "scroll" = apparition + disparition continue */
+  variant?: "once" | "scroll";
 };
 
 /* Sous-composant interne — useScroll n'est appelé que pour le variant "scroll" */
 function ScrollReveal({
-	children,
-	direction,
-	className,
-	as,
-	id,
+  children,
+  direction,
+  className,
+  as,
+  id,
 }: {
-	children: ReactNode;
-	direction: Direction;
-	className?: string;
-	as: AsType;
-	id?: string;
+  children: ReactNode;
+  direction: Direction;
+  className?: string;
+  as: AsType;
+  id?: string;
 }) {
-	const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
-	const { scrollYProgress } = useScroll({
-		target: ref,
-		offset: ["start end", "end start"],
-	});
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
 
-	const opacity = useTransform(
-		scrollYProgress,
-		[0, 0.12, 0.88, 1],
-		[0, 1, 1, 0],
-	);
+  // Offsets plus larges pour des transitions plus douces et progressives
+  const enterPoint = 0.18;
+  const exitPoint = 0.82;
 
-	const y = useTransform(
-		scrollYProgress,
-		[0, 0.12, 0.88, 1],
-		[
-			direction === "up" || direction === "none"
-				? 40
-				: direction === "down"
-					? -40
-					: 0,
-			0,
-			0,
-			direction === "down" || direction === "none"
-				? -40
-				: direction === "up"
-					? 40
-					: 0,
-		],
-	);
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, enterPoint, exitPoint, 1],
+    [0, 1, 1, 0],
+  );
 
-	const x = useTransform(
-		scrollYProgress,
-		[0, 0.12, 0.88, 1],
-		[
-			direction === "left" ? 40 : direction === "right" ? -40 : 0,
-			0,
-			0,
-			direction === "right" ? 40 : direction === "left" ? -40 : 0,
-		],
-	);
+  const slideDistance = 24;
 
-	const style = { opacity, y, x };
+  const y = useTransform(
+    scrollYProgress,
+    [0, enterPoint, exitPoint, 1],
+    [
+      direction === "up" || direction === "none"
+        ? slideDistance
+        : direction === "down"
+          ? -slideDistance
+          : 0,
+      0,
+      0,
+      direction === "down" || direction === "none"
+        ? -slideDistance
+        : direction === "up"
+          ? slideDistance
+          : 0,
+    ],
+  );
 
-	switch (as) {
-		case "footer":
-			return (
-				<motion.footer
-					ref={ref as never}
-					id={id}
-					className={className}
-					style={style}
-				>
-					{children}
-				</motion.footer>
-			);
-		case "section":
-			return (
-				<motion.section
-					ref={ref as never}
-					id={id}
-					className={className}
-					style={style}
-				>
-					{children}
-				</motion.section>
-			);
-		case "li":
-			return (
-				<motion.li
-					ref={ref as never}
-					id={id}
-					className={className}
-					style={style}
-				>
-					{children}
-				</motion.li>
-			);
-		case "span":
-			return (
-				<motion.span
-					ref={ref as never}
-					id={id}
-					className={className}
-					style={style}
-				>
-					{children}
-				</motion.span>
-			);
-		default:
-			return (
-				<motion.div ref={ref} id={id} className={className} style={style}>
-					{children}
-				</motion.div>
-			);
-	}
+  const x = useTransform(
+    scrollYProgress,
+    [0, enterPoint, exitPoint, 1],
+    [
+      direction === "left"
+        ? slideDistance
+        : direction === "right"
+          ? -slideDistance
+          : 0,
+      0,
+      0,
+      direction === "right"
+        ? slideDistance
+        : direction === "left"
+          ? -slideDistance
+          : 0,
+    ],
+  );
+
+  const style = { opacity, y, x };
+
+  switch (as) {
+    case "footer":
+      return (
+        <motion.footer
+          ref={ref as never}
+          id={id}
+          className={className}
+          style={style}
+        >
+          {children}
+        </motion.footer>
+      );
+    case "section":
+      return (
+        <motion.section
+          ref={ref as never}
+          id={id}
+          className={className}
+          style={style}
+        >
+          {children}
+        </motion.section>
+      );
+    case "li":
+      return (
+        <motion.li
+          ref={ref as never}
+          id={id}
+          className={className}
+          style={style}
+        >
+          {children}
+        </motion.li>
+      );
+    case "span":
+      return (
+        <motion.span
+          ref={ref as never}
+          id={id}
+          className={className}
+          style={style}
+        >
+          {children}
+        </motion.span>
+      );
+    default:
+      return (
+        <motion.div ref={ref} id={id} className={className} style={style}>
+          {children}
+        </motion.div>
+      );
+  }
 }
 
 /**
@@ -155,39 +169,39 @@ function ScrollReveal({
  * Respecte prefers-reduced-motion via le CSS global.
  */
 export function Reveal({
-	children,
-	direction = "up",
-	delay = 0,
-	className,
-	as = "div",
-	id,
-	once = true,
-	amount = 0.25,
-	variant = "once",
+  children,
+  direction = "up",
+  delay = 0,
+  className,
+  as = "div",
+  id,
+  once = true,
+  amount = 0.25,
+  variant = "once",
 }: RevealProps) {
-	if (variant === "scroll") {
-		return (
-			<ScrollReveal direction={direction} className={className} as={as} id={id}>
-				{children}
-			</ScrollReveal>
-		);
-	}
+  if (variant === "scroll") {
+    return (
+      <ScrollReveal direction={direction} className={className} as={as} id={id}>
+        {children}
+      </ScrollReveal>
+    );
+  }
 
-	/* Mode "once" — comportement historique (whileInView) */
-	const MotionTag = motion[as];
-	const variants = variantsFor(direction);
+  /* Mode "once" — comportement historique (whileInView) */
+  const MotionTag = motion[as];
+  const variants = variantsFor(direction);
 
-	return (
-		<MotionTag
-			id={id}
-			className={className}
-			variants={variants}
-			initial="hidden"
-			whileInView="visible"
-			viewport={{ once, amount }}
-			transition={{ delay }}
-		>
-			{children}
-		</MotionTag>
-	);
+  return (
+    <MotionTag
+      id={id}
+      className={className}
+      variants={variants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once, amount }}
+      transition={{ delay }}
+    >
+      {children}
+    </MotionTag>
+  );
 }

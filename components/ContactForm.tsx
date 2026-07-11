@@ -119,28 +119,16 @@ export function ContactSection() {
       {/* ─── Contenu ─── */}
       <div className="container-luxe relative z-10 mx-auto grid w-full max-w-[1200px] grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-0">
         {/* ─── Colonne gauche — Formulaire ─── */}
-        <Reveal direction="left">
+        <Reveal direction="left" variant="scroll">
           <div className="w-full lg:pr-16 xl:pr-24">
-            <motion.span
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.5, ease }}
-              className="eyebrow inline-flex items-center gap-2 text-[10px] tracking-[0.15em]"
-            >
+            <span className="eyebrow inline-flex items-center gap-2 text-[10px] tracking-[0.15em]">
               Écrivez-nous
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 14 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.6, delay: 0.08, ease }}
-              className="mt-1.5 font-display text-3xl font-bold leading-[1.15] text-royal md:text-4xl"
-            >
+            </span>
+            <h2 className="mt-1.5 font-display text-3xl font-bold leading-[1.15] text-royal md:text-4xl">
               Nous sommes là
               <br />
               pour vous.
-            </motion.h2>
+            </h2>
 
             {submitted ? (
               <motion.div
@@ -315,7 +303,7 @@ export function ContactSection() {
         </Reveal>
 
         {/* ─── Colonne droite — Coordonnées ─── */}
-        <Reveal direction="right">
+        <Reveal direction="right" variant="scroll">
           <div className="w-full lg:pl-16 xl:pl-24">
             <div className="mx-auto max-w-[360px] rounded-3xl bg-gradient-to-br from-gold/15 via-gold-warm/10 to-gold-deep/15 p-7 shadow-card ring-1 ring-gold/10 backdrop-blur-sm lg:mx-0">
               <span className="eyebrow inline-flex items-center gap-2 text-[9px]">
