@@ -6,7 +6,13 @@ import { UnderConstruction } from "@/components/UnderConstruction";
 export const metadata: Metadata = {
 	title: "À propos",
 	description:
-		"Découvrez Cynthia Cosmétique — notre histoire, notre expertise et notre passion pour la beauté naturelle à Douala.",
+		"Découvrez Cynthia Cosmétique — notre histoire, notre expertise et notre passion pour la beauté naturelle à Douala. Soins experts du visage, microneedling, beauté du regard.",
+	openGraph: {
+		title: "À propos · Cynthia Cosmétique",
+		description:
+			"Notre histoire, notre expertise et notre passion pour la beauté naturelle — Découvrez Cynthia Cosmétique à Douala.",
+		url: "https://cynthiacosmetique.com/a-propos",
+	},
 };
 
 export default function AProposPage() {

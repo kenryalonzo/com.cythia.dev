@@ -6,7 +6,13 @@ import { UnderConstruction } from "@/components/UnderConstruction";
 export const metadata: Metadata = {
 	title: "Contact",
 	description:
-		"Prenez rendez-vous ou contactez Cynthia Cosmétique à Douala. Soins du visage, microneedling, beauté du regard.",
+		"Prenez rendez-vous ou contactez Cynthia Cosmétique à Douala. Soins du visage, microneedling, beauté du regard — Institut de beauté haut de gamme.",
+	openGraph: {
+		title: "Contact · Cynthia Cosmétique",
+		description:
+			"Contactez Cynthia Cosmétique à Douala — Prenez rendez-vous pour vos soins du visage, microneedling ou beauté du regard.",
+		url: "https://cynthiacosmetique.com/contact",
+	},
 };
 
 export default function ContactPage() {

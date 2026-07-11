@@ -19,7 +19,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://cynthia-cosmetique.com"),
+	metadataBase: new URL("https://cynthiacosmetique.com"),
 	title: {
 		default: "Cynthia Cosmétique — L'expertise au service de votre peau",
 		template: "%s · Cynthia Cosmétique",
@@ -29,12 +29,29 @@ export const metadata: Metadata = {
 	keywords: [
 		"Cynthia Cosmétique",
 		"soin visage Douala",
+		"institut beauté Douala",
 		"microneedling",
 		"microblading",
 		"extensions de cils",
-		"esthétique Cameroun",
+		"beauté du regard",
+		"soin peau Cameroun",
+		"esthétique Douala",
+		"cosmétique Douala",
 	],
 	authors: [{ name: "Cynthia Cosmétique" }],
+	creator: "Cynthia Cosmétique",
+	publisher: "Cynthia Cosmétique",
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 	openGraph: {
 		type: "website",
 		locale: "fr_FR",
@@ -42,12 +59,13 @@ export const metadata: Metadata = {
 		description:
 			"Soins experts, microneedling, beauté du regard et accompagnement personnalisé à Douala.",
 		siteName: "Cynthia Cosmétique",
+		url: "https://cynthiacosmetique.com",
 		images: [
 			{
 				url: "/assets/logo-cynthia.png",
 				width: 1200,
 				height: 1200,
-				alt: "Cynthia Cosmétique",
+				alt: "Cynthia Cosmétique — Institut de beauté haut de gamme à Douala",
 			},
 		],
 	},
@@ -64,25 +82,63 @@ export const metadata: Metadata = {
 		],
 		apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
 	},
+	other: {
+		"geo.region": "CM-LT",
+		"geo.placename": "Douala",
+		"geo.position": "4.0511;9.7679",
+		ICBM: "4.0511, 9.7679",
+	},
 };
 
 const jsonLd = {
 	"@context": "https://schema.org",
-	"@type": "BeautySalon",
-	name: "Cynthia Cosmétique",
-	description:
-		"Soins experts du visage, microneedling, beauté du regard et accompagnement personnalisé à Douala.",
-	url: "https://cynthia-cosmetique.com",
-	telephone: "+237696565756",
-	address: {
-		"@type": "PostalAddress",
-		streetAddress: "Malepe Cour Suprême (Domino Market)",
-		addressLocality: "Douala",
-		addressCountry: "CM",
-	},
-	openingHours: "Mo-Sa 08:00-19:00",
-	image: "/assets/logo-cynthia.png",
-	priceRange: "$$",
+	"@graph": [
+		{
+			"@type": "BeautySalon",
+			"@id": "https://cynthiacosmetique.com/#organisation",
+			name: "Cynthia Cosmétique",
+			description:
+				"Soins experts du visage, microneedling, beauté du regard et accompagnement personnalisé à Douala. Révélez la meilleure version de votre peau.",
+			url: "https://cynthiacosmetique.com",
+			telephone: "+237696565756",
+			email: "cynthiacosmetique237@gmail.com",
+			founder: { "@type": "Person", name: "Cynthia" },
+			foundingDate: "2022",
+			areaServed: "Douala, Cameroun",
+			address: {
+				"@type": "PostalAddress",
+				streetAddress: "Malepe Cour Suprême (Domino Market)",
+				addressLocality: "Douala",
+				addressRegion: "Littoral",
+				addressCountry: "CM",
+			},
+			openingHoursSpecification: [
+				{
+					"@type": "OpeningHoursSpecification",
+					dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+					opens: "08:00",
+					closes: "19:00",
+				},
+			],
+			image: "/assets/logo-cynthia.png",
+			priceRange: "$$",
+			sameAs: [
+				"https://instagram.com/cynthiacosmetique",
+				"https://facebook.com/cynthiacosmetique",
+				"https://tiktok.com/@cynthiacosmetique",
+			],
+		},
+		{
+			"@type": "BreadcrumbList",
+			"@id": "https://cynthiacosmetique.com/#breadcrumb",
+			itemListElement: [
+				{ "@type": "ListItem", position: 1, name: "Accueil", item: "https://cynthiacosmetique.com" },
+				{ "@type": "ListItem", position: 2, name: "Prestations", item: "https://cynthiacosmetique.com/prestation" },
+				{ "@type": "ListItem", position: 3, name: "À propos", item: "https://cynthiacosmetique.com/a-propos" },
+				{ "@type": "ListItem", position: 4, name: "Contact", item: "https://cynthiacosmetique.com/contact" },
+			],
+		},
+	],
 };
 
 export default function RootLayout({
@@ -107,6 +163,50 @@ export default function RootLayout({
 					type="application/ld+json"
 					/* biome-ignore lint/security/noDangerouslySetInnerHtml: static JSON-LD */
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+				/>
+				<script
+					type="application/ld+json"
+					/* biome-ignore lint/security/noDangerouslySetInnerHtml: static FAQ JSON-LD */
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify({
+							"@context": "https://schema.org",
+							"@type": "FAQPage",
+							mainEntity: [
+								{
+									"@type": "Question",
+									name: "Le microneedling fait-il mal ?",
+									acceptedAnswer: {
+										"@type": "Answer",
+										text: "Un anesthésiant topique est appliqué avant la séance pour minimiser toute inconfort. La plupart des clientes décrivent une sensation de légères picotements.",
+									},
+								},
+								{
+									"@type": "Question",
+									name: "Combien de séances faut-il ?",
+									acceptedAnswer: {
+										"@type": "Answer",
+										text: "En général, 3 à 6 séances sont recommandées pour des résultats optimaux, espacées de 3 à 4 semaines. Votre protocole sera adapté lors du diagnostic.",
+									},
+								},
+								{
+									"@type": "Question",
+									name: "Comment se déroule une séance ?",
+									acceptedAnswer: {
+										"@type": "Answer",
+										text: "Après un nettoyage approfondi, nous appliquons le protocole adapté à votre peau. La durée moyenne est de 45 minutes à 1 heure.",
+									},
+								},
+								{
+									"@type": "Question",
+									name: "Quels sont les moyens de paiement ?",
+									acceptedAnswer: {
+										"@type": "Answer",
+										text: "Nous acceptons les paiements en espèces, par Mobile Money (Orange Money, MTN) ainsi que par carte bancaire.",
+									},
+								},
+							],
+						}),
+					}}
 				/>
 			</body>
 		</html>
