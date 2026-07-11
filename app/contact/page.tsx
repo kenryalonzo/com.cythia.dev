@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { BookingBanner } from "@/components/BookingBanner";
 import { ContactSection } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
+import { MapLocationSection } from "@/components/MapLocationSection";
 import { Navbar } from "@/components/Navbar";
+import { WhyContactSection } from "@/components/WhyContactSection";
 import { Reveal } from "@/components/ui/Reveal";
 
 export const metadata: Metadata = {
@@ -48,8 +50,14 @@ export default function ContactPage() {
 				{/* Section 2 — Formulaire + Coordonnées */}
 				<ContactSection />
 
-				{/* Section 3 — Bannière réservation rapide */}
+				{/* Section 3 — Bannière réservation */}
 				<BookingBanner />
+
+				{/* Section 4 — Pourquoi nous contacter */}
+				<WhyContactSection />
+
+				{/* Section 5 — Carte + Localisation */}
+				<MapLocationSection />
 			</main>
 			<Footer />
 		</>
