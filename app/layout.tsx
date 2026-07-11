@@ -62,9 +62,9 @@ export const metadata: Metadata = {
 		url: "https://cynthiacosmetique.com",
 		images: [
 			{
-				url: "/assets/logo-cynthia.png",
+				url: "/og-image.jpg",
 				width: 1200,
-				height: 1200,
+				height: 630,
 				alt: "Cynthia Cosmétique — Institut de beauté haut de gamme à Douala",
 			},
 		],
