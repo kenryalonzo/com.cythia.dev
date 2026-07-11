@@ -76,18 +76,36 @@ export function ContactSection() {
 			<div className="pointer-events-none absolute inset-y-0 left-1/2 z-10 hidden w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-gold-deep/30 to-transparent lg:block" />
 
 			{/* ─── Lotus central ─── */}
-			<div className="pointer-events-none absolute left-1/2 top-1/2 z-20 hidden -translate-x-1/2 -translate-y-1/2 lg:flex lg:h-[90px] lg:w-[90px] lg:items-center lg:justify-center lg:rounded-full lg:border lg:border-gold-deep/20 lg:bg-ivory/90 lg:shadow-soft lg:backdrop-blur-sm">
-				<div className="absolute top-0 h-1 w-1 -translate-y-1/2 rounded-full bg-gold-deep/60" />
-				<div className="absolute bottom-0 h-1 w-1 translate-y-1/2 rounded-full bg-gold-deep/60" />
-				<div className="absolute left-0 h-1 w-1 -translate-x-1/2 rounded-full bg-gold-deep/60" />
-				<div className="absolute right-0 h-1 w-1 translate-x-1/2 rounded-full bg-gold-deep/60" />
-				<div className="absolute inset-0 rounded-full bg-gold-deep/5 blur-sm" />
-				<img
-					src="/assets/images/lotus-middle.png"
-					alt=""
-					aria-hidden
-					className="relative h-12 w-12 drop-shadow-sm"
+			<div className="pointer-events-none absolute left-1/2 top-1/2 z-20 hidden -translate-x-1/2 -translate-y-1/2 lg:block">
+				{/* Halo extérieur pulsant */}
+				<motion.div
+					animate={{ scale: [1, 1.35, 1], opacity: [0.25, 0, 0.25] }}
+					transition={{ duration: 2.8, repeat: Infinity, ease: "easeOut" }}
+					className="absolute inset-0 -m-5 rounded-full bg-gold/30"
 				/>
+				{/* Halo intermédiaire */}
+				<motion.div
+					animate={{ scale: [1, 1.2, 1], opacity: [0.35, 0, 0.35] }}
+					transition={{ duration: 2.8, repeat: Infinity, ease: "easeOut", delay: 0.4 }}
+					className="absolute inset-0 -m-3 rounded-full bg-gold-deep/25"
+				/>
+				{/* Cercle principal */}
+				<div className="relative flex h-[90px] w-[90px] items-center justify-center rounded-full border border-gold/40 bg-ivory/95 shadow-gold backdrop-blur-sm">
+					<div className="absolute top-0 h-1 w-1 -translate-y-1/2 rounded-full bg-gold" />
+					<div className="absolute bottom-0 h-1 w-1 translate-y-1/2 rounded-full bg-gold" />
+					<div className="absolute left-0 h-1 w-1 -translate-x-1/2 rounded-full bg-gold" />
+					<div className="absolute right-0 h-1 w-1 translate-x-1/2 rounded-full bg-gold" />
+					{/* Lueur centrale */}
+					<div className="absolute inset-4 rounded-full bg-gold/10 blur-md" />
+					<motion.img
+						src="/assets/images/lotus-middle.png"
+						alt=""
+						aria-hidden
+						animate={{ rotate: [0, 3, 0, -3, 0] }}
+						transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+						className="relative h-12 w-12 drop-shadow-[0_0_8px_rgba(201,162,39,0.6)]"
+					/>
+				</div>
 			</div>
 
 			{/* ─── Contenu ─── */}
@@ -129,13 +147,13 @@ export function ContactSection() {
 										type="text"
 										required
 										placeholder="Nom complet"
-										className="w-full rounded-lg border border-slate-line/60 bg-white px-4 py-2.5 font-sans text-[13px] text-royal shadow-sm placeholder:text-slate-ink/40 transition-all focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold/30"
+										className="w-full rounded-lg border border-gold/30 bg-white px-4 py-2.5 font-sans text-[13px] text-royal shadow-sm placeholder:text-slate-ink/40 transition-all focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 hover:border-gold/50"
 									/>
 									<input
 										name="phone"
 										type="tel"
 										placeholder="Téléphone"
-										className="w-full rounded-lg border border-slate-line/60 bg-white px-4 py-2.5 font-sans text-[13px] text-royal shadow-sm placeholder:text-slate-ink/40 transition-all focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold/30"
+										className="w-full rounded-lg border border-gold/30 bg-white px-4 py-2.5 font-sans text-[13px] text-royal shadow-sm placeholder:text-slate-ink/40 transition-all focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 hover:border-gold/50"
 									/>
 								</div>
 								<div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2">
@@ -144,13 +162,13 @@ export function ContactSection() {
 										type="email"
 										required
 										placeholder="Email"
-										className="w-full rounded-lg border border-slate-line/60 bg-white px-4 py-2.5 font-sans text-[13px] text-royal shadow-sm placeholder:text-slate-ink/40 transition-all focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold/30"
+										className="w-full rounded-lg border border-gold/30 bg-white px-4 py-2.5 font-sans text-[13px] text-royal shadow-sm placeholder:text-slate-ink/40 transition-all focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 hover:border-gold/50"
 									/>
 									<div className="relative">
 										<select
 											name="service"
 											required
-											className="w-full appearance-none rounded-lg border border-slate-line/60 bg-white px-4 py-2.5 pr-8 font-sans text-[13px] text-slate-ink/60 shadow-sm transition-all focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold/30"
+											className="w-full appearance-none rounded-lg border border-gold/30 bg-white px-4 py-2.5 pr-8 font-sans text-[13px] text-slate-ink/60 shadow-sm transition-all focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 hover:border-gold/50"
 										>
 											<option value="">Sujet</option>
 											{services.map((s) => (
@@ -168,7 +186,7 @@ export function ContactSection() {
 									name="message"
 									rows={3}
 									placeholder="Votre message"
-									className="w-full resize-none rounded-lg border border-slate-line/60 bg-white px-4 py-2.5 font-sans text-[13px] text-royal shadow-sm placeholder:text-slate-ink/40 transition-all focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold/30"
+									className="w-full resize-none rounded-lg border border-gold/30 bg-white px-4 py-2.5 font-sans text-[13px] text-royal shadow-sm placeholder:text-slate-ink/40 transition-all focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 hover:border-gold/50"
 								/>
 
 								<motion.button
