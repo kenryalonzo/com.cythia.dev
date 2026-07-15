@@ -89,7 +89,7 @@ export function BeautyUnivers() {
 	};
 
 	return (
-		<section className="relative -mt-16 overflow-hidden bg-ivory pt-8 pb-12 md:-mt-20 md:pt-10 md:pb-16">
+		<section className="relative -mt-20 overflow-hidden bg-ivory pt-14 pb-12 md:-mt-28 md:pt-16 md:pb-16">
 			{/* ─── Layer 0: Decorative Silk Backgrounds ─── */}
 			<div className="pointer-events-none absolute left-[-10% ] top-0 h-full w-[40%] mix-blend-multiply opacity-40 lg:left-[-5%]">
 				<Image
