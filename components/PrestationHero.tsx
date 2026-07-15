@@ -12,12 +12,11 @@ import { cn } from "@/lib/utils";
 
 /**
  * PrestationHero — Refined hero for the services page.
- * Height is adjusted to align perfectly with the portrait cut-off at the neck level.
- * Homogenized with Home Hero spacing and typography.
+ * Height is naturally determined by the portrait image (no fixed height).
  */
 export function PrestationHero() {
   return (
-    <section className="relative sm:min-h-[540px] w-full overflow-hidden bg-ivory lg:h-[72vh] lg:min-h-[560px]">
+    <section className="relative w-full overflow-hidden bg-ivory">
       {/* ─── Layer 1: Global Silk Background ─── */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -33,114 +32,119 @@ export function PrestationHero() {
       {/* Filaments dorés */}
       <Filaments intensity="subtle" />
 
-      {/* ─── Layer 2: Main Portrait (Right) ─── */}
-      <div
-        className="absolute right-0 z-10 hidden h-[80%] w-[48%] lg:block"
-        style={{ top: "2%" }}
-      >
-        <motion.div
-          initial={{ opacity: 0, x: 50, scale: 0.95 }}
-          animate={{ opacity: 1, x: 0, scale: 1 }}
-          transition={{
-            duration: 1.2,
-            ease: [0.22, 1, 0.36, 1],
-            delay: 0.1,
-          }}
-          className="relative h-full w-full"
-        >
-          <Image
-            src="/assets/images/hero-right-image.png"
-            alt="Portrait Cynthia Cosmétique"
-            fill
-            priority
-            className="object-contain object-right"
-          />
-        </motion.div>
-      </div>
-
-      {/* ─── Layer 3: Content (Left) ─── */}
-      <div className="container-luxe relative z-20 flex h-full flex-col justify-center pt-28 pb-10 lg:pt-0 lg:pb-0">
-        <div className="flex max-w-2xl flex-col gap-3 lg:max-w-xl lg:gap-4 xl:max-w-2xl">
-          {/* Eyebrow — collé au titre */}
-          <Reveal direction="down" delay={0.2}>
-            <div className="flex items-center gap-2">
-              <div className="relative h-5 w-5 sm:h-6 sm:w-6">
-                <Image
-                  src="/assets/images/lotus-expertise.png"
-                  alt="Lotus"
-                  fill
-                  sizes="24px"
-                  className="object-contain"
-                  aria-hidden
-                />
-              </div>
-              <span className="eyebrow !text-[10px] !tracking-[0.2em] text-gold-deep/80 sm:!text-[11px]">
-                L&apos;expertise au service de votre beauté
-              </span>
-            </div>
-          </Reveal>
-
-          {/* Title */}
-          <Reveal delay={0.3}>
-            <h1 className="font-display text-2xl font-bold leading-[1.08] tracking-tight text-royal sm:text-3xl md:text-5xl lg:text-6xl xl:text-[4rem]">
-              <span>Nos</span>{" "}
-              <span className="text-gradient-gold font-normal italic">
-                Prestations
-              </span>
-            </h1>
-          </Reveal>
-
-          {/* Small decorative line */}
-          <Reveal delay={0.4} direction="none">
-            <div className="h-0.5 w-16 bg-royal/10 sm:w-20">
-              <div className="h-full w-1/3 bg-gold-deep" />
-            </div>
-          </Reveal>
-
-          {/* Description */}
-          <Reveal delay={0.5}>
-            <p className="max-w-md text-xs leading-relaxed text-slate-ink/80 sm:text-sm md:text-base lg:text-lg">
-              Des soins sur-mesure, des techniques de pointe et une approche
-              personnalisée pour révéler la beauté naturelle de votre peau.
-            </p>
-          </Reveal>
-
-          {/* Buttons */}
-          <Reveal delay={0.6} direction="up">
-            <div className="mt-4 flex flex-wrap items-center gap-3 sm:gap-4">
-              <Button
-                href={waLink("Bonjour, je souhaite réserver un soin.")}
-                external
-                variant="gold"
-                size="lg"
-                className="animate-pulse-glow shadow-gold hover:shadow-lift"
-                icon={<WhatsAppIcon className="h-4 w-4" />}
-              >
-                Réserver maintenant
-              </Button>
-              <Button
-                href="/contact"
-                variant="outline-gold"
-                size="lg"
-                className="group border-gold-deep/30"
-              >
-                Nous contacter
-                <svg
-                  className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  aria-hidden
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+      {/* ─── Layer 2: Content + Image Grid ─── */}
+      <div className="container-luxe relative z-20 flex min-h-[540px] flex-col justify-center pt-28 pb-10 sm:min-h-[600px] lg:min-h-0 lg:pt-0 lg:pb-0">
+        <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-[1.2fr_1fr]">
+          {/* ─── Colonne gauche — Texte ─── */}
+          <div className="flex flex-col gap-3 py-8 lg:py-16 lg:gap-4 xl:py-20">
+            {/* Eyebrow — collé au titre */}
+            <Reveal direction="down" delay={0.2}>
+              <div className="flex items-center gap-2">
+                <div className="relative h-5 w-5 sm:h-6 sm:w-6">
+                  <Image
+                    src="/assets/images/lotus-expertise.png"
+                    alt="Lotus"
+                    fill
+                    sizes="24px"
+                    className="object-contain"
+                    aria-hidden
                   />
-                </svg>
-              </Button>
-            </div>
+                </div>
+                <span className="eyebrow !text-[10px] !tracking-[0.2em] text-gold-deep/80 sm:!text-[11px]">
+                  L'expertise au service de votre beauté
+                </span>
+              </div>
+            </Reveal>
+
+            {/* Title */}
+            <Reveal delay={0.3}>
+              <h1 className="font-display text-2xl font-bold leading-[1.08] tracking-tight text-royal sm:text-3xl md:text-5xl lg:text-5xl xl:text-[4rem]">
+                <span>Nos</span>{" "}
+                <span className="text-gradient-gold font-normal italic">
+                  Prestations
+                </span>
+              </h1>
+            </Reveal>
+
+            {/* Small decorative line */}
+            <Reveal delay={0.4} direction="none">
+              <div className="h-0.5 w-16 bg-royal/10 sm:w-20">
+                <div className="h-full w-1/3 bg-gold-deep" />
+              </div>
+            </Reveal>
+
+            {/* Description */}
+            <Reveal delay={0.5}>
+              <p className="max-w-md text-xs leading-relaxed text-slate-ink/80 sm:text-sm md:text-base lg:text-base xl:text-lg">
+                Des soins sur-mesure, des techniques de pointe et une approche
+                personnalisée pour révéler la beauté naturelle de votre peau.
+              </p>
+            </Reveal>
+
+            {/* Buttons */}
+            <Reveal delay={0.6} direction="up">
+              <div className="mt-4 flex flex-wrap items-center gap-3 sm:gap-4">
+                <Button
+                  href={waLink("Bonjour, je souhaite réserver un soin.")}
+                  external
+                  variant="gold"
+                  size="lg"
+                  className="animate-pulse-glow shadow-gold hover:shadow-lift"
+                  icon={<WhatsAppIcon className="h-4 w-4" />}
+                >
+                  Réserver maintenant
+                </Button>
+                <Button
+                  href="/contact"
+                  variant="outline-gold"
+                  size="lg"
+                  className="group border-gold-deep/30"
+                >
+                  Nous contacter
+                  <svg
+                    className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    aria-hidden
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                    />
+                  </svg>
+                </Button>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* ─── Colonne droite — Portrait ─── */}
+          <Reveal direction="right" delay={0.15} className="hidden lg:block">
+            <motion.div
+              initial={{ opacity: 0, x: 50, scale: 0.95 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{
+                duration: 1.2,
+                ease: [0.22, 1, 0.36, 1],
+                delay: 0.1,
+              }}
+              className="relative w-full overflow-hidden rounded-2xl"
+              style={{ aspectRatio: "2048/1320" }}
+            >
+              <Image
+                src="/assets/images/hero-right-image.png"
+                alt="Portrait Cynthia Cosmétique"
+                fill
+                priority
+                className="object-cover object-[45%_20%]"
+              />
+              <div
+                aria-hidden
+                className="bg-portrait-overlay pointer-events-none absolute inset-0"
+              />
+            </motion.div>
           </Reveal>
         </div>
       </div>
