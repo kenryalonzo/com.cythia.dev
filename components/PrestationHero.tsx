@@ -25,7 +25,7 @@ export function PrestationHero() {
 					alt=""
 					fill
 					priority
-					className="object-cover opacity-60"
+					className="object-cover object-[center_70%] opacity-60"
 					aria-hidden
 				/>
 			</div>
@@ -34,7 +34,7 @@ export function PrestationHero() {
 			<Filaments intensity="subtle" />
 
 			{/* ─── Layer 2: Main Portrait (Right) ─── */}
-			<div className="absolute inset-y-0 right-[-2%] z-10 hidden w-[52%] lg:block">
+			<div className="absolute inset-y-0 right-0 z-10 hidden w-[48%] lg:block">
 				<motion.div
 					initial={{ opacity: 0, x: 50, scale: 0.95 }}
 					animate={{ opacity: 1, x: 0, scale: 1 }}
