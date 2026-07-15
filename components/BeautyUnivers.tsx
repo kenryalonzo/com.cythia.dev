@@ -89,7 +89,7 @@ export function BeautyUnivers() {
 	};
 
 	return (
-		<section className="relative overflow-hidden bg-ivory pb-20 pt-24 md:pb-32 md:pt-32">
+		<section className="relative -mt-16 overflow-hidden bg-ivory pt-8 pb-12 md:-mt-20 md:pt-10 md:pb-16">
 			{/* ─── Layer 0: Decorative Silk Backgrounds ─── */}
 			<div className="pointer-events-none absolute left-[-10% ] top-0 h-full w-[40%] mix-blend-multiply opacity-40 lg:left-[-5%]">
 				<Image
@@ -117,7 +117,7 @@ export function BeautyUnivers() {
 					highlight="univers de beauté"
 					description="Cliquez sur une catégorie pour explorer nos soins en détail."
 					align="center"
-					className="mb-12 md:mb-16"
+					className="mb-6 md:mb-8"
 				/>
 
 				{/* ─── Carousel / Grid Wrapper ─── */}
