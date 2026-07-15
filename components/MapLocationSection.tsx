@@ -1,8 +1,8 @@
 "use client";
 
+import { ArrowRight, Clock, MapPin, Phone } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { site } from "@/lib/site";
-import { MapPin, Phone, Clock, ArrowRight } from "lucide-react";
 
 /**
  * MapLocationSection — interactive map with contact & access details.
@@ -115,8 +115,10 @@ export function MapLocationSection() {
 												viewBox="0 0 24 24"
 												stroke="currentColor"
 												strokeWidth={1.5}
-												aria-hidden
+												aria-hidden="true"
+												role="img"
 											>
+												<title>Icône parking</title>
 												<path
 													strokeLinecap="round"
 													strokeLinejoin="round"
