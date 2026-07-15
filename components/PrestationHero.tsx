@@ -17,7 +17,7 @@ import { cn } from "@/lib/utils";
  */
 export function PrestationHero() {
   return (
-    <section className="relative min-h-[540px] w-full overflow-hidden bg-ivory lg:h-[72vh] lg:min-h-[560px]">
+    <section className="relative sm:min-h-[540px] w-full overflow-hidden bg-ivory lg:h-[72vh] lg:min-h-[560px]">
       {/* ─── Layer 1: Global Silk Background ─── */}
       <div className="absolute inset-0 z-0">
         <Image
