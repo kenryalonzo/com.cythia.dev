@@ -17,7 +17,7 @@ import { cn } from "@/lib/utils";
  */
 export function PrestationHero() {
 	return (
-		<section className="relative min-h-[540px] w-full overflow-hidden bg-ivory py-16 lg:h-[72vh] lg:min-h-[560px] lg:py-0">
+		<section className="relative min-h-[540px] w-full overflow-hidden bg-ivory lg:h-[72vh] lg:min-h-[560px]">
 			{/* ─── Layer 1: Global Silk Background ─── */}
 			<div className="absolute inset-0 z-0">
 				<Image
@@ -56,7 +56,7 @@ export function PrestationHero() {
 			</div>
 
 			{/* ─── Layer 3: Content (Left) ─── */}
-			<div className="container-luxe relative z-20 flex h-full flex-col justify-center pb-12 pt-32 lg:pb-0 lg:pt-8">
+			<div className="container-luxe relative z-20 flex h-full flex-col justify-center pt-28 pb-10 lg:pt-0 lg:pb-0">
 				<div className="flex max-w-2xl flex-col gap-3 lg:max-w-xl lg:gap-4 xl:max-w-2xl">
 					{/* Eyebrow — collé au titre */}
 					<Reveal direction="down" delay={0.2}>
