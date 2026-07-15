@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
+import { Filaments } from "@/components/ui/Filaments";
 import { Reveal } from "@/components/ui/Reveal";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { waLink } from "@/lib/site";
@@ -29,8 +30,11 @@ export function PrestationHero() {
 				/>
 			</div>
 
+			{/* Filaments dorés */}
+			<Filaments intensity="subtle" />
+
 			{/* ─── Layer 2: Main Portrait (Right) ─── */}
-			<div className="absolute inset-y-0 right-[-2%] z-10 hidden w-[45%] lg:block">
+			<div className="absolute inset-y-0 right-[-2%] z-10 hidden w-[52%] lg:block">
 				<motion.div
 					initial={{ opacity: 0, x: 50, scale: 0.95 }}
 					animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -53,23 +57,23 @@ export function PrestationHero() {
 
 			{/* ─── Layer 3: Content (Left) ─── */}
 			<div className="container-luxe relative z-20 flex h-full flex-col justify-center">
-				<div className="flex max-w-2xl flex-col gap-3 md:gap-5 lg:max-w-xl xl:max-w-2xl">
-					{/* Eyebrow */}
+				<div className="flex max-w-2xl flex-col gap-3 lg:max-w-xl lg:gap-4 xl:max-w-2xl">
+					{/* Eyebrow — collé au titre */}
 					<Reveal direction="down" delay={0.2}>
-						<div className="flex items-center gap-3">
-							<span className="eyebrow !text-[10px] !tracking-[0.2em] text-gold-deep/80 sm:!text-[11px]">
-								L&apos;expertise au service de votre beauté
-							</span>
-							<div className="relative h-6 w-6 sm:h-8 sm:w-8">
+						<div className="flex items-center gap-2">
+							<div className="relative h-5 w-5 sm:h-6 sm:w-6">
 								<Image
 									src="/assets/images/lotus-expertise.png"
 									alt="Lotus"
 									fill
-									sizes="32px"
+									sizes="24px"
 									className="object-contain"
 									aria-hidden
 								/>
 							</div>
+							<span className="eyebrow !text-[10px] !tracking-[0.2em] text-gold-deep/80 sm:!text-[11px]">
+								L&apos;expertise au service de votre beauté
+							</span>
 						</div>
 					</Reveal>
 
@@ -100,13 +104,13 @@ export function PrestationHero() {
 
 					{/* Buttons */}
 					<Reveal delay={0.6} direction="up">
-						<div className="mt-2 flex flex-wrap items-center gap-3 sm:gap-4">
+						<div className="mt-4 flex flex-wrap items-center gap-3 sm:gap-4">
 							<Button
 								href={waLink("Bonjour, je souhaite réserver un soin.")}
 								external
-								variant="royal"
+								variant="gold"
 								size="lg"
-								className="animate-pulse-glow shadow-soft hover:shadow-lift"
+								className="animate-pulse-glow shadow-gold hover:shadow-lift"
 								icon={<WhatsAppIcon className="h-4 w-4" />}
 							>
 								Réserver maintenant

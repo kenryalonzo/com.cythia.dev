@@ -80,7 +80,7 @@ const categories = [
 
 export function BeautyUnivers() {
 	return (
-		<section className="relative overflow-hidden bg-cream py-20 md:py-28">
+		<section className="relative -mt-20 overflow-hidden bg-cream pt-32 pb-20 md:-mt-28 md:pt-40 md:pb-28">
 			{/* Soie dorée décorative */}
 			<div className="pointer-events-none absolute -left-20 top-0 h-full w-[40%] opacity-30">
 				<img
