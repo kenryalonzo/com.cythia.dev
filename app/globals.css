@@ -239,3 +239,12 @@
 		}
 	}
 }
+
+/* ---------- @utility (must be top-level, not inside @layer) ---------- */
+@utility scrollbar-hidden {
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
