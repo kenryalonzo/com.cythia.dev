@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
-import { UnderConstruction } from "@/components/UnderConstruction";
+import { PrestationHero } from "@/components/PrestationHero";
 
 export const metadata: Metadata = {
 	title: "Prestations",
@@ -20,10 +20,7 @@ export default function PrestationPage() {
 		<>
 			<Navbar />
 			<main className="flex flex-1 flex-col">
-				<UnderConstruction
-					title="Nos Prestations"
-					subtitle="La liste complète de nos soins et tarifs est en cours de préparation. En attendant, découvrez nos soins phares sur la page d'accueil ou contactez-nous directement."
-				/>
+				<PrestationHero />
 			</main>
 			<Footer />
 		</>

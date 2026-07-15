@@ -33,11 +33,7 @@ export function Hero() {
 		>
 			<div
 				aria-hidden
-				className="absolute inset-0"
-				style={{
-					background:
-						"radial-gradient(1100px 600px at 78% 18%, #fff7d6 0%, rgba(247,243,234,0) 60%), radial-gradient(900px 700px at 8% 90%, #e8eef9 0%, rgba(250,250,248,0) 55%)",
-				}}
+				className="bg-hero-halo absolute inset-0"
 			/>
 			<Filaments intensity="subtle" />
 
@@ -165,11 +161,7 @@ export function Hero() {
 							/>
 							<div
 								aria-hidden
-								className="pointer-events-none absolute inset-0"
-								style={{
-									background:
-										"linear-gradient(to top, rgba(247,243,234,0.25), transparent 50%)",
-								}}
+								className="bg-portrait-overlay pointer-events-none absolute inset-0"
 							/>
 						</motion.div>
 

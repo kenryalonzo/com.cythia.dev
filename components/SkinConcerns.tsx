@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Filaments } from "@/components/ui/Filaments";
 import { skinConcernIcons } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/Reveal";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { waLink } from "@/lib/site";
 
 type Concern = {
@@ -46,58 +47,35 @@ export function SkinConcerns() {
 			as="section"
 			variant="scroll"
 			id="soins-visage"
-			className="relative overflow-hidden bg-ivory py-12 md:py-16 section-below-fold"
+			className="section-below-fold relative overflow-hidden bg-ivory py-12 md:py-20"
 		>
 			{/* Background image avec mouvement lent */}
-			<div className="absolute inset-0 overflow-hidden">
+			<div className="absolute inset-0 overflow-hidden" aria-hidden="true">
 				<Image
 					src="/assets/images/background-segond-section.png"
 					alt=""
 					fill
 					sizes="100vw"
 					loading="eager"
-					className="object-cover animate-slow-pan"
-					aria-hidden
+					className="animate-slow-pan object-cover opacity-40"
 				/>
-				<div className="absolute inset-0 bg-ivory/65" />
-				{/* Animation brillante — reflet qui traverse */}
-				<div className="pointer-events-none absolute inset-0 overflow-hidden">
-					<div className="animate-shine absolute inset-0 -ml-full w-[50%] bg-gradient-to-r from-transparent via-white/25 to-transparent" />
-				</div>
+				<div className="absolute inset-0 bg-ivory/40" />
 			</div>
 
-			{/* Filaments dorés — plus visibles, sur toute la section */}
 			<Filaments intensity="soft" />
 
 			<div className="container-luxe relative">
-				{/* En-tête compact */}
-				<Reveal direction="none">
-					<div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-						<div>
-							<span className="eyebrow inline-flex items-center gap-2">
-								<span className="h-px w-6 bg-gold-deep/60" aria-hidden />
-								Votre peau vous parle
-							</span>
-							<h2 className="mt-3 font-display text-2xl font-bold leading-[1.15] tracking-tight text-royal sm:text-3xl md:text-4xl">
-								Chaque peau a son histoire,{" "}
-								<span className="text-gradient-gold">
-									chaque problème a sa solution.
-								</span>
-							</h2>
-						</div>
-						<p className="max-w-sm text-base font-medium leading-relaxed text-slate-ink/80 md:text-right">
-							Quel que soit votre souci, nous avons un soin adapté.
-						</p>
-					</div>
-				</Reveal>
-
-				{/* Ligne dorée séparatrice */}
-				<Reveal direction="none">
-					<div className="hairline mb-8 h-px" />
-				</Reveal>
+				<SectionHeading
+					eyebrow="Votre peau vous parle"
+					title="Chaque peau a son histoire,"
+					highlight="chaque problème a sa solution."
+					description="Quel que soit votre souci, nous avons un soin adapté pour révéler votre éclat naturel et restaurer votre confiance."
+					align="left"
+					className="mb-12"
+				/>
 
 				{/* Grid — 4 colonnes avec mini description */}
-				<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+				<div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
 					{concerns.map((c, i) => {
 						const Icon = skinConcernIcons[c.iconKey];
 						return (
@@ -110,31 +88,30 @@ export function SkinConcerns() {
 									rel="noopener noreferrer"
 									whileHover={{ y: -8, scale: 1.02 }}
 									transition={{ type: "spring", stiffness: 300, damping: 20 }}
-									className="group relative flex h-full flex-col rounded-xl bg-ivory/80 p-5 ring-1 ring-slate-line/25 backdrop-blur-sm transition-shadow duration-500 hover:bg-ivory hover:shadow-card hover:ring-gold/30"
+									className="group relative flex h-full flex-col rounded-2xl bg-white/80 p-6 shadow-soft ring-1 ring-slate-line/20 backdrop-blur-sm transition-all duration-500 hover:bg-white hover:shadow-card hover:ring-gold/30"
 								>
-									<span className="flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-to-br from-gold-soft to-gold-soft/40 text-gold-deep ring-1 ring-gold/15 transition-all duration-300 group-hover:scale-110 group-hover:ring-gold/40">
-										<Icon className="h-5 w-5" />
+									<span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-soft text-gold-deep ring-1 ring-gold/15 transition-all duration-300 group-hover:scale-110 group-hover:bg-gold group-hover:text-royal">
+										<Icon className="h-6 w-6" />
 									</span>
-									<span className="mt-4 font-display text-sm font-semibold leading-snug text-royal sm:text-base">
+									<h3 className="mt-5 font-display text-base font-bold leading-snug text-royal">
 										{c.title}
-									</span>
-									<p className="mt-2 text-xs leading-relaxed text-slate-ink/60">
+									</h3>
+									<p className="mt-2 text-[13px] leading-relaxed text-slate-ink/70">
 										{c.description}
 									</p>
-									<span className="mt-auto inline-flex h-8 w-8 items-center justify-center self-end rounded-full bg-gold-soft text-gold-deep opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:bg-gold group-hover:text-royal group-hover:opacity-100">
+									<div className="mt-6 flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-gold-deep opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100">
+										<span>En savoir plus</span>
 										<svg
 											viewBox="0 0 24 24"
 											fill="none"
 											stroke="currentColor"
-											strokeWidth="2.5"
-											strokeLinecap="round"
-											strokeLinejoin="round"
-											className="h-3.5 w-3.5"
+											strokeWidth="3"
+											className="h-3 w-3"
 											aria-hidden="true"
 										>
 											<path d="M5 12h14M12 5l7 7-7 7" />
 										</svg>
-									</span>
+									</div>
 								</motion.a>
 							</Reveal>
 						);
