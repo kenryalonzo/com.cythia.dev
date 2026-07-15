@@ -10,13 +10,13 @@ import { waLink } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 /**
- * PrestationHero — High-fidelity hero for the services page.
- * Faithfully reproduces the attached design using strategic assets:
- * hero-right-image.png, left-image-effect.png, and lotus-expertise.png.
+ * PrestationHero — Refined hero for the services page.
+ * Height is adjusted to align perfectly with the portrait cut-off at the neck level.
+ * Homogenized with Home Hero spacing and typography.
  */
 export function PrestationHero() {
 	return (
-		<section className="relative min-h-[600px] w-full overflow-hidden bg-ivory py-16 lg:h-[85vh] lg:min-h-[700px] lg:py-0">
+		<section className="relative min-h-[480px] w-full overflow-hidden bg-ivory py-16 lg:h-[65vh] lg:min-h-[500px] lg:py-0">
 			{/* ─── Layer 1: Global Silk Background ─── */}
 			<div className="absolute inset-0 z-0">
 				<Image
@@ -24,15 +24,15 @@ export function PrestationHero() {
 					alt=""
 					fill
 					priority
-					className="object-cover opacity-70"
+					className="object-cover opacity-60"
 					aria-hidden
 				/>
 			</div>
 
 			{/* ─── Layer 2: Main Portrait (Right) ─── */}
-			<div className="absolute inset-y-0 right-0 z-10 hidden w-full lg:block">
+			<div className="absolute inset-y-0 right-[-2%] z-10 hidden w-[45%] lg:block">
 				<motion.div
-					initial={{ opacity: 0, x: 50, scale: 1.05 }}
+					initial={{ opacity: 0, x: 50, scale: 0.95 }}
 					animate={{ opacity: 1, x: 0, scale: 1 }}
 					transition={{
 						duration: 1.2,
@@ -46,26 +46,26 @@ export function PrestationHero() {
 						alt="Portrait Cynthia Cosmétique"
 						fill
 						priority
-						className="object-contain object-right"
+						className="object-contain object-right object-bottom"
 					/>
 				</motion.div>
 			</div>
 
 			{/* ─── Layer 3: Content (Left) ─── */}
 			<div className="container-luxe relative z-20 flex h-full flex-col justify-center">
-				<div className="max-w-2xl lg:max-w-2xl xl:max-w-3xl">
+				<div className="flex max-w-2xl flex-col gap-3 md:gap-5 lg:max-w-xl xl:max-w-2xl">
 					{/* Eyebrow */}
 					<Reveal direction="down" delay={0.2}>
-						<div className="mb-8 flex items-center gap-4">
-							<span className="eyebrow !text-[11px] !tracking-[0.25em] text-gold-deep/80 sm:!text-[12px]">
+						<div className="flex items-center gap-3">
+							<span className="eyebrow !text-[10px] !tracking-[0.2em] text-gold-deep/80 sm:!text-[11px]">
 								L&apos;expertise au service de votre beauté
 							</span>
-							<div className="relative h-8 w-8 sm:h-10 sm:w-10">
+							<div className="relative h-6 w-6 sm:h-8 sm:w-8">
 								<Image
 									src="/assets/images/lotus-expertise.png"
 									alt="Lotus"
 									fill
-									sizes="40px"
+									sizes="32px"
 									className="object-contain"
 									aria-hidden
 								/>
@@ -75,24 +75,24 @@ export function PrestationHero() {
 
 					{/* Title */}
 					<Reveal delay={0.3}>
-						<h1 className="flex flex-col gap-2 font-display text-5xl font-bold leading-[1.05] text-royal sm:text-6xl md:flex-row md:items-baseline md:gap-4 lg:text-[5.5rem] xl:text-[6.5rem]">
-							<span>Nos</span>
+						<h1 className="font-display text-2xl font-bold leading-[1.08] tracking-tight text-royal sm:text-3xl md:text-5xl lg:text-6xl xl:text-[4rem]">
+							<span>Nos</span>{" "}
 							<span className="text-gradient-gold font-normal italic">
 								Prestations
 							</span>
 						</h1>
 					</Reveal>
 
-					{/* Decorative Line */}
+					{/* Small decorative line */}
 					<Reveal delay={0.4} direction="none">
-						<div className="mt-6 h-[1.5px] w-12 bg-royal/15 sm:w-16">
-							<div className="h-full w-2/5 bg-gold-deep" />
+						<div className="h-0.5 w-16 bg-royal/10 sm:w-20">
+							<div className="h-full w-1/3 bg-gold-deep" />
 						</div>
 					</Reveal>
 
 					{/* Description */}
 					<Reveal delay={0.5}>
-						<p className="mt-8 max-w-lg text-base leading-relaxed text-slate-ink/85 sm:text-lg md:text-xl">
+						<p className="max-w-md text-xs leading-relaxed text-slate-ink/80 sm:text-sm md:text-base lg:text-lg">
 							Des soins sur-mesure, des techniques de pointe et une approche
 							personnalisée pour révéler la beauté naturelle de votre peau.
 						</p>
@@ -100,7 +100,7 @@ export function PrestationHero() {
 
 					{/* Buttons */}
 					<Reveal delay={0.6} direction="up">
-						<div className="mt-10 flex flex-wrap items-center gap-5">
+						<div className="mt-2 flex flex-wrap items-center gap-3 sm:gap-4">
 							<Button
 								href={waLink("Bonjour, je souhaite réserver un soin.")}
 								external
@@ -145,7 +145,7 @@ export function PrestationHero() {
 						src="/assets/images/hero-right-image.png"
 						alt=""
 						fill
-						className="object-cover object-top opacity-30"
+						className="object-cover object-top opacity-25"
 						aria-hidden
 					/>
 					<div className="absolute inset-0 bg-gradient-to-b from-ivory/80 via-ivory/40 to-ivory" />

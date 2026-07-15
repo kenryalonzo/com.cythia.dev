@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import { PrestationHero } from "@/components/PrestationHero";
+import { BeautyUnivers } from "@/components/BeautyUnivers";
 
 export const metadata: Metadata = {
 	title: "Prestations",
@@ -21,6 +22,7 @@ export default function PrestationPage() {
 			<Navbar />
 			<main className="flex flex-1 flex-col">
 				<PrestationHero />
+				<BeautyUnivers />
 			</main>
 			<Footer />
 		</>
