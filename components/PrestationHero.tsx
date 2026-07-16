@@ -70,7 +70,7 @@ export function PrestationHero() {
                   aria-hidden
                 />
               </div>
-              <span className="eyebrow !text-[10px] !tracking-[0.2em] text-gold-deep/80 sm:!text-[11px]">
+              <span className="eyebrow !text-[10px] !tracking-[0.2em] text-gold-deep/80 sm:!text-[11px] md:!text-xs">
                 L'expertise au service de votre beauté
               </span>
             </div>

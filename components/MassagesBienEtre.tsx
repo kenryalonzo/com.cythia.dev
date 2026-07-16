@@ -137,7 +137,7 @@ export function MassagesBienEtre() {
 					{/* ─── Colonne gauche : Texte ─── */}
 					<div className="flex flex-col gap-3">
 						<Reveal>
-							<span className="eyebrow !text-[9px] !tracking-[0.2em] text-gold/80 sm:!text-[10px]">
+							<span className="eyebrow !text-[9px] !tracking-[0.2em] text-gold/80 sm:!text-[10px] md:!text-xs">
 								Massages & Bien-Être
 							</span>
 						</Reveal>

@@ -182,7 +182,7 @@ export function SoinsVisage() {
           >
             <motion.span
               variants={fadeSlideUpVariants}
-              className="eyebrow !text-[9px] !tracking-[0.18em] text-gold-deep/80 sm:!text-[10px]"
+              className="eyebrow !text-[9px] !tracking-[0.18em] text-gold-deep/80 sm:!text-[10px] md:!text-xs"
             >
               Soins du visage
             </motion.span>

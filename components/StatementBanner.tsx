@@ -14,7 +14,7 @@ export function StatementBanner() {
 			className="relative overflow-hidden bg-cream py-10 md:py-14"
 		>
 			{/* Déco gold — lignes fines animées */}
-			<div className="pointer-events-none absolute inset-0" aria-hidden="true">
+			<div className="pointer-events-none absolute inset-0 max-sm:hidden" aria-hidden="true">
 				{/* Ligne gauche */}
 				<motion.div
 					initial={{ scaleX: 0 }}

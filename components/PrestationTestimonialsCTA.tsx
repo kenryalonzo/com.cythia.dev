@@ -86,7 +86,7 @@ export function PrestationTestimonialsCTA() {
 					variant="scroll"
 					className="relative bg-[#0a1d5a] px-5 py-10 md:px-10 md:py-14"
 				>
-					<div className="mx-auto max-w-[480px]">
+					<div className="mx-auto w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[480px]">
 						<span className="eyebrow inline-flex items-center gap-2 text-gold-deep/80">
 							Elles nous font confiance
 						</span>
@@ -97,7 +97,7 @@ export function PrestationTestimonialsCTA() {
 							récompense.
 						</h2>
 
-						<div className="mt-6 flex gap-3">
+						<div className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-3">
 							{testimonials.map((t, i) => (
 								<motion.div
 									key={t.name}
@@ -143,19 +143,19 @@ export function PrestationTestimonialsCTA() {
 					<motion.div
 						animate={{ y: [0, -6, 0], rotate: [0, 2, 0] }}
 						transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-						className="absolute -right-4 top-1/2 -translate-y-1/2 opacity-40 sm:right-4 sm:opacity-100 lg:right-8"
+						className="absolute -right-6 top-1/2 -translate-y-1/2 opacity-25 sm:-right-4 sm:opacity-60 md:opacity-100 lg:right-0"
 					>
 						<Image
 							src="/assets/images/lotus-cote-droit.png"
 							alt=""
-							width={280}
-							height={280}
+							width={200}
+							height={200}
 							style={{ width: "auto", height: "auto" }}
-							className="object-contain drop-shadow-[0_0_30px_rgba(253,207,2,0.4)]"
+							className="object-contain sm:w-[240px] md:w-[280px] drop-shadow-[0_0_30px_rgba(253,207,2,0.4)]"
 						/>
 					</motion.div>
 
-					<div className="relative z-10 mx-auto max-w-[340px] text-center lg:mx-0 lg:text-left">
+					<div className="relative z-10 mx-auto w-full max-w-[280px] sm:max-w-[340px] text-center lg:mx-0 lg:text-left">
 						<h2 className="font-display text-2xl font-bold leading-[1.15] tracking-tight text-royal sm:text-3xl">
 							<span className="text-gradient-gold">Prête à révéler</span>
 							<br />
@@ -212,7 +212,7 @@ export function PrestationTestimonialsCTA() {
 
 				{/* Contenu FAQ — gauche uniquement */}
 				<div className="relative z-10 px-5 py-10 md:px-10 md:py-14">
-					<div className="mx-auto max-w-[520px]">
+					<div className="mx-auto w-full max-w-[400px] sm:max-w-[520px]">
 						<span className="eyebrow inline-flex items-center gap-2 text-gold-deep">
 							Questions fréquentes
 						</span>
