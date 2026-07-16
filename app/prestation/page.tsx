@@ -4,6 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { PrestationHero } from "@/components/PrestationHero";
 import { BeautyUnivers } from "@/components/BeautyUnivers";
 import { SoinsVisage } from "@/components/SoinsVisage";
+import { MicroneedlingExpert } from "@/components/MicroneedlingExpert";
 
 export const metadata: Metadata = {
   title: "Prestations",
@@ -25,6 +26,7 @@ export default function PrestationPage() {
         <PrestationHero />
         <BeautyUnivers />
         <SoinsVisage />
+        <MicroneedlingExpert />
       </main>
       <Footer />
     </>
