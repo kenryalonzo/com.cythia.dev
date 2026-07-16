@@ -7,6 +7,8 @@ import { SoinsVisage } from "@/components/SoinsVisage";
 import { MicroneedlingExpert } from "@/components/MicroneedlingExpert";
 import { BeauteDuRegard } from "@/components/BeauteDuRegard";
 import { MassagesBienEtre } from "@/components/MassagesBienEtre";
+import { EpilationFormations } from "@/components/EpilationFormations";
+import { PrestationTestimonialsCTA } from "@/components/PrestationTestimonialsCTA";
 
 export const metadata: Metadata = {
   title: "Prestations",
@@ -31,6 +33,8 @@ export default function PrestationPage() {
         <MicroneedlingExpert />
         <BeauteDuRegard />
         <MassagesBienEtre />
+        <EpilationFormations />
+        <PrestationTestimonialsCTA />
       </main>
       <Footer />
     </>
