@@ -93,10 +93,30 @@ const treatments = [
   },
 ];
 
+const easeLuxe = [0.22, 1, 0.36, 1] as [number, number, number, number];
+
+const staggerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.06, delayChildren: 0.1 },
+  },
+};
+
+const fadeSlideUpVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: easeLuxe } },
+};
+
+const fadeSlideLeftVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: easeLuxe } },
+};
+
 export function SoinsVisage() {
   return (
     <section className="relative overflow-hidden bg-cream py-6 md:py-10">
-      {/* Décorations animées */}
+      {/* Décorations animées — float subtil */}
       <motion.div
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
@@ -129,12 +149,17 @@ export function SoinsVisage() {
       </motion.div>
 
       <div className="container-luxe relative z-10">
-        {/* Mobile: 1 colonne | Desktop: 3 colonnes */}
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-[0.7fr_0.6fr_1fr] lg:items-start lg:gap-5">
-          {/* ─── Colonne 1 : Image ─── */}
-          <Reveal direction="left" className="flex">
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-[0.7fr_0.6fr_1fr] lg:gap-5">
+          {/* ─── Colonne 1 : Image — fade + slide left ─── */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeSlideLeftVariants}
+            className="flex"
+          >
             <div className="flex w-full overflow-hidden rounded-xl bg-royal shadow-card">
-              <div className="relative min-h-[200px] w-full flex-1 md:min-h-[260px] lg:min-h-[320px]">
+              <div className="relative h-full w-full min-h-[200px] md:min-h-[260px]">
                 <Image
                   src="/assets/images/cleanup.png"
                   alt="Soin du visage expert"
@@ -145,77 +170,113 @@ export function SoinsVisage() {
                 />
               </div>
             </div>
-          </Reveal>
+          </motion.div>
 
-          {/* ─── Colonne 2 : Texte + Bouton ─── */}
-          <div className="flex flex-col gap-2">
-            <Reveal>
-              <span className="eyebrow !text-[9px] !tracking-[0.18em] text-gold-deep/80 sm:!text-[10px]">
-                Soins du visage
+          {/* ─── Colonne 2 : Texte + Bouton — fade + slide up ─── */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={staggerVariants}
+            className="flex flex-col gap-2 py-6"
+          >
+            <motion.span
+              variants={fadeSlideUpVariants}
+              className="eyebrow !text-[9px] !tracking-[0.18em] text-gold-deep/80 sm:!text-[10px]"
+            >
+              Soins du visage
+            </motion.span>
+
+            <motion.h2
+              variants={fadeSlideUpVariants}
+              className="font-display text-lg font-bold leading-[1.1] tracking-tight text-royal sm:text-xl lg:text-2xl"
+            >
+              Une peau saine, éclatante et{" "}
+              <span className="text-gradient-gold font-normal italic">
+                équilibrée.
               </span>
-            </Reveal>
+            </motion.h2>
 
-            <Reveal delay={0.1}>
-              <h2 className="font-display text-lg font-bold leading-[1.1] tracking-tight text-royal sm:text-xl lg:text-2xl">
-                Une peau saine, éclatante et{" "}
-                <span className="text-gradient-gold font-normal italic">
-                  équilibrée.
-                </span>
-              </h2>
-            </Reveal>
+            <motion.div
+              variants={fadeSlideUpVariants}
+              className="h-0.5 w-8 bg-royal/10 sm:w-10"
+            >
+              <div className="h-full w-1/3 bg-gold-deep" />
+            </motion.div>
 
-            <Reveal delay={0.15} direction="none">
-              <div className="h-0.5 w-8 bg-royal/10 sm:w-10">
-                <div className="h-full w-1/3 bg-gold-deep" />
-              </div>
-            </Reveal>
+            <motion.p
+              variants={fadeSlideUpVariants}
+              className="max-w-[260px] text-xs leading-relaxed text-slate-ink/80"
+            >
+              Nos soins visages sont conçus pour répondre aux besoins
+              specifiques de votre peau avec des produits professionnels et des
+              techniques expertes.
+            </motion.p>
 
-            <Reveal delay={0.2}>
-              <p className="max-w-[260px] text-xs leading-relaxed text-slate-ink/80">
-                Nos soins visages sont conçus pour répondre aux besoins
-                specifiques de votre peau avec des produits professionnels et
-                des techniques expertes.
-              </p>
-            </Reveal>
-
-            <Reveal delay={0.3}>
+            <motion.div variants={fadeSlideUpVariants}>
               <Link
                 href="#soins-visage"
                 className="mt-0.5 inline-flex items-center justify-center rounded-full bg-royal px-4 py-2 font-sans text-[10px] font-bold uppercase tracking-[0.08em] text-ivory shadow-soft transition-all hover:bg-royal-light hover:shadow-lift sm:w-fit"
               >
                 Voir tous les soins
               </Link>
-            </Reveal>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          {/* ─── Colonne 3 : 4 cartes en 2x2 ─── */}
-          <div className="grid grid-cols-2 gap-2 sm:gap-2.5">
+          {/* ─── Colonne 3 : Cartes en 2x2 — staggered ─── */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.07 } },
+            }}
+            className="grid grid-cols-2 gap-2 sm:gap-2.5"
+          >
             {treatments.map((treatment, i) => (
-              <Reveal key={treatment.name} delay={0.1 + i * 0.06}>
+              <motion.div
+                key={treatment.name}
+                variants={{
+                  hidden: { opacity: 0, y: 20, scale: 0.95 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    transition: { duration: 0.5, ease: easeLuxe },
+                  },
+                }}
+                whileHover={{
+                  y: -4,
+                  scale: 1.02,
+                  boxShadow: "0 18px 50px -20px rgba(9, 52, 133, 0.14)",
+                  transition: { type: "spring", stiffness: 300, damping: 20 },
+                }}
+                whileTap={{ scale: 0.98 }}
+                className="flex h-full flex-col gap-1 rounded-lg bg-ivory p-2.5 shadow-soft ring-1 ring-slate-line/20 hover:shadow-card sm:p-3"
+              >
                 <motion.div
-                  whileHover={{ y: -3 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 24 }}
-                  className="flex h-full flex-col gap-1 rounded-lg bg-ivory p-2.5 shadow-soft ring-1 ring-slate-line/20 transition-shadow hover:shadow-card sm:p-3"
+                  whileHover={{ rotate: 5, scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                  className="flex h-6 w-6 items-center justify-center rounded-full bg-gold/15 text-gold-deep"
                 >
-                  <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gold/15 text-gold-deep">
-                    {treatment.icon}
-                  </div>
-                  <h3 className="font-display text-[11px] font-bold text-royal sm:text-xs">
-                    {treatment.name}
-                  </h3>
-                  <p className="text-[10px] leading-relaxed text-slate-soft sm:text-[11px]">
-                    {treatment.description}
-                  </p>
-                  <div className="mt-auto pt-0.5">
-                    <p className="text-[10px] font-semibold text-gold-deep sm:text-[11px]">
-                      Dès{" "}
-                      <span className="font-bold">{treatment.price} FCFA</span>
-                    </p>
-                  </div>
+                  {treatment.icon}
                 </motion.div>
-              </Reveal>
+                <h3 className="font-display text-[11px] font-bold text-royal sm:text-xs">
+                  {treatment.name}
+                </h3>
+                <p className="text-[10px] leading-relaxed text-slate-soft sm:text-[11px]">
+                  {treatment.description}
+                </p>
+                <div className="mt-auto pt-0.5">
+                  <p className="text-[10px] font-semibold text-gold-deep sm:text-[11px]">
+                    Dès{" "}
+                    <span className="font-bold">{treatment.price} FCFA</span>
+                  </p>
+                </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
