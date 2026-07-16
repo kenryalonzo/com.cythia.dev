@@ -74,23 +74,33 @@ export function BeauteDuRegard() {
 			<div className="container-luxe relative z-10">
 				<div className="flex flex-col items-center gap-5 lg:flex-row lg:items-center lg:gap-6">
 					{/* ─── Colonne gauche : Texte ─── */}
-					<div className="flex shrink-0 max-w-[260px] flex-col gap-2">
+					<div className="flex shrink-0 flex-col gap-2">
 						<Reveal>
 							<span className="eyebrow !text-[9px] !tracking-[0.2em] text-gold-deep/80 sm:!text-[10px]">
 								Beauté du regard
 							</span>
 						</Reveal>
 
-						<Reveal delay={0.1}>
-							<h2 className="font-display text-2xl font-bold leading-[1.1] tracking-tight text-royal sm:text-3xl">
-								Un regard qui{" "}
-								<br className="hidden sm:block" />
-								sublime votre{" "}
-								<span className="text-gradient-gold font-normal italic">
-									beauté.
-								</span>
-							</h2>
-						</Reveal>
+						{/* Titre + Description côte à côte */}
+						<div className="flex flex-col gap-3 sm:flex-row sm:items-baseline sm:gap-4">
+							<Reveal delay={0.1}>
+								<h2 className="font-display text-2xl font-bold leading-[1.1] tracking-tight text-royal sm:text-3xl">
+									Un regard qui{" "}
+									<br className="hidden sm:block" />
+									sublime votre{" "}
+									<span className="text-gradient-gold font-normal italic">
+										beauté.
+									</span>
+								</h2>
+							</Reveal>
+
+							<Reveal delay={0.2}>
+								<p className="max-w-[200px] text-xs leading-relaxed text-slate-ink/80 sm:text-sm">
+									Des techniques précises pour intensifier votre regard
+									et mettre en valeur votre beauté naturelle.
+								</p>
+							</Reveal>
+						</div>
 
 						<Reveal delay={0.15} direction="none">
 							<div className="h-0.5 w-10 bg-royal/10 sm:w-14">
@@ -98,17 +108,10 @@ export function BeauteDuRegard() {
 							</div>
 						</Reveal>
 
-						<Reveal delay={0.2}>
-							<p className="text-xs leading-relaxed text-slate-ink/80 sm:text-sm">
-								Des techniques précises pour intensifier votre regard
-								et mettre en valeur votre beauté naturelle.
-							</p>
-						</Reveal>
-
 						<Reveal delay={0.3}>
 							<Link
 								href="#beaute-regard"
-								className="animate-pulse-glow mt-1 inline-flex items-center justify-center rounded-full bg-gold px-6 py-2.5 font-sans text-[10px] font-bold uppercase tracking-[0.08em] text-royal shadow-gold transition-all hover:shadow-lift sm:w-fit"
+								className="animate-pulse-glow mt-1 inline-flex w-fit items-center justify-center rounded-full bg-gold px-6 py-2.5 font-sans text-[10px] font-bold uppercase tracking-[0.08em] text-royal shadow-gold transition-all hover:shadow-lift whitespace-nowrap"
 							>
 								Découvrir toutes les prestations
 							</Link>
