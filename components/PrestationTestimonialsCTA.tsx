@@ -12,28 +12,22 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 type Testimonial = {
 	name: string;
-	role: string;
 	quote: string;
 	image: string;
-	rating: number;
 };
 
 const testimonials: Testimonial[] = [
 	{
 		name: "Marie L.",
-		role: "Cliente fidèle",
 		quote:
 			"Ma peau a complètement changé ! Les soins sont incroyables, ma peau n'a jamais été aussi lumineuse et douce. Merci Cynthia !",
 		image: "/assets/images/testimonie1.jpg",
-		rating: 5,
 	},
 	{
 		name: "Aïcha D.",
-		role: "Cliente régulière",
 		quote:
 			"Professionnelle, accueil chaleureux et résultats visibles dès les premières séances. Je recommande les yeux fermés !",
 		image: "/assets/images/testimonie3.jpg",
-		rating: 5,
 	},
 ];
 
@@ -44,7 +38,7 @@ type FAQ = {
 
 const faqs: FAQ[] = [
 	{
-		question: "Comment choisir le soin adapté à ma peau ? ?",
+		question: "Comment choisir le soin adapté à ma peau ?",
 		answer:
 			"Lors de votre première visite, nous réalisons un diagnostic complet de votre peau pour vous recommander les soins les plus adaptés à vos besoins.",
 	},
@@ -65,13 +59,13 @@ const faqs: FAQ[] = [
 	},
 ];
 
-function RatingStars({ count }: { count: number }) {
+function RatingStars() {
 	return (
 		<div className="flex gap-0.5">
-			{Array.from({ length: count }).map((_, i) => (
+			{Array.from({ length: 5 }).map((_, i) => (
 				<Star
 					key={`star-${i}`}
-					size={14}
+					size={12}
 					className="fill-gold text-gold"
 				/>
 			))}
@@ -90,51 +84,47 @@ export function PrestationTestimonialsCTA() {
 				<Reveal
 					as="div"
 					variant="scroll"
-					className="relative bg-[#0a1d5a] px-6 py-14 md:px-12 md:py-20"
+					className="relative bg-[#0a1d5a] px-5 py-10 md:px-10 md:py-14"
 				>
-					<div className="mx-auto max-w-[520px]">
+					<div className="mx-auto max-w-[480px]">
 						<span className="eyebrow inline-flex items-center gap-2 text-gold-deep/80">
-							<span className="h-px w-6 bg-gold-deep/60" aria-hidden />
 							Elles nous font confiance
 						</span>
 
-						<h2 className="mt-3 font-display text-3xl font-bold leading-[1.15] tracking-tight text-ivory sm:text-4xl">
+						<h2 className="mt-2 font-display text-2xl font-bold leading-[1.15] tracking-tight text-ivory sm:text-3xl">
 							Leurs{" "}
 							<span className="text-gradient-gold">avis</span>, notre plus belle
 							récompense.
 						</h2>
 
-						<div className="mt-8 space-y-4">
+						<div className="mt-6 flex gap-3">
 							{testimonials.map((t, i) => (
 								<motion.div
 									key={t.name}
-									initial={{ opacity: 0, y: 20 }}
+									initial={{ opacity: 0, y: 16 }}
 									whileInView={{ opacity: 1, y: 0 }}
 									viewport={{ once: true }}
-									transition={{ delay: i * 0.15, duration: 0.6, ease }}
-									className="rounded-2xl bg-white/10 p-5 backdrop-blur-sm ring-1 ring-white/15"
+									transition={{ delay: i * 0.15, duration: 0.5, ease }}
+									className="flex-1 rounded-xl bg-white/10 p-4 backdrop-blur-sm ring-1 ring-white/15"
 								>
-									<div className="flex items-center gap-3">
-										<span className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full bg-gray-300 ring-2 ring-gold/40">
+									<div className="flex items-center gap-2.5">
+										<span className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full bg-gray-300 ring-2 ring-gold/40">
 											<Image
 												src={t.image}
 												alt={t.name}
 												fill
-												sizes="44px"
+												sizes="36px"
 												className="object-cover"
 											/>
 										</span>
 										<div>
-											<span className="block font-display text-sm font-semibold text-ivory">
+											<span className="block font-display text-xs font-semibold text-ivory">
 												{t.name}
 											</span>
-											<span className="block text-xs text-ivory/50">
-												{t.role}
-											</span>
+											<RatingStars />
 										</div>
 									</div>
-									<RatingStars count={t.rating} />
-									<p className="mt-3 text-sm leading-relaxed text-ivory/70">
+									<p className="mt-2 text-xs leading-relaxed text-ivory/65">
 										« {t.quote} »
 									</p>
 								</motion.div>
@@ -143,41 +133,42 @@ export function PrestationTestimonialsCTA() {
 					</div>
 				</Reveal>
 
-				{/* ── CTA Lotus (light bg) ── */}
+				{/* ── CTA Lotus (cream) ── */}
 				<Reveal
 					as="div"
 					variant="scroll"
-					className="relative flex items-center bg-cream px-6 py-14 md:px-12 md:py-20"
+					className="relative flex items-center bg-cream px-5 py-10 md:px-10 md:py-14"
 				>
+					{/* Lotus grand — droite */}
 					<motion.div
-						animate={{ y: [0, -8, 0], rotate: [0, 2, 0] }}
+						animate={{ y: [0, -6, 0], rotate: [0, 2, 0] }}
 						transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-						className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/3 opacity-30 lg:opacity-100"
+						className="absolute -right-4 top-1/2 -translate-y-1/2 opacity-40 sm:right-4 sm:opacity-100 lg:right-8"
 					>
 						<Image
 							src="/assets/images/lotus-cote-droit.png"
 							alt=""
-							width={320}
-							height={320}
+							width={280}
+							height={280}
 							style={{ width: "auto", height: "auto" }}
-							className="object-contain drop-shadow-[0_0_30px_rgba(253,207,2,0.5)]"
+							className="object-contain drop-shadow-[0_0_30px_rgba(253,207,2,0.4)]"
 						/>
 					</motion.div>
 
-					<div className="relative z-10 mx-auto max-w-[380px] text-center lg:mx-0 lg:text-left">
-						<h2 className="font-display text-3xl font-bold leading-[1.15] tracking-tight text-royal sm:text-4xl">
+					<div className="relative z-10 mx-auto max-w-[340px] text-center lg:mx-0 lg:text-left">
+						<h2 className="font-display text-2xl font-bold leading-[1.15] tracking-tight text-royal sm:text-3xl">
 							<span className="text-gradient-gold">Prête à révéler</span>
 							<br />
 							la meilleure version
 							<br />
 							de vous-même ?
 						</h2>
-						<p className="mt-4 text-sm leading-relaxed text-slate-ink/70">
+						<p className="mt-3 text-xs leading-relaxed text-slate-ink/65">
 							Réservez votre consultation dès maintenant
 							<br />
 							et commencez votre transformation.
 						</p>
-						<div className="mt-6 lg:text-left">
+						<div className="mt-5 lg:text-left">
 							<Button
 								href={waLink()}
 								external
@@ -202,70 +193,75 @@ export function PrestationTestimonialsCTA() {
 				</Reveal>
 			</div>
 
-			{/* ── Bottom: FAQ ── */}
+			{/* ── Bottom: FAQ avec background ── */}
 			<Reveal
 				as="div"
 				variant="scroll"
-				className="bg-ivory px-6 py-14 md:px-12 md:py-20"
+				className="relative overflow-hidden bg-ivory"
 			>
-				<div className="mx-auto max-w-[680px]">
-					<span className="eyebrow inline-flex items-center gap-2">
-						<span className="h-px w-6 bg-gold-deep/60" aria-hidden />
-						Questions fréquentes
-					</span>
+				{/* Image de fond */}
+				<div className="absolute inset-0 z-0">
+					<Image
+						src="/assets/images/background_last_section.png"
+						alt=""
+						fill
+						sizes="100vw"
+						className="object-cover"
+					/>
+				</div>
 
-					<h2 className="mt-3 font-display text-2xl font-bold leading-[1.15] tracking-tight text-royal sm:text-3xl">
-						Tout ce que vous{" "}
-						<span className="text-gradient-gold">savoir</span>.
-					</h2>
+				{/* Contenu FAQ — gauche uniquement */}
+				<div className="relative z-10 px-5 py-10 md:px-10 md:py-14">
+					<div className="mx-auto max-w-[520px]">
+						<span className="eyebrow inline-flex items-center gap-2 text-gold-deep">
+							Questions fréquentes
+						</span>
 
-					<div className="mt-6 space-y-2">
-						{faqs.map((faq, i) => (
-							<motion.div
-								key={faq.question}
-								initial={{ opacity: 0, y: 16 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
-								transition={{ delay: i * 0.1, duration: 0.5, ease }}
-								className="overflow-hidden rounded-xl bg-cream ring-1 ring-slate-line/25"
-							>
-								<button
-									type="button"
-									onClick={() =>
-										setOpenIndex(openIndex === i ? null : i)
-									}
-									className="flex w-full items-center justify-between gap-4 p-4 text-left"
+						<div className="mt-5 space-y-0">
+							{faqs.map((faq, i) => (
+								<motion.div
+									key={faq.question}
+									initial={{ opacity: 0, x: -16 }}
+									whileInView={{ opacity: 1, x: 0 }}
+									viewport={{ once: true }}
+									transition={{ delay: i * 0.08, duration: 0.4, ease }}
+									className="border-b border-slate-line/30 last:border-b-0"
 								>
-									<span className="font-display text-sm font-semibold text-royal">
-										{faq.question}
-									</span>
-									<motion.span
-										animate={{ rotate: openIndex === i ? 45 : 0 }}
-										transition={{ duration: 0.2 }}
-										className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold-soft text-gold-deep"
+									<button
+										type="button"
+										onClick={() =>
+											setOpenIndex(openIndex === i ? null : i)
+										}
+										className="flex w-full items-center justify-between gap-4 py-3.5 text-left"
 									>
-										<Plus size={14} />
-									</motion.span>
-								</button>
-								<AnimatePresence initial={false}>
-									{openIndex === i && (
-										<motion.div
-											initial={{ height: 0 }}
-											animate={{ height: "auto" }}
-											exit={{ height: 0 }}
-											transition={{
-												duration: 0.3,
-												ease,
-											}}
+										<span className="font-display text-sm font-medium text-royal">
+											{faq.question}
+										</span>
+										<motion.span
+											animate={{ rotate: openIndex === i ? 45 : 0 }}
+											transition={{ duration: 0.2 }}
+											className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-gold-deep"
 										>
-											<p className="px-4 pb-4 text-xs leading-relaxed text-slate-ink/65">
-												{faq.answer}
-											</p>
-										</motion.div>
-									)}
-								</AnimatePresence>
-							</motion.div>
-						))}
+											<Plus size={14} />
+										</motion.span>
+									</button>
+									<AnimatePresence initial={false}>
+										{openIndex === i && (
+											<motion.div
+												initial={{ height: 0 }}
+												animate={{ height: "auto" }}
+												exit={{ height: 0 }}
+												transition={{ duration: 0.3, ease }}
+											>
+												<p className="pb-3.5 text-xs leading-relaxed text-slate-ink/60">
+													{faq.answer}
+												</p>
+											</motion.div>
+										)}
+									</AnimatePresence>
+								</motion.div>
+							))}
+						</div>
 					</div>
 				</div>
 			</Reveal>
