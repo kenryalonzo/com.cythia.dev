@@ -75,13 +75,13 @@ export function Navbar() {
 					))}
 				</ul>
 
-				{/* Right — CTA */}
+				{/* Right — CTA desktop uniquement (même breakpoint que les nav links) */}
 				<div className="flex items-center gap-3">
 					<Button
 						href={waLink()}
 						external
 						size="md"
-						className="hidden animate-pulse-glow shadow-gold sm:inline-flex"
+						className="hidden animate-pulse-glow shadow-gold lg:inline-flex"
 						icon={<WhatsAppIcon className="h-4 w-4" />}
 					>
 						Réserver
@@ -136,7 +136,7 @@ export function Navbar() {
 									href={waLink()}
 									external
 									size="lg"
-									className="w-full"
+									className="w-full animate-pulse-glow shadow-gold"
 									icon={<WhatsAppIcon className="h-4 w-4" />}
 								>
 									Réserver via WhatsApp
