@@ -83,7 +83,7 @@ function LuminousDust() {
 
 export function MassagesBienEtre() {
 	return (
-		<section className="relative overflow-hidden bg-[#0a1d5a] py-10 md:py-14">
+		<Reveal as="section" variant="scroll" className="relative overflow-hidden bg-[#0a1d5a] py-10 md:py-14">
 			{/* ─── Fond doré animé ─── */}
 			<div className="pointer-events-none absolute inset-0">
 				{/* Gradient radial doré */}
@@ -231,6 +231,6 @@ export function MassagesBienEtre() {
 					</motion.div>
 				</div>
 			</div>
-		</section>
+		</Reveal>
 	);
 }

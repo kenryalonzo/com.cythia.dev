@@ -63,7 +63,7 @@ const treatments = [
 
 export function BeauteDuRegard() {
 	return (
-		<section className="relative overflow-hidden bg-cream py-8 md:py-10">
+		<Reveal as="section" variant="scroll" className="relative overflow-hidden bg-cream py-8 md:py-10">
 			{/* Filaments dorés en arrière-plan — multiples */}
 			<Filaments intensity="soft" />
 			<Filaments intensity="subtle" className="rotate-45 scale-110" />
@@ -176,6 +176,6 @@ export function BeauteDuRegard() {
 					</motion.div>
 				</div>
 			</div>
-		</section>
+		</Reveal>
 	);
 }

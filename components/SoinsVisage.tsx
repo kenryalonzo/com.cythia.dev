@@ -115,7 +115,7 @@ const fadeSlideLeftVariants = {
 
 export function SoinsVisage() {
   return (
-    <section className="relative overflow-hidden bg-cream py-6 md:py-10">
+    <Reveal as="section" variant="scroll" className="relative overflow-hidden bg-cream py-6 md:py-10">
       {/* Décorations animées — float subtil */}
       <motion.div
         animate={{ y: [0, -8, 0] }}
@@ -279,6 +279,6 @@ export function SoinsVisage() {
           </motion.div>
         </div>
       </div>
-    </section>
+    </Reveal>
   );
 }

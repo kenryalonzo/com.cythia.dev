@@ -89,7 +89,7 @@ export function BeautyUnivers() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-ivory pt-10 pb-12 md:pt-16 md:pb-16">
+    <Reveal as="section" variant="scroll" className="relative overflow-hidden bg-ivory pt-10 pb-12 md:pt-16 md:pb-16">
       {/* ─── Layer 0: Decorative Silk Backgrounds with float animation ─── */}
       <motion.div
         animate={{ y: [0, -12, 0] }}
@@ -211,6 +211,6 @@ export function BeautyUnivers() {
           </div>
         </div>
       </div>
-    </section>
+    </Reveal>
   );
 }

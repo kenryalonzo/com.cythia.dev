@@ -77,7 +77,7 @@ export function PrestationTestimonialsCTA() {
 	const [openIndex, setOpenIndex] = useState<number | null>(null);
 
 	return (
-		<section className="overflow-hidden">
+		<Reveal as="section" variant="scroll" className="overflow-hidden">
 			{/* ── Top: Témoignages + CTA ── */}
 			<div className="grid grid-cols-1 lg:grid-cols-2">
 				{/* ── Témoignages (dark navy) ── */}
@@ -265,6 +265,6 @@ export function PrestationTestimonialsCTA() {
 					</div>
 				</div>
 			</Reveal>
-		</section>
+		</Reveal>
 	);
 }

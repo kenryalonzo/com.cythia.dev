@@ -16,7 +16,7 @@ import { cn } from "@/lib/utils";
  */
 export function PrestationHero() {
   return (
-    <section className="relative w-full overflow-hidden bg-ivory">
+    <Reveal as="section" variant="scroll" className="relative w-full overflow-hidden bg-ivory">
       {/* ─── Layer 1: Global Silk Background ─── */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -56,7 +56,7 @@ export function PrestationHero() {
 
       {/* ─── Layer 3: Content (Left) ─── */}
       <div className="container-luxe relative z-20 flex min-h-[540px] flex-col justify-center pt-28 pb-10 sm:min-h-[600px] lg:min-h-[70vh] lg:pt-0 lg:pb-0">
-        <div className="flex max-w-xl flex-col gap-3 lg:gap-4 xl:max-w-2xl">
+        <div className="flex max-w-xl flex-col gap-1 lg:gap-2 xl:max-w-2xl">
           {/* Eyebrow — collé au titre */}
           <Reveal direction="down" delay={0.2}>
             <div className="flex items-center gap-2">
@@ -154,6 +154,6 @@ export function PrestationHero() {
           <div className="absolute inset-0 bg-gradient-to-b from-ivory/80 via-ivory/40 to-ivory" />
         </div>
       </div>
-    </section>
+    </Reveal>
   );
 }
