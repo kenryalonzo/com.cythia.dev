@@ -147,12 +147,12 @@ export function EpilationFormations() {
 						</div>
 
 						{/* CTA */}
-						<div className="relative z-10 mt-3 ml-auto">
+						<div className="relative z-10 mt-3 flex justify-center">
 							<Button
 								href={waLink("formations")}
 								external
 								variant="gold"
-								size="lg"
+								size="md"
 								className="animate-pulse-glow whitespace-nowrap shadow-gold"
 							>
 								Découvrir nos formations

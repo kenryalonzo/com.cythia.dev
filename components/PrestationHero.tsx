@@ -109,7 +109,7 @@ export function PrestationHero() {
                 external
                 variant="gold"
                 size="lg"
-                className="animate-pulse-glow shadow-gold hover:shadow-lift"
+                className="w-full sm:w-auto animate-pulse-glow shadow-gold hover:shadow-lift"
                 icon={<WhatsAppIcon className="h-4 w-4" />}
               >
                 Réserver maintenant
@@ -118,7 +118,7 @@ export function PrestationHero() {
                 href="/contact"
                 variant="outline-gold"
                 size="lg"
-                className="group border-gold-deep/30"
+                className="w-full sm:w-auto group border-gold-deep/30"
               >
                 Nous contacter
                 <svg

@@ -178,7 +178,7 @@ export function SoinsVisage() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={staggerVariants}
-            className="flex flex-col gap-2 py-6"
+            className="flex flex-col items-center text-center gap-2 py-6"
           >
             <motion.span
               variants={fadeSlideUpVariants}

@@ -95,7 +95,7 @@ export function BeauteDuRegard() {
 							</Reveal>
 
 							<Reveal delay={0.2}>
-								<p className="w-full max-w-[200px] text-xs leading-relaxed text-slate-ink/80 sm:max-w-[280px] sm:text-sm lg:max-w-[360px]">
+								<p className="w-full max-w-[200px] text-xs leading-relaxed text-slate-ink/80 sm:max-w-[280px] lg:max-w-[260px]">
 									Des techniques précises pour intensifier votre regard
 									et mettre en valeur votre beauté naturelle.
 								</p>
