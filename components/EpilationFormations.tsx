@@ -46,12 +46,10 @@ export function EpilationFormations() {
 								sizes="(max-width: 1024px) 100vw, 50vw"
 								className="object-cover"
 							/>
-							{/* Overlay gradient gauche → droite pour lisibilité */}
-							<div className="absolute inset-0 bg-gradient-to-r from-ivory/95 via-ivory/70 to-transparent" />
 						</div>
 
-						{/* Contenu */}
-						<div className="relative z-10 max-w-[340px]">
+						{/* Contenu — fond semi-transparent pour lisibilité */}
+						<div className="relative z-10 max-w-[340px] rounded-2xl bg-ivory/80 p-5 backdrop-blur-sm">
 							<span className="eyebrow inline-flex items-center gap-2 text-gold-deep">
 								Épilation experte
 							</span>
@@ -82,10 +80,12 @@ export function EpilationFormations() {
 						</div>
 
 						{/* Prix */}
-						<div className="relative z-10 mt-5">
+						<div className="relative z-10 mt-5 rounded-xl bg-ivory/80 px-4 py-2 backdrop-blur-sm">
 							<p className="font-display text-sm font-semibold text-royal">
 								À partir de{" "}
-								<span className="text-lg text-gold-deep">3 000 FCFA</span>
+								<span className="text-lg font-bold text-gold-deep">
+									3 000 FCFA
+								</span>
 							</p>
 						</div>
 					</div>
@@ -107,10 +107,10 @@ export function EpilationFormations() {
 								alt=""
 								fill
 								sizes="(max-width: 1024px) 100vw, 50vw"
-								className="object-cover"
+								className="object-cover object-right"
 							/>
 							{/* Overlay */}
-							<div className="absolute inset-0 bg-gradient-to-l from-ivory/95 via-ivory/70 to-transparent" />
+							<div className="absolute inset-0 bg-gradient-to-l from-ivory/90 via-ivory/60 to-transparent" />
 						</div>
 
 						{/* Contenu */}
@@ -151,7 +151,7 @@ export function EpilationFormations() {
 								external
 								variant="gold"
 								size="lg"
-								className="whitespace-nowrap shadow-gold"
+								className="animate-pulse-glow whitespace-nowrap shadow-gold"
 							>
 								Découvrir nos formations
 							</Button>
