@@ -155,6 +155,7 @@ export function PrestationHero() {
             alt=""
             fill
             sizes="100vw"
+            priority
             className="object-cover object-top opacity-25"
             aria-hidden
           />

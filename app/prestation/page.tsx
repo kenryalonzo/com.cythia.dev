@@ -1,15 +1,37 @@
 import type { Metadata } from "next";
-import { Footer } from "@/components/Footer";
+import dynamic from "next/dynamic";
 import { Navbar } from "@/components/Navbar";
 import { PrestationHero } from "@/components/PrestationHero";
-import { BeautyUnivers } from "@/components/BeautyUnivers";
-import { SoinsVisage } from "@/components/SoinsVisage";
-import { MicroneedlingExpert } from "@/components/MicroneedlingExpert";
-import { BeauteDuRegard } from "@/components/BeauteDuRegard";
-import { MassagesBienEtre } from "@/components/MassagesBienEtre";
-import { EpilationFormations } from "@/components/EpilationFormations";
-import { StatementBanner } from "@/components/StatementBanner";
-import { PrestationTestimonialsCTA } from "@/components/PrestationTestimonialsCTA";
+
+const BeautyUnivers = dynamic(() =>
+  import("@/components/BeautyUnivers").then((m) => m.BeautyUnivers),
+);
+const SoinsVisage = dynamic(() =>
+  import("@/components/SoinsVisage").then((m) => m.SoinsVisage),
+);
+const MicroneedlingExpert = dynamic(() =>
+  import("@/components/MicroneedlingExpert").then((m) => m.MicroneedlingExpert),
+);
+const BeauteDuRegard = dynamic(() =>
+  import("@/components/BeauteDuRegard").then((m) => m.BeauteDuRegard),
+);
+const MassagesBienEtre = dynamic(() =>
+  import("@/components/MassagesBienEtre").then((m) => m.MassagesBienEtre),
+);
+const EpilationFormations = dynamic(() =>
+  import("@/components/EpilationFormations").then((m) => m.EpilationFormations),
+);
+const StatementBanner = dynamic(() =>
+  import("@/components/StatementBanner").then((m) => m.StatementBanner),
+);
+const PrestationTestimonialsCTA = dynamic(() =>
+  import("@/components/PrestationTestimonialsCTA").then(
+    (m) => m.PrestationTestimonialsCTA,
+  ),
+);
+const Footer = dynamic(() =>
+  import("@/components/Footer").then((m) => m.Footer),
+);
 
 export const metadata: Metadata = {
   title: "Prestations",
