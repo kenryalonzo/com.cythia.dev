@@ -8,6 +8,7 @@ import { MicroneedlingExpert } from "@/components/MicroneedlingExpert";
 import { BeauteDuRegard } from "@/components/BeauteDuRegard";
 import { MassagesBienEtre } from "@/components/MassagesBienEtre";
 import { EpilationFormations } from "@/components/EpilationFormations";
+import { StatementBanner } from "@/components/StatementBanner";
 import { PrestationTestimonialsCTA } from "@/components/PrestationTestimonialsCTA";
 
 export const metadata: Metadata = {
@@ -34,6 +35,7 @@ export default function PrestationPage() {
         <BeauteDuRegard />
         <MassagesBienEtre />
         <EpilationFormations />
+        <StatementBanner />
         <PrestationTestimonialsCTA />
       </main>
       <Footer />
