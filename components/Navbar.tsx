@@ -41,21 +41,19 @@ export function Navbar() {
 					: "border-b border-transparent bg-transparent",
 			)}
 		>
-			<nav className="container-luxe flex h-24 items-center justify-between gap-4 sm:h-28">
+			<nav className="container-luxe flex items-center justify-between gap-4 py-1 sm:py-1.5">
 				{/* Logo */}
 				<a
 					href="#accueil"
 					className="relative z-10 flex shrink-0 items-center"
 					aria-label="Cynthia Cosmétique — accueil"
 				>
-					{/* NOTE: logo text is royal+gold; we tint via CSS on white version if needed.
-              Using the provided PNG as-is. */}
 					<img
 						src="/cynthia-logo.svg"
 						alt="Cynthia Cosmétique"
-						width={72}
-						height={72}
-						className="h-24 w-24 sm:h-28 sm:w-28"
+						width={56}
+						height={56}
+						className="h-10 w-10 sm:h-12 sm:w-12"
 					/>
 				</a>
 
