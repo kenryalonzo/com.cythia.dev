@@ -53,7 +53,7 @@ export function Navbar() {
 						alt="Cynthia Cosmétique"
 						width={56}
 						height={56}
-						className="h-10 w-10 sm:h-12 sm:w-12"
+						className="h-12 w-12 sm:h-14 sm:w-14"
 					/>
 				</a>
 
