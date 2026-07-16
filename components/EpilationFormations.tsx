@@ -53,7 +53,7 @@ export function EpilationFormations() {
 				<div className="relative flex min-h-[280px] flex-col justify-between p-6 sm:min-h-[320px] sm:p-8">
 					{/* Contenu sur fond semi-transparent */}
 					<div className="relative z-10 w-fit rounded-2xl bg-ivory/80 p-5 backdrop-blur-sm">
-						<span className="eyebrow inline-flex items-center gap-2 text-gold-deep">
+						<span className="eyebrow inline-flex items-center gap-2 text-royal/75">
 							Épilation experte
 							</span>
 							<h2 className="mt-2 font-display text-2xl font-bold leading-[1.15] tracking-tight text-royal sm:text-3xl">
@@ -73,7 +73,7 @@ export function EpilationFormations() {
 										className="flex items-center gap-2.5 text-sm font-medium text-royal"
 									>
 										<span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold-soft">
-											<Check size={12} className="text-gold-deep" />
+											<Check size={12} className="text-royal" />
 										</span>
 										{f}
 									</li>
@@ -85,7 +85,7 @@ export function EpilationFormations() {
 						<div className="relative z-10 mt-3 w-fit rounded-xl bg-ivory/80 px-4 py-2 backdrop-blur-sm">
 							<p className="font-display text-sm font-semibold text-royal">
 								À partir de{" "}
-								<span className="text-lg font-bold text-gold-deep">
+								<span className="text-lg font-bold text-royal">
 									3 000 FCFA
 								</span>
 							</p>
@@ -118,7 +118,7 @@ export function EpilationFormations() {
 				<div className="relative flex min-h-[280px] flex-col justify-between p-6 sm:min-h-[320px] sm:p-8">
 					{/* Contenu sur fond semi-transparent */}
 					<div className="relative z-10 ml-auto w-fit rounded-2xl bg-ivory/80 p-5 text-right backdrop-blur-sm">
-						<span className="eyebrow inline-flex items-center gap-2 text-gold-deep">
+						<span className="eyebrow inline-flex items-center gap-2 text-royal/75">
 							Formations professionnelles
 							</span>
 							<h2 className="mt-2 font-display text-2xl font-bold leading-[1.15] tracking-tight text-royal sm:text-3xl">
@@ -139,7 +139,7 @@ export function EpilationFormations() {
 									>
 										{f}
 										<span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold-soft">
-											<Check size={12} className="text-gold-deep" />
+											<Check size={12} className="text-royal" />
 										</span>
 									</li>
 								))}

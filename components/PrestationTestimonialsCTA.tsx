@@ -163,7 +163,7 @@ export function PrestationTestimonialsCTA() {
 							<br />
 							de vous-même ?
 						</h2>
-						<p className="mt-3 text-xs leading-relaxed text-slate-ink/65">
+						<p className="mt-3 text-xs leading-relaxed text-slate-ink/90">
 							Réservez votre consultation dès maintenant
 							<br />
 							et commencez votre transformation.
@@ -210,12 +210,12 @@ export function PrestationTestimonialsCTA() {
 					/>
 				</div>
 
-				{/* Contenu FAQ — gauche uniquement */}
+				{/* Contenu FAQ — avec fond semi-transparent pour lisibilité */}
 				<div className="relative z-10 px-5 py-10 md:px-10 md:py-14">
-					<div className="mx-auto w-full max-w-[400px] sm:max-w-[520px]">
-						<span className="eyebrow inline-flex items-center gap-2 text-gold-deep">
+					<div className="mx-auto w-full max-w-[400px] rounded-2xl bg-ivory/70 p-6 backdrop-blur-sm sm:max-w-[520px] sm:p-8">
+						<h2 className="eyebrow inline-flex items-center gap-2 text-royal/80">
 							Questions fréquentes
-						</span>
+						</h2>
 
 						<div className="mt-5 space-y-0">
 							{faqs.map((faq, i) => (
@@ -253,7 +253,7 @@ export function PrestationTestimonialsCTA() {
 												exit={{ height: 0 }}
 												transition={{ duration: 0.3, ease }}
 											>
-												<p className="pb-3.5 text-xs leading-relaxed text-slate-ink/60">
+												<p className="pb-3.5 text-xs leading-relaxed text-slate-ink/80">
 													{faq.answer}
 												</p>
 											</motion.div>

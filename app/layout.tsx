@@ -162,10 +162,11 @@ export default function RootLayout({
 			<head>
 				<link rel="preconnect" href="https://fonts.googleapis.com" />
 				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+				<link rel="preload" as="image" href="/assets/images/left-image-effect.png" fetchPriority="high" />
 			</head>
 			<body className="min-h-full flex flex-col bg-ivory">
 				<LoaderProvider>{children}</LoaderProvider>
-				<Script id="scroll-restore" strategy="beforeInteractive">
+				<Script id="scroll-restore" strategy="afterInteractive">
 					{`if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; } window.scrollTo(0, 0);`}
 				</Script>
 				<script

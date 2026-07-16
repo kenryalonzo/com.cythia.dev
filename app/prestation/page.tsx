@@ -43,6 +43,21 @@ export const metadata: Metadata = {
       "Soins du visage, microneedling, microblading, extensions de cils — Découvrez toute notre gamme de prestations à Douala.",
     url: "https://cynthiacosmetique.com/prestation",
   },
+  alternates: {
+    canonical: "https://cynthiacosmetique.com/prestation",
+  },
+  keywords: [
+    "prestations beauté Douala",
+    "soins visage Douala",
+    "microneedling Douala",
+    "microblading Douala",
+    "extensions de cils Douala",
+    "beauté du regard",
+    "massage bien-être Douala",
+    "épilation Douala",
+    "formation beauté Douala",
+    "Cynthia Cosmétique",
+  ],
 };
 
 export default function PrestationPage() {

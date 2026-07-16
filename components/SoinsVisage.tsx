@@ -122,12 +122,14 @@ export function SoinsVisage() {
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
         className="pointer-events-none absolute right-0 top-0 h-full w-[20%] opacity-20"
       >
-        <img
+        <Image
           src="/assets/images/floor-dore-image.png"
           alt=""
-          aria-hidden
-          className="h-full w-full object-cover"
+          fill
+          sizes="20vw"
+          className="object-cover"
           style={{ transform: "scaleX(-1)" }}
+          aria-hidden
         />
       </motion.div>
       <motion.div
@@ -140,11 +142,13 @@ export function SoinsVisage() {
         }}
         className="pointer-events-none absolute left-0 top-0 h-full w-[20%] opacity-15"
       >
-        <img
+        <Image
           src="/assets/images/forme-left.png"
           alt=""
+          fill
+          sizes="20vw"
+          className="object-cover"
           aria-hidden
-          className="h-full w-full object-cover"
         />
       </motion.div>
 

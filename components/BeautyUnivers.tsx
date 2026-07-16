@@ -141,6 +141,9 @@ export function BeautyUnivers() {
           <div
             ref={scrollRef}
             onScroll={onScroll}
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="Univers de soins"
             className="scrollbar-hidden flex gap-4 overflow-x-auto snap-x snap-mandatory pb-8 lg:grid lg:grid-cols-6 lg:overflow-visible lg:pb-0"
           >
             {categories.map((cat, i) => {
@@ -197,18 +200,26 @@ export function BeautyUnivers() {
           </div>
 
           {/* ─── Carousel Indicators (Mobile/Tablet) ─── */}
-          <div className="mt-8 flex justify-center gap-2 lg:hidden">
+          <div className="mt-8 flex justify-center gap-2 lg:hidden" role="tablist" aria-label="Sélection d'un univers">
             {[0, 1, 2].map((dot) => (
               <button
                 key={dot}
                 type="button"
+                role="tab"
+                aria-selected={activeDot === dot}
+                aria-label={`Univers ${dot + 1}`}
                 onClick={() => scrollTo(dot)}
                 className={cn(
-                  "h-1.5 transition-all duration-500 rounded-full cursor-pointer",
-                  activeDot === dot ? "w-6 bg-gold" : "w-1.5 bg-gold/30",
+                  "flex items-center justify-center w-[44px] h-[44px] rounded-full cursor-pointer",
                 )}
-                aria-label={`Go to slide ${dot + 1}`}
-              />
+              >
+                <span
+                  className={cn(
+                    "block h-1.5 rounded-full transition-all duration-500",
+                    activeDot === dot ? "w-6 bg-gold" : "w-1.5 bg-gold/30",
+                  )}
+                />
+              </button>
             ))}
           </div>
         </div>

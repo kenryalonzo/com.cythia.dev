@@ -67,14 +67,14 @@ export function PrestationHero() {
           <Reveal direction="down" delay={0.2}>
             <div className="flex items-center gap-2">
               <div className="relative h-5 w-5 sm:h-6 sm:w-6">
-                <Image
-                  src="/assets/images/lotus-expertise.png"
-                  alt="Lotus"
-                  fill
-                  sizes="24px"
-                  className="object-contain"
-                  aria-hidden
-                />
+                  <Image
+                    src="/assets/images/lotus-expertise.png"
+                    alt=""
+                    fill
+                    sizes="24px"
+                    className="object-contain"
+                    aria-hidden
+                  />
               </div>
               <span className="eyebrow !text-[10px] !tracking-[0.2em] text-gold-deep/80 sm:!text-[11px] md:!text-xs">
                 L'expertise au service de votre beauté
