@@ -27,7 +27,7 @@ export function EpilationFormations() {
 			variant="scroll"
 			className="bg-cream px-4 py-6 md:px-8 md:py-8"
 		>
-			<div className="container-luxe grid grid-cols-1 gap-5 lg:grid-cols-2">
+			<div className="container-luxe grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-2">
 				{/* ── Épilation ── */}
 				<motion.div
 					initial={{ opacity: 0, x: -30 }}

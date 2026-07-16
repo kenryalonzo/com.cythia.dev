@@ -110,7 +110,7 @@ export function MicroneedlingExpert() {
 			</div>
 
 			<div className="container-luxe relative z-10">
-				<div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-[1fr_1fr_auto] lg:gap-8">
+          <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-[1fr_1fr] lg:grid-cols-[1fr_1fr_auto] lg:gap-8">
 					{/* ─── Colonne gauche : Texte ─── */}
 					<div className="flex flex-col gap-3">
 						<Reveal>
@@ -183,8 +183,8 @@ export function MicroneedlingExpert() {
 					</motion.div>
 
 					{/* ─── Colonne droite : Image appareil ─── */}
-					<Reveal direction="right" className="hidden lg:block">
-						<div className="relative h-[200px] w-[200px] xl:h-[260px] xl:w-[260px]">
+					<Reveal direction="right" className="hidden md:block">
+						<div className="relative mx-auto h-[160px] w-[160px] md:h-[200px] md:w-[200px] xl:h-[260px] xl:w-[260px]">
 							<Image
 								src="/assets/images/microneeding.jpg"
 								alt="Appareil microneedling"

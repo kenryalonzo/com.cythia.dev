@@ -153,7 +153,7 @@ export function SoinsVisage() {
       </motion.div>
 
       <div className="container-luxe relative z-10">
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-[0.7fr_0.6fr_1fr] lg:gap-5">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-[1fr_1fr] lg:grid-cols-[0.7fr_0.6fr_1fr] lg:gap-5">
           {/* ─── Colonne 1 : Image — fade + slide left ─── */}
           <motion.div
             initial="hidden"
@@ -236,7 +236,7 @@ export function SoinsVisage() {
               hidden: {},
               visible: { transition: { staggerChildren: 0.07 } },
             }}
-            className="grid grid-cols-2 gap-2 sm:gap-2.5"
+            className="grid grid-cols-2 gap-2 md:col-span-2 sm:gap-2.5 lg:col-span-1"
           >
             {treatments.map((treatment, i) => (
               <motion.div

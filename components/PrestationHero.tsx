@@ -38,7 +38,7 @@ export function PrestationHero() {
       <Filaments intensity="subtle" />
 
       {/* ─── Layer 2: Main Portrait (Right) — absolute, fills section height ─── */}
-      <div className="absolute inset-y-0 right-0 z-10 hidden w-[48%] lg:block">
+      <div className="absolute inset-y-0 right-0 z-10 hidden w-[40%] md:block lg:w-[48%]">
         <motion.div
           initial={{ opacity: 0, x: 50, scale: 0.95 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -61,7 +61,7 @@ export function PrestationHero() {
       </div>
 
       {/* ─── Layer 3: Content (Left) ─── */}
-      <div className="container-luxe relative z-20 flex min-h-[540px] flex-col justify-center pt-28 pb-10 sm:min-h-[600px] lg:min-h-[70vh] lg:pt-0 lg:pb-0">
+      <div className="container-luxe relative z-20 flex min-h-[540px] flex-col justify-center pt-28 pb-10 sm:min-h-[600px] md:min-h-[550px] md:pt-24 lg:min-h-[70vh] lg:pt-0 lg:pb-0">
         <div className="flex max-w-xl flex-col gap-1 lg:gap-2 xl:max-w-2xl">
           {/* Eyebrow — collé au titre */}
           <Reveal direction="down" delay={0.2}>
@@ -148,7 +148,7 @@ export function PrestationHero() {
       </div>
 
       {/* Mobile Portrait Background (Faded) */}
-      <div className="absolute inset-0 z-10 block lg:hidden">
+      <div className="absolute inset-0 z-10 block md:hidden">
         <div className="relative h-full w-full">
           <Image
             src="/assets/images/hero-right-image.png"
