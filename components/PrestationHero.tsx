@@ -16,7 +16,11 @@ import { cn } from "@/lib/utils";
  */
 export function PrestationHero() {
   return (
-    <Reveal as="section" variant="scroll" className="relative w-full overflow-hidden bg-ivory">
+    <Reveal
+      as="section"
+      variant="scroll"
+      className="relative w-full overflow-hidden bg-ivory"
+    >
       {/* ─── Layer 1: Global Silk Background ─── */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -24,6 +28,7 @@ export function PrestationHero() {
           alt=""
           fill
           priority
+          sizes="100vw"
           className="object-cover object-[center_70%] opacity-60"
           aria-hidden
         />
@@ -49,6 +54,7 @@ export function PrestationHero() {
             alt="Portrait Cynthia Cosmétique"
             fill
             priority
+            sizes="48vw"
             className="object-cover object-[45%_15%]"
           />
         </motion.div>
@@ -109,7 +115,7 @@ export function PrestationHero() {
                 external
                 variant="gold"
                 size="lg"
-                className="w-full sm:w-auto animate-pulse-glow shadow-gold hover:shadow-lift"
+                className="px-6 sm:px-4 animate-pulse-glow shadow-gold hover:shadow-lift"
                 icon={<WhatsAppIcon className="h-4 w-4" />}
               >
                 Réserver maintenant
@@ -118,7 +124,7 @@ export function PrestationHero() {
                 href="/contact"
                 variant="outline-gold"
                 size="lg"
-                className="w-full sm:w-auto group border-gold-deep/30"
+                className="py-[22px] group border-gold-deep/30"
               >
                 Nous contacter
                 <svg
@@ -148,6 +154,7 @@ export function PrestationHero() {
             src="/assets/images/hero-right-image.png"
             alt=""
             fill
+            sizes="100vw"
             className="object-cover object-top opacity-25"
             aria-hidden
           />

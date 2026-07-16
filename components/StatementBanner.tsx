@@ -107,6 +107,7 @@ export function StatementBanner() {
 							alt=""
 							width={36}
 							height={36}
+							style={{ width: "auto", height: "auto" }}
 							className="object-contain"
 							priority
 						/>

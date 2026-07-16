@@ -100,6 +100,7 @@ export function BeautyUnivers() {
           src="/assets/images/forme-left.png"
           alt=""
           fill
+          sizes="40vw"
           className="object-contain object-left"
           aria-hidden
         />
@@ -118,6 +119,7 @@ export function BeautyUnivers() {
           src="/assets/images/forme-left.png"
           alt=""
           fill
+          sizes="40vw"
           className="object-contain object-right"
           aria-hidden
         />
