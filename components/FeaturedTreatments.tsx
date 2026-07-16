@@ -46,7 +46,7 @@ const treatments: Treatment[] = [
 		description:
 			"Un regard intense et glamour grâce à des extensions légères et durables.",
 		price: "7 000 FCFA",
-		image: "/assets/images/Extension-cils.jpg",
+		image: "/assets/images/extension_des_cils.avif",
 		alt: "Résultat d'extensions de cils",
 	},
 ];
