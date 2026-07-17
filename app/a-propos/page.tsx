@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
-import { UnderConstruction } from "@/components/UnderConstruction";
+import { AboutHero } from "@/components/AboutHero";
 
 export const metadata: Metadata = {
 	title: "À propos",
@@ -20,10 +20,8 @@ export default function AProposPage() {
 		<>
 			<Navbar />
 			<main className="flex flex-1 flex-col">
-				<UnderConstruction
-					title="À propos"
-					subtitle="Découvrez bientôt notre histoire, notre expertise et ce qui fait de Cynthia Cosmétique un institut d'exception à Douala."
-				/>
+				<AboutHero />
+				{/* Autres sections à venir : Notre Histoire, Expertise, Engagement */}
 			</main>
 			<Footer />
 		</>
