@@ -75,7 +75,7 @@ export function InstitutGallery() {
 					</div>
 
 					{/* ─── Right: 4 images ─── */}
-					<div className="grid w-full grid-cols-4 gap-3 sm:gap-4 lg:w-[62%]">
+					<div className="grid w-full grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3 md:gap-4 lg:w-[62%]">
 						{images.map((img, i) => (
 							<Reveal key={img.src} delay={0.2 + i * 0.1} direction="right">
 								<motion.div

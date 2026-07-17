@@ -129,7 +129,7 @@ export function OurStory() {
 					{/* ─── Column 2: Gallery & Timeline ─── */}
 					<div className="flex flex-col">
 						{/* Horizontal Gallery */}
-						<div className="grid grid-cols-5 gap-2 sm:gap-2.5 md:gap-3">
+						<div className="grid grid-cols-3 gap-2 sm:grid-cols-5 sm:gap-2.5 md:gap-3">
 							{timelineEvents.map((item, i) => (
 								<Reveal
 									key={item.year}
@@ -172,7 +172,7 @@ export function OurStory() {
 							</div>
 
 							{/* Markers and Event description grid */}
-							<div className="relative grid grid-cols-5 gap-1.5 sm:gap-2">
+							<div className="relative grid grid-cols-3 gap-1.5 sm:grid-cols-5 sm:gap-2">
 								{timelineEvents.map((item, i) => (
 									<Reveal
 										key={`${item.year}-meta`}

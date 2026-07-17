@@ -108,7 +108,7 @@ export function Fondatrice() {
 						<motion.div
 							whileHover={{ y: -3 }}
 							transition={{ type: "spring", stiffness: 300, damping: 24 }}
-							className="relative mx-auto aspect-[3/4] w-[220px] overflow-hidden rounded-2xl bg-[#0a1d5a] shadow-card sm:w-[260px] md:w-[280px]"
+							className="relative mx-auto aspect-[3/4] w-[180px] overflow-hidden rounded-2xl bg-[#0a1d5a] shadow-card sm:w-[220px] md:w-[260px] lg:w-[280px]"
 						>
 							{/* Gold shimmer */}
 							<div
