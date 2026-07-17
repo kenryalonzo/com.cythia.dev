@@ -106,13 +106,13 @@ export function Engagement() {
 							</svg>
 
 							<div className="relative z-10 flex items-center gap-4">
-								<div className="relative h-[100px] w-[80px] shrink-0 sm:h-[120px] sm:w-[95px]">
+								<div className="relative h-[100px] w-[80px] shrink-0 overflow-hidden rounded-xl sm:h-[120px] sm:w-[95px]">
 									<Image
 										src="/assets/images/cynthia-image.png"
 										alt="Cynthia"
 										fill
 										sizes="95px"
-										className="object-contain object-bottom"
+										className="object-cover object-top"
 									/>
 								</div>
 								<div className="flex flex-col">
@@ -147,9 +147,9 @@ export function Engagement() {
 						</h2>
 						<Button
 							href="#contact"
-							variant="royal"
+							variant="gold"
 							size="md"
-							className="group mt-4 w-fit px-5 shadow-soft hover:shadow-lift"
+							className="animate-pulse-glow group mt-4 w-fit px-5 shadow-gold"
 						>
 							Prendre rendez-vous
 							<ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
