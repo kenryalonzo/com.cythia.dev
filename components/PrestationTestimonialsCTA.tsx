@@ -87,7 +87,7 @@ export function PrestationTestimonialsCTA() {
 					className="relative bg-[#0a1d5a] px-5 py-10 md:px-10 md:py-14"
 				>
 					<div className="mx-auto w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[480px]">
-						<span className="eyebrow inline-flex items-center gap-2 text-gold-deep/80">
+						<span className="eyebrow inline-flex items-center gap-2">
 							Elles nous font confiance
 						</span>
 
@@ -257,7 +257,7 @@ export function PrestationTestimonialsCTA() {
 												exit={{ height: 0 }}
 												transition={{ duration: 0.3, ease }}
 											>
-												<p className="pb-3.5 text-xs leading-relaxed text-slate-ink/80">
+												<p className="pb-3.5 text-xs leading-relaxed text-slate-ink">
 													{faq.answer}
 												</p>
 											</motion.div>

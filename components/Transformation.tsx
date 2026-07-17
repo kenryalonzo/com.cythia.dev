@@ -48,7 +48,7 @@ export function Transformation() {
 					className="absolute -bottom-32 right-0 h-[260px] w-[260px] translate-x-1/3"
 				>
 					<Image
-						src="/assets/images/floor-dore-image.png"
+						src="/assets/images/floor-dore-image.webp"
 						alt=""
 						fill
 						sizes="260px"
@@ -70,7 +70,7 @@ export function Transformation() {
 					className="absolute -bottom-34 left-0 h-[300px] w-[300px] -translate-x-1/4"
 				>
 					<Image
-						src="/assets/images/floor-dore-image.png"
+						src="/assets/images/floor-dore-image.webp"
 						alt=""
 						fill
 						sizes="300px"
@@ -149,7 +149,7 @@ export function Transformation() {
 									}}
 								/>
 								<Image
-									src="/assets/images/floor-dore-image.png"
+									src="/assets/images/floor-dore-image.webp"
 									alt="Lotus doré — notre approche"
 									fill
 									sizes="96px"

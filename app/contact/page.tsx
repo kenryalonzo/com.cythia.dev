@@ -40,7 +40,7 @@ export default function ContactPage() {
 							<br />
 							<span className="text-gradient-gold">dès aujourd'hui</span>
 						</h1>
-						<p className="mx-auto mt-4 max-w-xl font-sans text-base leading-relaxed text-slate-ink/80">
+						<p className="mx-auto mt-4 max-w-xl font-sans text-base leading-relaxed text-slate-ink">
 							Une question, un devis personnalisé ou simplement envie
 							d'échanger ? Répondons ensemble à vos besoins beauté.
 						</p>

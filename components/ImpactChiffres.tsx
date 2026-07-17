@@ -109,7 +109,7 @@ export function ImpactChiffres() {
 				<div className="flex flex-col items-center gap-6 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
 					<Reveal direction="left" className="shrink-0">
 						<div className="flex items-center gap-3">
-							<h2 className="eyebrow !text-[9px] !tracking-[0.2em] !text-gold-deep/70">
+							<h2 className="eyebrow !text-[9px] !tracking-[0.2em]">
 								Notre impact en chiffres
 							</h2>
 							<span

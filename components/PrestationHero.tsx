@@ -24,7 +24,7 @@ export function PrestationHero() {
       {/* ─── Layer 1: Global Silk Background ─── */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/assets/images/left-image-effect.png"
+          src="/assets/images/left-image-effect.webp"
           alt=""
           fill
           priority
@@ -76,7 +76,7 @@ export function PrestationHero() {
                     aria-hidden
                   />
               </div>
-              <span className="eyebrow !text-[10px] !tracking-[0.2em] text-gold-deep/80 sm:!text-[11px] md:!text-xs">
+              <span className="eyebrow !text-[10px] !tracking-[0.2em] sm:!text-[11px] md:!text-xs">
                 L'expertise au service de votre beauté
               </span>
             </div>
@@ -101,7 +101,7 @@ export function PrestationHero() {
 
           {/* Description */}
           <Reveal delay={0.5}>
-            <p className="max-w-md text-xs leading-relaxed text-slate-ink/80 sm:text-sm md:text-base lg:text-base xl:text-lg">
+            <p className="max-w-md text-xs leading-relaxed text-slate-ink sm:text-sm md:text-base lg:text-base xl:text-lg">
               Des soins sur-mesure, des techniques de pointe et une approche
               personnalisée pour révéler la beauté naturelle de votre peau.
             </p>

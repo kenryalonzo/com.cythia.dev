@@ -160,9 +160,8 @@ export default function RootLayout({
 			className={`${playfair.variable} ${inter.variable} h-full antialiased`}
 		>
 			<head>
-				<link rel="preconnect" href="https://fonts.googleapis.com" />
-				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-				<link rel="preload" as="image" href="/assets/images/left-image-effect.png" fetchPriority="high" />
+				<link rel="preload" as="image" href="/assets/images/left-image-effect.webp" fetchPriority="high" />
+				<link rel="preload" as="image" href="/assets/images/hero-right-image.png" fetchPriority="high" />
 			</head>
 			<body className="min-h-full flex flex-col bg-ivory">
 				<LoaderProvider>{children}</LoaderProvider>

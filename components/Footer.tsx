@@ -95,7 +95,7 @@ export function Footer() {
 						<div className="flex flex-col items-center sm:items-start">
 							<div className="flex items-center gap-3">
 								<Image
-									src="/assets/logo-cynthia.png"
+									src="/assets/logo-cynthia.webp"
 									alt={site.brand}
 									width={48}
 									height={48}

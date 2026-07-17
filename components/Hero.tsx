@@ -69,7 +69,7 @@ export function Hero() {
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.7, delay: 0.2 }}
-							className="max-w-md text-xs leading-relaxed text-slate-ink/80 sm:text-sm md:text-base lg:text-lg"
+							className="max-w-md text-xs leading-relaxed text-slate-ink sm:text-sm md:text-base lg:text-lg"
 						>
 							Soins experts, microneedling, beauté du regard et accompagnement
 							personnalisé à Douala.

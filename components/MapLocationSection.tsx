@@ -130,7 +130,7 @@ export function MapLocationSection() {
 											<p className="font-sans text-[10px] font-bold uppercase tracking-[0.12em] text-gold-deep">
 												Stationnement
 											</p>
-											<p className="font-sans text-[13px] text-slate-ink/80">
+											<p className="font-sans text-[13px] text-slate-ink">
 												Sécurisé & disponible
 											</p>
 										</div>

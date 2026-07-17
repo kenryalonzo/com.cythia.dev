@@ -76,7 +76,7 @@ export function BeauteDuRegard() {
 					{/* ─── Colonne gauche : Texte ─── */}
 					<div className="flex shrink-0 flex-col gap-2">
 						<Reveal>
-							<span className="eyebrow !text-[9px] !tracking-[0.2em] text-gold-deep/80 sm:!text-[10px] md:!text-xs">
+							<span className="eyebrow !text-[9px] !tracking-[0.2em] sm:!text-[10px] md:!text-xs">
 								Beauté du regard
 							</span>
 						</Reveal>
@@ -95,7 +95,7 @@ export function BeauteDuRegard() {
 							</Reveal>
 
 							<Reveal delay={0.2}>
-								<p className="w-full max-w-[200px] text-xs leading-relaxed text-slate-ink/80 sm:max-w-[280px] lg:max-w-[260px]">
+								<p className="w-full max-w-[200px] text-xs leading-relaxed text-slate-ink sm:max-w-[280px] lg:max-w-[260px]">
 									Des techniques précises pour intensifier votre regard
 									et mettre en valeur votre beauté naturelle.
 								</p>

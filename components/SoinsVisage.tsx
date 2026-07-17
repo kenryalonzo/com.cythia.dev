@@ -131,7 +131,7 @@ export function SoinsVisage() {
 				className="pointer-events-none absolute right-0 top-0 h-full w-[20%] opacity-20"
 			>
 				<Image
-					src="/assets/images/floor-dore-image.png"
+					src="/assets/images/floor-dore-image.webp"
 					alt=""
 					fill
 					sizes="20vw"
@@ -194,7 +194,7 @@ export function SoinsVisage() {
 					>
 						<motion.span
 							variants={fadeSlideUpVariants}
-							className="eyebrow !text-[9px] !tracking-[0.18em] text-gold-deep/80 sm:!text-[10px] md:!text-xs"
+							className="eyebrow !text-[9px] !tracking-[0.18em] sm:!text-[10px] md:!text-xs"
 						>
 							Soins du visage
 						</motion.span>
@@ -218,7 +218,7 @@ export function SoinsVisage() {
 
 						<motion.p
 							variants={fadeSlideUpVariants}
-							className="max-w-[260px] text-xs leading-relaxed text-slate-ink/80"
+							className="max-w-[260px] text-xs leading-relaxed text-slate-ink"
 						>
 							Nos soins visages sont conçus pour répondre aux besoins
 							specifiques de votre peau avec des produits professionnels et des

@@ -74,7 +74,7 @@ export function SectionHeading({
 				<Reveal delay={0.1}>
 					<p
 						className={cn(
-							"max-w-xl text-base leading-relaxed text-slate-ink/80",
+							"max-w-xl text-base leading-relaxed text-slate-ink",
 							align === "center" ? "mx-auto" : "",
 						)}
 					>

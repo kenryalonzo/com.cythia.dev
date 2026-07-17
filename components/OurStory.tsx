@@ -71,7 +71,7 @@ export function OurStory() {
 				<div className="grid grid-cols-1 gap-8 lg:grid-cols-[35%_1fr] lg:gap-10 xl:gap-14">
 					<div className="flex flex-col">
 						<Reveal direction="down" delay={0.1}>
-							<span className="eyebrow mb-3 block !text-[9px] !tracking-[0.2em] !text-gold-deep/80 sm:!text-[10px] md:!text-[11px]">
+							<span className="eyebrow mb-3 block !text-[9px] !tracking-[0.2em] sm:!text-[10px] md:!text-[11px]">
 								Notre Histoire
 							</span>
 						</Reveal>

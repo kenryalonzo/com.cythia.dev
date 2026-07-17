@@ -24,7 +24,7 @@ export function InstitutGallery() {
 		>
 			<div className="absolute inset-0 z-0">
 				<Image
-					src="/assets/images/left-image-effect.png"
+					src="/assets/images/left-image-effect.webp"
 					alt=""
 					fill
 					sizes="100vw"
@@ -37,7 +37,7 @@ export function InstitutGallery() {
 				<div className="flex flex-col items-center gap-8 lg:flex-row lg:items-center lg:gap-10">
 					<div className="flex w-full flex-col lg:w-[38%]">
 						<Reveal direction="down" delay={0.1}>
-							<span className="eyebrow mb-3 block !text-[9px] !tracking-[0.2em] !text-gold-deep/80 sm:!text-[10px] md:!text-[11px]">
+							<span className="eyebrow mb-3 block !text-[9px] !tracking-[0.2em] sm:!text-[10px] md:!text-[11px]">
 								Notre institut
 							</span>
 						</Reveal>

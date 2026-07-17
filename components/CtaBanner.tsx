@@ -16,7 +16,7 @@ export function CtaBanner() {
 			{/* Background silk texture */}
 			<div className="absolute inset-0 z-0">
 				<Image
-					src="/assets/images/left-image-effect.png"
+					src="/assets/images/left-image-effect.webp"
 					alt=""
 					fill
 					sizes="100vw"

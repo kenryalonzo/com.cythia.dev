@@ -40,7 +40,7 @@ export function UnderConstruction({ title, subtitle }: UnderConstructionProps) {
 					className="absolute -bottom-20 right-0 h-[200px] w-[200px] translate-x-1/4 opacity-[0.06]"
 				>
 					<Image
-						src="/assets/images/floor-dore-image.png"
+						src="/assets/images/floor-dore-image.webp"
 						alt=""
 						fill
 						sizes="200px"

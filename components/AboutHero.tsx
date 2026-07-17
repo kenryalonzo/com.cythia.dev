@@ -19,7 +19,7 @@ export function AboutHero() {
 			{/* ─── Silk Background (shared) ─── */}
 			<div className="absolute inset-0 z-0">
 				<Image
-					src="/assets/images/left-image-effect.png"
+					src="/assets/images/left-image-effect.webp"
 					alt=""
 					fill
 					priority
@@ -74,7 +74,7 @@ export function AboutHero() {
 										aria-hidden
 									/>
 								</div>
-								<span className="eyebrow !text-[10px] !tracking-[0.2em] text-gold-deep/80">
+								<span className="eyebrow !text-[10px] !tracking-[0.2em]">
 									Une philosophie de la beauté
 								</span>
 							</div>
@@ -99,7 +99,7 @@ export function AboutHero() {
 						</Reveal>
 
 						<Reveal delay={0.5}>
-							<p className="max-w-md text-sm leading-relaxed text-slate-ink/80">
+							<p className="max-w-md text-sm leading-relaxed text-slate-ink">
 								Cynthia Cosmétique est née d&apos;une conviction profonde : la
 								beauté véritable commence par le respect de la peau, de la
 								personne et de son histoire.
@@ -141,7 +141,7 @@ export function AboutHero() {
 					{/* Left: Text (~40%) */}
 					<div className="w-full lg:w-[40%] lg:pr-8">
 						<Reveal direction="down" delay={0.1}>
-							<span className="eyebrow mb-3 block !text-[9px] !tracking-[0.2em] !text-gold-deep/80 sm:!text-[10px] md:!text-[11px]">
+							<span className="eyebrow mb-3 block !text-[9px] !tracking-[0.2em] sm:!text-[10px] md:!text-[11px]">
 								À propos de Cynthia Cosmétique
 							</span>
 						</Reveal>
@@ -162,7 +162,7 @@ export function AboutHero() {
 						</Reveal>
 
 						<Reveal delay={0.3}>
-							<p className="mt-3 max-w-sm text-sm leading-relaxed text-slate-ink/80 sm:text-base">
+							<p className="mt-3 max-w-sm text-sm leading-relaxed text-slate-ink sm:text-base">
 								Cynthia Cosmétique est née d&apos;une conviction profonde : la
 								beauté véritable commence par le respect de la peau, de la
 								personne et de son histoire.

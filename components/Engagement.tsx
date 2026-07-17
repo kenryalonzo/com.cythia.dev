@@ -134,7 +134,7 @@ export function Engagement() {
 						delay={0.2}
 						className="flex flex-col justify-center lg:w-[30%]"
 					>
-						<span className="eyebrow mb-2 !text-[9px] !tracking-[0.2em] !text-gold-deep/70">
+						<span className="eyebrow mb-2 !text-[9px] !tracking-[0.2em]">
 							Notre Engagement
 						</span>
 						<h2 className="font-display text-lg font-bold leading-[1.1] tracking-tight text-royal sm:text-xl">
