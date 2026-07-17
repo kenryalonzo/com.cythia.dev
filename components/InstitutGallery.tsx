@@ -62,7 +62,7 @@ export function InstitutGallery() {
 							<div className="mt-5 sm:mt-6">
 								<Link
 									href="/a-propos"
-									className="animate-pulse-glow inline-flex items-center justify-center rounded-full bg-[#0a1d5a] px-6 py-3 font-sans text-[10px] font-bold uppercase tracking-[0.08em] text-gold shadow-gold transition-all hover:shadow-lift sm:px-8 sm:text-xs"
+									className="animate-pulse-glow inline-flex items-center justify-center rounded-full bg-gold px-6 py-3 font-sans text-[10px] font-bold uppercase tracking-[0.08em] text-royal shadow-gold transition-all hover:bg-gold-warm hover:shadow-lift sm:px-8 sm:text-xs"
 								>
 									Découvrir notre espace
 								</Link>
@@ -71,13 +71,13 @@ export function InstitutGallery() {
 					</div>
 
 					{/* ─── Right: 4 images ─── */}
-					<div className="flex w-full gap-3 sm:gap-4 lg:w-[62%]">
+					<div className="grid w-full grid-cols-4 gap-3 sm:gap-4 lg:w-[62%]">
 						{images.map((img, i) => (
 							<Reveal key={img.src} delay={0.2 + i * 0.1} direction="right">
 								<motion.div
 									whileHover={{ y: -4, scale: 1.02 }}
 									transition={{ type: "spring", stiffness: 300, damping: 20 }}
-									className="relative aspect-[3/4] flex-1 overflow-hidden rounded-2xl shadow-card ring-1 ring-slate-line/10 sm:rounded-3xl"
+									className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-card ring-1 ring-slate-line/10 sm:rounded-3xl"
 								>
 									<Image
 										src={img.src}
