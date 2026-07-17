@@ -162,11 +162,11 @@ export function AboutHero() {
 								<Button
 									href="#histoire"
 									variant="outline-gold"
-									size="md"
+									size="lg"
 									className="group border-gold-deep/40"
 								>
 									Notre Histoire
-									<ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+									<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
 								</Button>
 							</div>
 						</Reveal>

@@ -141,11 +141,14 @@ export function OurStory() {
 										/>
 										<div className="absolute inset-0 bg-gradient-to-t from-royal/40 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 									</div>
+									<span className="mt-1.5 block text-center text-[10px] font-bold text-royal sm:hidden">
+										{item.year} — {item.title}
+									</span>
 								</Reveal>
 							))}
 						</div>
 
-						<div className="relative mt-6 px-1 sm:mt-10 md:mt-12 lg:mt-14">
+						<div className="relative mt-6 px-1 sm:mt-10 md:mt-12 lg:mt-14 hidden sm:block">
 							<div
 								className="absolute left-0 top-[7px] h-[1.5px] w-full bg-gold-deep/20"
 								aria-hidden="true"
