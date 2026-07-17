@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
+import { waLink } from "@/lib/site";
 
 const treatments = [
 	{
@@ -226,12 +226,14 @@ export function SoinsVisage() {
 						</motion.p>
 
 						<motion.div variants={fadeSlideUpVariants}>
-							<Link
-								href="#soins-visage"
+							<a
+								href={waLink("Bonjour Cynthia, je souhaite en savoir plus sur vos soins du visage.")}
+								target="_blank"
+								rel="noopener noreferrer"
 								className="animate-pulse-glow mt-0.5 inline-flex items-center justify-center rounded-full bg-gold px-4 py-2 font-sans text-[10px] font-bold uppercase tracking-[0.08em] text-royal shadow-gold transition-all hover:shadow-lift sm:w-fit"
 							>
 								Voir tous les soins
-							</Link>
+							</a>
 						</motion.div>
 					</motion.div>
 

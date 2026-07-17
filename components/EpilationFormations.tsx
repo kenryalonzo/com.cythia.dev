@@ -149,7 +149,7 @@ export function EpilationFormations() {
 						{/* CTA */}
 						<div className="relative z-10 mt-3 flex justify-center">
 							<Button
-								href={waLink("formations")}
+								href={waLink("Bonjour Cynthia, je suis intéressé(e) par vos formations professionnelles.")}
 								external
 								variant="gold"
 								size="md"

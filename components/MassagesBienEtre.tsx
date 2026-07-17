@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import { waLink } from "@/lib/site";
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
@@ -163,12 +163,14 @@ export function MassagesBienEtre() {
 						</Reveal>
 
 						<Reveal delay={0.3}>
-							<Link
-								href="#massages"
+							<a
+								href={waLink("Bonjour Cynthia, je suis intéressé(e) par vos massages bien-être.")}
+								target="_blank"
+								rel="noopener noreferrer"
 								className="mt-1 inline-flex items-center justify-center rounded-full border border-gold/40 bg-transparent px-6 py-2.5 font-sans text-[10px] font-bold uppercase tracking-[0.08em] text-gold transition-all hover:border-gold hover:bg-gold/10 sm:w-fit"
 							>
 								Découvrir nos rituels
-							</Link>
+							</a>
 						</Reveal>
 					</div>
 

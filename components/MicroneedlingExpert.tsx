@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
+import { waLink } from "@/lib/site";
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
@@ -113,7 +114,9 @@ export function MicroneedlingExpert() {
 
 						<Reveal delay={0.3}>
 							<a
-								href="#microneedling"
+								href={waLink("Bonjour Cynthia, je suis intéressé(e) par le microneedling expert.")}
+								target="_blank"
+								rel="noopener noreferrer"
 								className="mt-1 inline-flex items-center justify-center rounded-full border border-gold/40 bg-transparent px-6 py-2.5 font-sans text-[10px] font-bold uppercase tracking-[0.08em] text-gold transition-all hover:border-gold hover:bg-gold/10 sm:w-fit"
 							>
 								Découvrir le protocole

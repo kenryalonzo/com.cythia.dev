@@ -44,7 +44,7 @@ export function Navbar() {
 			<nav className="container-luxe flex items-center justify-between gap-4 py-1 sm:py-1.5">
 				{/* Logo */}
 				<a
-					href="#accueil"
+					href="/"
 					className="relative z-10 flex shrink-0 items-center"
 					aria-label="Cynthia Cosmétique — accueil"
 				>
