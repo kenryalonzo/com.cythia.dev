@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
+import { Filaments } from "@/components/ui/Filaments";
 import { Reveal } from "@/components/ui/Reveal";
 
 const timelineEvents = [
@@ -59,6 +60,10 @@ export function OurStory() {
 					className="object-contain object-left-bottom"
 				/>
 			</div>
+
+			{/* ─── Filaments — subtle gold strokes across the section ─── */}
+			<Filaments intensity="subtle" />
+			<Filaments intensity="subtle" className="-rotate-12 scale-105" />
 
 			<div className="container-luxe relative z-10">
 				<div className="grid grid-cols-1 gap-10 lg:grid-cols-[35%_1fr] lg:gap-8 xl:gap-12">

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
+import { Filaments } from "@/components/ui/Filaments";
 import { Reveal } from "@/components/ui/Reveal";
 
 /**
@@ -26,6 +27,10 @@ export function AboutHero() {
 					aria-hidden
 				/>
 			</div>
+
+			{/* ─── Layer 1.5: Filaments — subtle gold strokes over the silk ─── */}
+			<Filaments intensity="subtle" />
+			<Filaments intensity="subtle" className="rotate-45 scale-110" />
 
 			{/* ─── Layer 2: Content Container ─── */}
 			<div className="container-luxe relative z-20 flex h-full flex-col items-center justify-center gap-8 lg:flex-row lg:items-center lg:gap-0">
