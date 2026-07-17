@@ -3,6 +3,7 @@ import { AboutHero } from "@/components/AboutHero";
 import { CtaBanner } from "@/components/CtaBanner";
 import { Engagement } from "@/components/Engagement";
 import { Expertise } from "@/components/Expertise";
+import { Fondatrice } from "@/components/Fondatrice";
 import { Footer } from "@/components/Footer";
 import { ImpactChiffres } from "@/components/ImpactChiffres";
 import { InstitutGallery } from "@/components/InstitutGallery";
@@ -30,6 +31,7 @@ export default function AProposPage() {
 			<main className="flex flex-1 flex-col">
 				<AboutHero />
 				<OurStory />
+				<Fondatrice />
 				<Expertise />
 				<ImpactChiffres />
 				<Engagement />
