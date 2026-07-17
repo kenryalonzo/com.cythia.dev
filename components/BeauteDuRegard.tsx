@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { Filaments } from "@/components/ui/Filaments";
 import { Reveal } from "@/components/ui/Reveal";
+import { waLink } from "@/lib/site";
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
@@ -109,12 +109,14 @@ export function BeauteDuRegard() {
 						</Reveal>
 
 						<Reveal delay={0.3}>
-							<Link
-								href="#beaute-regard"
+							<a
+								href={waLink("Bonjour Cynthia, je souhaite en savoir plus sur la beauté du regard.")}
+								target="_blank"
+								rel="noopener noreferrer"
 								className="animate-pulse-glow mt-1 inline-flex w-fit items-center justify-center rounded-full bg-gold px-6 py-2.5 font-sans text-[10px] font-bold uppercase tracking-[0.08em] text-royal shadow-gold transition-all hover:shadow-lift whitespace-nowrap"
 							>
 								Découvrir toutes les prestations
-							</Link>
+							</a>
 						</Reveal>
 					</div>
 

@@ -5,6 +5,7 @@ import { ArrowRight, Check } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
+import { waLink } from "@/lib/site";
 
 const promises = [
 	"Un diagnostic précis et personnalisé",
@@ -144,7 +145,8 @@ export function Engagement() {
 							</span>
 						</h2>
 						<Button
-							href="#contact"
+							href={waLink("Bonjour Cynthia, je souhaite prendre rendez-vous.")}
+							external
 							variant="gold"
 							size="md"
 							className="animate-pulse-glow group mt-4 w-fit px-5 shadow-gold"

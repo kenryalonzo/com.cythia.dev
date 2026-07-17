@@ -4,12 +4,13 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
+import { waLink } from "@/lib/site";
 
 type Universe = {
 	title: string;
 	description: string;
 	image: string;
-	href: string;
+	waMsg: string;
 };
 
 const universes: Universe[] = [
@@ -17,26 +18,26 @@ const universes: Universe[] = [
 		title: "Soins du visage",
 		description: "Nettoyer, traiter et sublimer votre peau.",
 		image: "/assets/images/soin-visage.jpg",
-		href: "/prestation",
+		waMsg: "Bonjour Cynthia, je souhaite en savoir plus sur les soins du visage.",
 	},
 	{
 		title: "Beauté du regard",
 		description: "Sourcils parfaits, cils de rêve et regard sublimé.",
 		image: "/assets/images/beaute-au-regard.jpg",
-		href: "/prestation",
+		waMsg: "Bonjour Cynthia, je suis intéressé(e) par la beauté du regard.",
 	},
 	{
 		title: "Formations",
 		description:
 			"Apprenez un métier d'avenir avec nos formations certifiantes.",
 		image: "/assets/images/formation-soin.jpg",
-		href: "/prestation",
+		waMsg: "Bonjour Cynthia, je suis intéressé(e) par vos formations.",
 	},
 	{
 		title: "À propos",
 		description: "Découvrez notre histoire, notre mission et nos valeurs.",
 		image: "/assets/images/candylip.webp",
-		href: "/a-propos",
+		waMsg: "Bonjour Cynthia, je souhaite en savoir plus sur votre institut.",
 	},
 ];
 
@@ -73,7 +74,9 @@ export function Explore() {
 						{universes.map((u, i) => (
 							<Reveal key={u.title} delay={i * 0.06}>
 								<motion.a
-									href={u.href}
+									href={waLink(u.waMsg)}
+									target="_blank"
+									rel="noopener noreferrer"
 									whileHover={{ y: -4 }}
 									transition={{ type: "spring", stiffness: 300, damping: 24 }}
 									className="group relative flex h-[180px] flex-col justify-between overflow-hidden rounded-2xl p-4"
@@ -139,7 +142,9 @@ export function Explore() {
 
 						{/* Bouton */}
 						<motion.a
-							href="#tarifs"
+							href={waLink("Bonjour Cynthia, je souhaite connaître tous vos tarifs.")}
+							target="_blank"
+							rel="noopener noreferrer"
 							whileHover={{ scale: 1.05, y: -2 }}
 							whileTap={{ scale: 0.95 }}
 							transition={{ type: "spring", stiffness: 500, damping: 18 }}

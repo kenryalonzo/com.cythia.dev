@@ -16,7 +16,7 @@ type Treatment = {
 	alt: string;
 };
 
-const treatments: Treatment[] = [
+const treatments: (Treatment & { waMsg: string })[] = [
 	{
 		name: "Microneedling",
 		description:
@@ -24,6 +24,7 @@ const treatments: Treatment[] = [
 		price: "35 000 FCFA",
 		image: "/assets/images/microneeding.jpg",
 		alt: "Résultat de microneedling sur le visage",
+		waMsg: "Bonjour Cynthia, je suis intéressé(e) par le microneedling.",
 	},
 	{
 		name: "Notre Signoche",
@@ -32,6 +33,7 @@ const treatments: Treatment[] = [
 		price: "5 000 FCFA",
 		image: "/assets/images/massage.webp",
 		alt: "Soin du visage signature Cynthia",
+		waMsg: "Bonjour Cynthia, je souhaite en savoir plus sur le soin Signoche.",
 	},
 	{
 		name: "Microblading",
@@ -40,6 +42,7 @@ const treatments: Treatment[] = [
 		price: "15 000 FCFA",
 		image: "/assets/images/microshading.webp",
 		alt: "Résultat de microblading des sourcils",
+		waMsg: "Bonjour Cynthia, je suis intéressé(e) par le microblading.",
 	},
 	{
 		name: "Extensions de cils",
@@ -48,6 +51,7 @@ const treatments: Treatment[] = [
 		price: "7 000 FCFA",
 		image: "/assets/images/extension_des_cils.avif",
 		alt: "Résultat d'extensions de cils",
+		waMsg: "Bonjour Cynthia, je souhaite des informations sur les extensions de cils.",
 	},
 ];
 
@@ -72,11 +76,17 @@ export function FeaturedTreatments() {
 				<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
 					{treatments.map((t, i) => (
 						<Reveal key={t.name} delay={i * 0.08} className="h-full">
-							<motion.article
-								whileHover={{ y: -4 }}
-								transition={{ type: "spring", stiffness: 300, damping: 24 }}
-								className="group relative flex h-full flex-col overflow-hidden rounded-2xl bg-cream shadow-soft ring-1 ring-slate-line/30 transition-shadow duration-500 hover:shadow-card"
+							<a
+								href={waLink(t.waMsg)}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="group block h-full"
 							>
+								<motion.div
+									whileHover={{ y: -4 }}
+									transition={{ type: "spring", stiffness: 300, damping: 24 }}
+									className="relative flex h-full flex-col overflow-hidden rounded-2xl bg-cream shadow-soft ring-1 ring-slate-line/30 transition-shadow duration-500 hover:shadow-card"
+								>
 								{/* Image — format plus large */}
 								<div className="relative aspect-[16/10] w-full overflow-hidden">
 									<Image
@@ -115,7 +125,8 @@ export function FeaturedTreatments() {
 										</span>
 									</div>
 								</div>
-							</motion.article>
+							</motion.div>
+							</a>
 						</Reveal>
 					))}
 				</div>

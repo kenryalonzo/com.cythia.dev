@@ -11,10 +11,11 @@ import {
   Zap,
 } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { waLink } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const categories = [
@@ -22,42 +23,42 @@ const categories = [
     title: "SOINS\nDU VISAGE",
     subtitle: "4 soins experts",
     image: "/assets/images/soin-visage.jpg",
-    href: "#soins-visage",
+    waMsg: "Bonjour Cynthia, je souhaite en savoir plus sur vos soins du visage.",
     icon: Sparkles,
   },
   {
     title: "MICRONEEDLING\nEXPERT",
     subtitle: "1 protocole avancé",
     image: "/assets/images/microneeding.jpg",
-    href: "#microneedling",
+    waMsg: "Bonjour Cynthia, je suis intéressé(e) par le microneedling expert.",
     icon: Zap,
   },
   {
     title: "BEAUTÉ\nDU REGARD",
     subtitle: "5 prestations",
     image: "/assets/images/beaute-au-regard.jpg",
-    href: "#beaute-regard",
+    waMsg: "Bonjour Cynthia, je souhaite des informations sur la beauté du regard.",
     icon: Eye,
   },
   {
     title: "MASSAGES\n& BIEN-ÊTRE",
     subtitle: "3 rituels",
     image: "/assets/images/massage.webp",
-    href: "#massages",
+    waMsg: "Bonjour Cynthia, je suis intéressé(e) par vos massages bien-être.",
     icon: Waves,
   },
   {
     title: "ÉPILATION\nEXPERTE",
     subtitle: "2 techniques",
     image: "/assets/images/soin-expert.jpg",
-    href: "#epilation",
+    waMsg: "Bonjour Cynthia, je souhaite en savoir plus sur l'épilation.",
     icon: User,
   },
   {
     title: "FORMATIONS\nPROFESSIONNELLES",
     subtitle: "3 programmes",
     image: "/assets/images/formation-soin.jpg",
-    href: "#formations",
+    waMsg: "Bonjour Cynthia, je suis intéressé(e) par vos formations professionnelles.",
     icon: GraduationCap,
   },
 ];
@@ -154,8 +155,10 @@ export function BeautyUnivers() {
                   delay={i * 0.05}
                   className="min-w-[280px] snap-center lg:min-w-0"
                 >
-                  <Link
-                    href={cat.href}
+                  <a
+                    href={waLink(cat.waMsg)}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="group relative block aspect-[4/5] overflow-hidden rounded-2xl bg-slate-100 shadow-card transition-all duration-500 hover:shadow-lift lg:aspect-[3/4.5] xl:aspect-[4/6]"
                   >
                     {/* Image Layer */}
@@ -193,7 +196,7 @@ export function BeautyUnivers() {
                         <ArrowRight size={14} strokeWidth={3} />
                       </div>
                     </div>
-                  </Link>
+                    </a>
                 </Reveal>
               );
             })}
