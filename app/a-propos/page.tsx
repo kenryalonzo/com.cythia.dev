@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { Footer } from "@/components/Footer";
-import { Navbar } from "@/components/Navbar";
 import { AboutHero } from "@/components/AboutHero";
-import { OurStory } from "@/components/OurStory";
+import { Engagement } from "@/components/Engagement";
 import { Expertise } from "@/components/Expertise";
+import { Footer } from "@/components/Footer";
+import { ImpactChiffres } from "@/components/ImpactChiffres";
+import { Navbar } from "@/components/Navbar";
+import { OurStory } from "@/components/OurStory";
 
 export const metadata: Metadata = {
 	title: "À propos",
@@ -25,7 +27,8 @@ export default function AProposPage() {
 				<AboutHero />
 				<OurStory />
 				<Expertise />
-				{/* Autres sections à venir : Engagement */}
+				<ImpactChiffres />
+				<Engagement />
 			</main>
 			<Footer />
 		</>
