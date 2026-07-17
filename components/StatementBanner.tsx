@@ -104,7 +104,7 @@ export function StatementBanner() {
 						aria-hidden="true"
 					>
 						<Image
-							src="/assets/images/lotus-middle.png"
+							src="/assets/images/lotus-middle.webp"
 							alt=""
 							width={36}
 							height={36}

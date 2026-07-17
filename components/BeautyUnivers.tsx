@@ -97,7 +97,7 @@ export function BeautyUnivers() {
         className="pointer-events-none absolute left-[-10%] top-0 h-full w-[40%] mix-blend-multiply opacity-40 lg:left-[-5%]"
       >
         <Image
-          src="/assets/images/forme-left.png"
+          src="/assets/images/forme-left.webp"
           alt=""
           fill
           sizes="40vw"
@@ -116,7 +116,7 @@ export function BeautyUnivers() {
         className="pointer-events-none absolute right-[-10%] top-0 h-full w-[40%] rotate-180 mix-blend-multiply opacity-40 lg:right-[-5%]"
       >
         <Image
-          src="/assets/images/forme-left.png"
+          src="/assets/images/forme-left.webp"
           alt=""
           fill
           sizes="40vw"

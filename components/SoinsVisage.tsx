@@ -151,7 +151,7 @@ export function SoinsVisage() {
 				className="pointer-events-none absolute left-0 top-0 h-full w-[20%] opacity-15"
 			>
 				<Image
-					src="/assets/images/forme-left.png"
+					src="/assets/images/forme-left.webp"
 					alt=""
 					fill
 					sizes="20vw"

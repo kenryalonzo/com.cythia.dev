@@ -12,13 +12,13 @@ const timelineEvents = [
 		year: "2019",
 		title: "Les premiers pas",
 		description: "Naissance d'un rêve et d'un institut intimiste.",
-		image: "/assets/images/lotus-middle.png",
+		image: "/assets/images/lotus-middle.webp",
 	},
 	{
 		year: "2020",
 		title: "L'expansion",
 		description: "De nouveaux soins, plus d'expertise, plus de résultats.",
-		image: "/assets/images/bureau-cynthia.png",
+		image: "/assets/images/bureau-cynthia.webp",
 	},
 	{
 		year: "2021",
@@ -56,7 +56,7 @@ export function OurStory() {
 				aria-hidden="true"
 			>
 				<Image
-					src="/assets/images/forme-left.png"
+					src="/assets/images/forme-left.webp"
 					alt=""
 					fill
 					sizes="35vw"

@@ -113,7 +113,7 @@ export function WhyContactSection() {
                 <h3 className="font-display text-[15px] font-bold text-royal">
                   {reason.title}
                 </h3>
-                <p className="mt-1.5 font-sans text-[13px] leading-relaxed text-slate-ink/60">
+                <p className="mt-1.5 font-sans text-[13px] leading-relaxed text-slate-ink/80">
                   {reason.description}
                 </p>
               </motion.div>

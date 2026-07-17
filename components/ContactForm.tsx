@@ -52,7 +52,7 @@ export function ContactSection() {
     <section className="relative flex items-center overflow-hidden bg-ivory py-10 md:py-12 lg:py-16">
       {/* ─── Arrière-plan — forme gauche dorée ─── */}
       <motion.img
-        src="/assets/images/forme-left.png"
+        src="/assets/images/forme-left.webp"
         alt=""
         aria-hidden
         animate={{ y: [0, -10, 0], rotate: [0, 1, 0] }}
@@ -63,7 +63,7 @@ export function ContactSection() {
       {/* ─── Arrière-plan — bureau droit avec fondu ─── */}
       <div className="pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-1/2 lg:block">
         <img
-          src="/assets/images/bureau-cynthia.png"
+          src="/assets/images/bureau-cynthia.webp"
           alt=""
           aria-hidden
           className="absolute inset-0 h-full w-full object-cover opacity-60"
@@ -106,7 +106,7 @@ export function ContactSection() {
           {/* Lueur centrale */}
           <div className="absolute inset-4 rounded-full bg-gold/10 blur-md" />
           <motion.img
-            src="/assets/images/lotus-middle.png"
+            src="/assets/images/lotus-middle.webp"
             alt=""
             aria-hidden
             animate={{ rotate: [0, 3, 0, -3, 0] }}
@@ -154,7 +154,7 @@ export function ContactSection() {
                 <h3 className="font-display text-xl font-bold text-royal">
                   Merci !
                 </h3>
-                <p className="mt-1.5 max-w-[240px] font-sans text-[11px] text-slate-ink/70">
+                <p className="mt-1.5 max-w-[240px] font-sans text-[11px] text-slate-ink">
                   Votre message a bien été envoyé. Nous vous répondrons très
                   vite.
                 </p>
@@ -217,7 +217,8 @@ export function ContactSection() {
                     <select
                       name="service"
                       required
-                      className="w-full appearance-none rounded-lg border border-gold/30 bg-white px-4 py-2.5 pr-8 font-sans text-base text-slate-ink/60 shadow-sm transition-all focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 hover:border-gold/50"
+                      aria-label="Sujet du message"
+                      className="w-full appearance-none rounded-lg border border-gold/30 bg-white px-4 py-2.5 pr-8 font-sans text-base text-slate-ink shadow-sm transition-all focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 hover:border-gold/50"
                     >
                       <option value="">Sujet</option>
                       {services.map((s) => (
@@ -252,21 +253,9 @@ export function ContactSection() {
 
                 <motion.button
                   type="submit"
-                  animate={{
-                    boxShadow: [
-                      "0 4px 14px rgba(201,162,39,.25)",
-                      "0 4px 14px rgba(201,162,39,.25), 0 0 0 10px rgba(253,207,2,0.22)",
-                      "0 4px 14px rgba(201,162,39,.25)",
-                    ],
-                  }}
-                  transition={{
-                    duration: 1.1,
-                    repeat: Infinity,
-                    ease: "easeOut",
-                  }}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="group relative flex w-full items-center justify-between overflow-hidden rounded-full bg-gradient-to-r from-gold-warm via-gold to-gold-warm px-2 py-2 pl-6 font-sans text-[12px] font-bold uppercase tracking-[0.08em] text-royal transition-all hover:shadow-lift"
+                  className="group relative flex w-full items-center justify-between overflow-hidden rounded-full bg-gradient-to-r from-gold-warm via-gold to-gold-warm px-2 py-2 pl-6 font-sans text-[12px] font-bold uppercase tracking-[0.08em] text-royal shadow-gold transition-shadow hover:shadow-lift"
                 >
                   <span className="flex-1 text-center">Envoyer le message</span>
                   <span className="flex h-[38px] w-[38px] shrink-0 items-center justify-center rounded-full bg-royal text-gold transition-transform duration-300 group-hover:translate-x-0.5 group-hover:bg-royal-light">
@@ -281,7 +270,7 @@ export function ContactSection() {
                   </span>
                 </motion.button>
 
-                <p className="flex items-center gap-1 pt-1 font-sans text-[9px] text-slate-ink/50">
+                <p className="flex items-center gap-1 pt-1 font-sans text-[9px] text-slate-ink/70">
                   <svg
                     className="h-2.5 w-2.5"
                     fill="none"
