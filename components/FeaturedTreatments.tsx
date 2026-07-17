@@ -30,7 +30,7 @@ const treatments: Treatment[] = [
 		description:
 			"Nettoie, hydrate et revitalise votre peau en profondeur pour un éclat immédiat.",
 		price: "5 000 FCFA",
-		image: "/assets/images/massage.png",
+		image: "/assets/images/massage.webp",
 		alt: "Soin du visage signature Cynthia",
 	},
 	{

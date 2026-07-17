@@ -9,7 +9,7 @@ export default function NotFound() {
 			{/* Image de fond — clouds */}
 			<div className="pointer-events-none absolute inset-0">
 				<img
-					src="/assets/images/image-404.png"
+					src="/assets/images/image-404.webp"
 					alt=""
 					aria-hidden
 					className="h-full w-full object-cover opacity-80 contrast-125 saturate-50"

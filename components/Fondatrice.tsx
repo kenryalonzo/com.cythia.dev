@@ -48,7 +48,7 @@ export function Fondatrice() {
 				aria-hidden
 			>
 				<Image
-					src="/assets/images/lotus-cote-droit.png"
+					src="/assets/images/lotus-cote-droit.webp"
 					alt=""
 					fill
 					sizes="20vw"
@@ -114,7 +114,7 @@ export function Fondatrice() {
 								}}
 							/>
 							<Image
-								src="/assets/images/cynthia-vision.png"
+								src="/assets/images/cynthia-vision.webp"
 								alt="Cynthia — Fondatrice de Cynthia Cosmétique"
 								fill
 								sizes="280px"

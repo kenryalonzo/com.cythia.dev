@@ -112,7 +112,7 @@ export function FAQ() {
 								className="absolute top-18 right-22 hidden translate-x-1/3 lg:block"
 							>
 								<Image
-									src="/assets/images/lotus-cote-droit.png"
+									src="/assets/images/lotus-cote-droit.webp"
 									alt="lotus-image-cosmetique"
 									width={280}
 									height={280}

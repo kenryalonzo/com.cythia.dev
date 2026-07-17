@@ -173,7 +173,7 @@ export function SoinsVisage() {
 						<div className="flex w-full overflow-hidden rounded-xl bg-royal shadow-card">
 							<div className="relative h-full w-full min-h-[200px] md:min-h-[260px]">
 								<Image
-									src="/assets/images/cleanup.png"
+									src="/assets/images/cleanup.webp"
 									alt="Soin du visage expert"
 									fill
 									sizes="(min-width: 1024px) 25vw, 100vw"

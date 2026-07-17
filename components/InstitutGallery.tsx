@@ -7,12 +7,12 @@ import { Reveal } from "@/components/ui/Reveal";
 
 const images = [
 	{
-		src: "/assets/images/institut-1.png",
+		src: "/assets/images/institut-1.webp",
 		alt: "Entrée de l'institut Cynthia Cosmétique",
 	},
-	{ src: "/assets/images/institut-2.png", alt: "Salle de soin" },
-	{ src: "/assets/images/institut-3.png", alt: "Espace détente" },
-	{ src: "/assets/images/institut-4.png", alt: "Coin maquillage" },
+	{ src: "/assets/images/institut-2.webp", alt: "Salle de soin" },
+	{ src: "/assets/images/institut-3.webp", alt: "Espace détente" },
+	{ src: "/assets/images/institut-4.webp", alt: "Coin maquillage" },
 ];
 
 export function InstitutGallery() {

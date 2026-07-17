@@ -108,7 +108,7 @@ export function BookingBanner() {
               />
             ))}
             <motion.img
-              src="/assets/images/right-lotus-blue-section.png"
+              src="/assets/images/right-lotus-blue-section.webp"
               alt="Lotus Cynthia"
               className="absolute left-1/2 top-1/2"
               style={{
@@ -141,7 +141,7 @@ export function BookingBanner() {
               }}
             >
               <img
-                src="/assets/images/right-lotus-blue-section.png"
+                src="/assets/images/right-lotus-blue-section.webp"
                 alt=""
                 aria-hidden
                 style={{

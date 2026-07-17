@@ -47,7 +47,7 @@ export function AboutHero() {
 				<div className="absolute inset-0 z-10">
 					<div className="relative h-full w-full">
 						<Image
-							src="/assets/images/profil-cynthia.png"
+							src="/assets/images/profil-cynthia.webp"
 							alt=""
 							fill
 							sizes="100vw"
@@ -66,7 +66,7 @@ export function AboutHero() {
 							<div className="flex items-center gap-2">
 								<div className="relative h-5 w-5">
 									<Image
-										src="/assets/images/lotus-expertise.png"
+										src="/assets/images/lotus-expertise.webp"
 										alt=""
 										fill
 										sizes="20px"
@@ -224,7 +224,7 @@ export function AboutHero() {
 						className="relative h-[420px] w-[300px]"
 					>
 						<Image
-							src="/assets/images/profil-cynthia.png"
+							src="/assets/images/profil-cynthia.webp"
 							alt="Cynthia — Fondatrice de Cynthia Cosmétique"
 							fill
 							priority

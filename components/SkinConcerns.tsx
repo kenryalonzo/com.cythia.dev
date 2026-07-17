@@ -52,7 +52,7 @@ export function SkinConcerns() {
 			{/* Background image avec mouvement lent */}
 			<div className="absolute inset-0 overflow-hidden" aria-hidden="true">
 				<Image
-					src="/assets/images/background-segond-section.png"
+					src="/assets/images/background-segond-section.webp"
 					alt=""
 					fill
 					sizes="100vw"

@@ -119,7 +119,7 @@ export function Transformation() {
 								<div className="relative overflow-hidden rounded-[10px] ring-1 ring-royal/20">
 									<div className="relative aspect-[3/4] w-[120px] sm:w-[160px] md:w-[180px]">
 										<Image
-											src="/assets/images/before-image.png"
+											src="/assets/images/before-image.webp"
 											alt="Avant le soin — peau avec imperfections"
 											fill
 											sizes="(min-width: 768px) 180px, (min-width: 640px) 160px, 120px"
@@ -182,7 +182,7 @@ export function Transformation() {
 								<div className="relative overflow-hidden rounded-[10px] ring-1 ring-royal/20">
 									<div className="relative aspect-[3/4] w-[120px] sm:w-[160px] md:w-[180px]">
 										<Image
-											src="/assets/images/after-image.png"
+											src="/assets/images/after-image.webp"
 											alt="Après le soin — peau saine et éclatante"
 											fill
 											sizes="(min-width: 768px) 180px, (min-width: 640px) 160px, 120px"

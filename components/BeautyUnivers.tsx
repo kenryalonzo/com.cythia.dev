@@ -42,7 +42,7 @@ const categories = [
   {
     title: "MASSAGES\n& BIEN-ÊTRE",
     subtitle: "3 rituels",
-    image: "/assets/images/massage.png",
+    image: "/assets/images/massage.webp",
     href: "#massages",
     icon: Waves,
   },

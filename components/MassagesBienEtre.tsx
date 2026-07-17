@@ -13,7 +13,7 @@ const massages = [
 		name: "Massage Relaxant",
 		description: "Détente musculaire et mentale",
 		price: "10 000",
-		image: "/assets/images/massage.png",
+		image: "/assets/images/massage.webp",
 	},
 	{
 		name: "Soin Renaissance",

@@ -39,7 +39,7 @@ export function EpilationFormations() {
 					{/* Image background — 100% */}
 					<div className="absolute inset-0 z-0" aria-hidden="true">
 						<Image
-							src="/assets/images/epilation_impecable.png"
+							src="/assets/images/epilation_impecable.webp"
 							alt=""
 							fill
 							sizes="(max-width: 1024px) 100vw, 50vw"
@@ -104,7 +104,7 @@ export function EpilationFormations() {
 					{/* Image background — 100% */}
 				<div className="absolute inset-0 z-0" aria-hidden="true">
 					<Image
-						src="/assets/images/formation_pro.png"
+						src="/assets/images/formation_pro.webp"
 						alt=""
 						fill
 						sizes="(max-width: 1024px) 100vw, 50vw"

@@ -50,7 +50,7 @@ export function PrestationHero() {
           className="relative h-full w-full"
         >
           <Image
-            src="/assets/images/hero-right-image.png"
+            src="/assets/images/hero-right-image.webp"
             alt="Portrait Cynthia Cosmétique"
             fill
             priority
@@ -68,7 +68,7 @@ export function PrestationHero() {
             <div className="flex items-center gap-2">
               <div className="relative h-5 w-5 sm:h-6 sm:w-6">
                   <Image
-                    src="/assets/images/lotus-expertise.png"
+                    src="/assets/images/lotus-expertise.webp"
                     alt=""
                     fill
                     sizes="24px"
@@ -151,7 +151,7 @@ export function PrestationHero() {
       <div className="absolute inset-0 z-10 block md:hidden">
         <div className="relative h-full w-full">
           <Image
-            src="/assets/images/hero-right-image.png"
+            src="/assets/images/hero-right-image.webp"
             alt=""
             fill
             sizes="100vw"

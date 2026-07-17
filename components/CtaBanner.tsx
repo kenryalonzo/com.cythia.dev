@@ -57,7 +57,7 @@ export function CtaBanner() {
 				aria-hidden
 			>
 				<Image
-					src="/assets/images/lotus-cote-droit.png"
+					src="/assets/images/lotus-cote-droit.webp"
 					alt=""
 					fill
 					sizes="30vw"

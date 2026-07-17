@@ -147,7 +147,7 @@ export function PrestationTestimonialsCTA() {
 						aria-hidden="true"
 					>
 						<Image
-							src="/assets/images/lotus-cote-droit.png"
+							src="/assets/images/lotus-cote-droit.webp"
 							alt=""
 							width={200}
 							height={200}
@@ -203,7 +203,7 @@ export function PrestationTestimonialsCTA() {
 				{/* Image de fond */}
 				<div className="absolute inset-0 z-0" aria-hidden="true">
 					<Image
-						src="/assets/images/background_last_section.png"
+						src="/assets/images/background_last_section.webp"
 						alt=""
 						fill
 						sizes="100vw"

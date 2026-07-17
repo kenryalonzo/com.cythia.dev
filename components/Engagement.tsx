@@ -107,7 +107,7 @@ export function Engagement() {
 							<div className="relative z-10 flex items-center gap-4">
 								<div className="relative h-[100px] w-[80px] shrink-0 overflow-hidden rounded-xl sm:h-[120px] sm:w-[95px]">
 									<Image
-										src="/assets/images/cynthia-image.png"
+										src="/assets/images/cynthia-image.webp"
 										alt="Cynthia"
 										fill
 										sizes="95px"

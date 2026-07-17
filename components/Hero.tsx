@@ -152,7 +152,7 @@ export function Hero() {
 							className="relative aspect-[3/4] w-full overflow-hidden rounded-[1.2rem] shadow-lift ring-1 ring-white/70 sm:aspect-[4/5] sm:rounded-[1.8rem] lg:rounded-[2rem] lg:ring-2"
 						>
 							<Image
-								src="/assets/visage-hero.png"
+								src="/assets/visage-hero.webp"
 								alt="Femme recevant un soin du visage expert chez Cynthia Cosmétique"
 								fill
 								priority

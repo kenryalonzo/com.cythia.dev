@@ -25,7 +25,7 @@ const timelineEvents = [
 		title: "La confiance",
 		description:
 			"Une clientèle fidèle et des transformations qui parlent d'elles-mêmes.",
-		image: "/assets/images/massage.png",
+		image: "/assets/images/massage.webp",
 	},
 	{
 		year: "2022",
@@ -39,7 +39,7 @@ const timelineEvents = [
 		title: "Notre vision",
 		description:
 			"Former, inspirer et continuer d'élever les standards de beauté.",
-		image: "/assets/images/formation_pro.png",
+		image: "/assets/images/formation_pro.webp",
 	},
 ];
 
