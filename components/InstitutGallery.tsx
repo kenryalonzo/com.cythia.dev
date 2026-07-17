@@ -22,7 +22,6 @@ export function InstitutGallery() {
 			variant="scroll"
 			className="relative overflow-hidden bg-ivory py-10 sm:py-12 md:py-14 lg:py-16"
 		>
-			{/* Background silk texture */}
 			<div className="absolute inset-0 z-0">
 				<Image
 					src="/assets/images/left-image-effect.png"
@@ -37,7 +36,6 @@ export function InstitutGallery() {
 
 			<div className="container-luxe relative z-10">
 				<div className="flex flex-col items-center gap-8 lg:flex-row lg:items-center lg:gap-10">
-					{/* ─── Left: Text ─── */}
 					<div className="flex w-full flex-col lg:w-[38%]">
 						<Reveal direction="down" delay={0.1}>
 							<span className="eyebrow mb-3 block !text-[9px] !tracking-[0.2em] !text-gold-deep/80 sm:!text-[10px] md:!text-[11px]">
@@ -46,7 +44,7 @@ export function InstitutGallery() {
 						</Reveal>
 
 						<Reveal delay={0.2}>
-							<h2 className="max-w-[300px] font-display text-xl font-bold leading-[1.1] tracking-tight text-royal sm:text-2xl md:max-w-none md:text-[1.75rem] lg:text-[2rem]">
+							<h2 className="font-display text-xl font-bold leading-[1.1] tracking-tight text-royal sm:text-2xl md:text-[1.75rem] lg:text-[2rem] lg:max-w-[300px]">
 								Un lieu pensé pour votre{" "}
 								<span className="text-gradient-gold font-normal italic">
 									bien-être
@@ -74,23 +72,21 @@ export function InstitutGallery() {
 						</Reveal>
 					</div>
 
-					{/* ─── Right: 4 images ─── */}
 					<div className="grid w-full grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3 md:gap-4 lg:w-[62%]">
 						{images.map((img, i) => (
 							<Reveal key={img.src} delay={0.2 + i * 0.1} direction="right">
 								<motion.div
 									whileHover={{ y: -4, scale: 1.02 }}
 									transition={{ type: "spring", stiffness: 300, damping: 20 }}
-									className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-card ring-1 ring-slate-line/10 sm:rounded-3xl"
+									className="relative aspect-[3/4] overflow-hidden rounded-xl shadow-card ring-1 ring-slate-line/10 sm:rounded-2xl md:rounded-3xl"
 								>
 									<Image
 										src={img.src}
 										alt={img.alt}
 										fill
-										sizes="(min-width: 1024px) 15vw, 25vw"
+										sizes="(min-width: 1024px) 15vw, (min-width: 640px) 25vw, 45vw"
 										className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-105"
 									/>
-									{/* Gold shimmer on hover */}
 									<div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gold/10 via-transparent to-transparent opacity-0 transition-opacity duration-300 hover:opacity-100" />
 								</motion.div>
 							</Reveal>

@@ -17,7 +17,6 @@ export function Fondatrice() {
 			variant="scroll"
 			className="relative overflow-hidden bg-[#f7f3ea] py-10 sm:py-12"
 		>
-			{/* Background gold flowing lines */}
 			<svg
 				className="pointer-events-none absolute inset-0 h-full w-full opacity-20"
 				viewBox="0 0 1200 400"
@@ -42,7 +41,6 @@ export function Fondatrice() {
 					transition={{ duration: 3, ease: "easeInOut" }}
 				/>
 			</svg>
-			{/* Lotus decoration */}
 			<motion.div
 				animate={{ y: [0, -6, 0] }}
 				transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
@@ -59,8 +57,7 @@ export function Fondatrice() {
 			</motion.div>
 
 			<div className="container-luxe relative z-10">
-				<div className="flex flex-col items-center gap-8 lg:flex-row lg:items-center lg:gap-0">
-					{/* ─── Left: Text + Stats (~45%) ─── */}
+				<div className="flex flex-col items-center gap-6 lg:flex-row lg:items-center lg:gap-0">
 					<div className="flex w-full flex-col lg:w-[45%] lg:pr-10">
 						<Reveal direction="down" delay={0.1}>
 							<span className="eyebrow mb-3 block !text-[9px] !tracking-[0.2em] !text-gold-deep/80 sm:!text-[10px] md:!text-[11px]">
@@ -69,7 +66,7 @@ export function Fondatrice() {
 						</Reveal>
 
 						<Reveal delay={0.2}>
-							<h2 className="max-w-[320px] font-display text-xl font-bold leading-[1.1] tracking-tight text-royal sm:text-2xl md:max-w-none md:text-[1.75rem] lg:text-[2rem]">
+							<h2 className="font-display text-xl font-bold leading-[1.1] tracking-tight text-royal sm:text-2xl md:text-[1.75rem] lg:text-[2rem] lg:max-w-[320px]">
 								Une vision,
 								<br />
 								une mission,
@@ -79,14 +76,13 @@ export function Fondatrice() {
 						</Reveal>
 
 						<Reveal delay={0.3}>
-							<p className="mt-3 max-w-md text-xs leading-relaxed text-slate-ink/70 sm:text-sm md:text-base">
+							<p className="mt-3 max-w-md text-sm leading-relaxed text-slate-ink/70 sm:text-base">
 								J&apos;ai créé Cynthia Cosmétique pour offrir bien plus
 								qu&apos;un soin : une expérience transformative qui révèle la
 								beauté et renforce la confiance.
 							</p>
 						</Reveal>
 
-						{/* Stats */}
 						<Reveal delay={0.4}>
 							<div className="mt-5 flex gap-6 sm:gap-8">
 								{stats.map((s) => (
@@ -94,7 +90,7 @@ export function Fondatrice() {
 										<span className="font-display text-lg font-bold text-gold-deep sm:text-xl md:text-2xl">
 											{s.number}
 										</span>
-										<span className="mt-0.5 text-[9px] text-slate-ink/55 sm:text-[10px] md:text-xs">
+										<span className="mt-0.5 text-[10px] text-slate-ink/55 sm:text-xs">
 											{s.label}
 										</span>
 									</div>
@@ -103,14 +99,12 @@ export function Fondatrice() {
 						</Reveal>
 					</div>
 
-					{/* ─── Center: Portrait (~35%) ─── */}
 					<Reveal delay={0.2} className="w-full lg:w-[35%]">
 						<motion.div
 							whileHover={{ y: -3 }}
 							transition={{ type: "spring", stiffness: 300, damping: 24 }}
 							className="relative mx-auto aspect-[3/4] w-[180px] overflow-hidden rounded-2xl bg-[#0a1d5a] shadow-card sm:w-[220px] md:w-[260px] lg:w-[280px]"
 						>
-							{/* Gold shimmer */}
 							<div
 								className="pointer-events-none absolute inset-0 z-10 opacity-20"
 								aria-hidden
@@ -129,7 +123,6 @@ export function Fondatrice() {
 						</motion.div>
 					</Reveal>
 
-					{/* ─── Right: Quote (~20%) ─── */}
 					<Reveal
 						direction="right"
 						delay={0.3}

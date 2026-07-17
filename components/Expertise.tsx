@@ -98,10 +98,6 @@ const values: Value[] = [
 	},
 ];
 
-/**
- * Expertise — "Nos Valeurs" section for the About page.
- * Features a dark navy background with golden flowing lines and 5 value cards.
- */
 export function Expertise() {
 	return (
 		<Reveal
@@ -109,9 +105,7 @@ export function Expertise() {
 			variant="scroll"
 			className="relative overflow-hidden bg-[#0a1d5a] py-10 sm:py-12 md:py-14 lg:py-16"
 		>
-			{/* ─── Background gold flowing lines ─── */}
 			<div className="pointer-events-none absolute inset-0">
-				{/* Gradient radial doré */}
 				<div
 					className="absolute inset-0"
 					style={{
@@ -119,7 +113,6 @@ export function Expertise() {
 							"radial-gradient(ellipse 70% 60% at 20% 50%, rgba(201,162,39,0.15) 0%, transparent 60%)",
 					}}
 				/>
-				{/* Lignes dorées fluides */}
 				<svg
 					className="absolute inset-0 h-full w-full opacity-40"
 					viewBox="0 0 1440 400"
@@ -152,7 +145,6 @@ export function Expertise() {
 						transition={{ duration: 2.8, ease: "easeInOut", delay: 0.3 }}
 					/>
 				</svg>
-				{/* Particules dorées */}
 				{[
 					{ cx: "15%", cy: "25%", delay: 0 },
 					{ cx: "45%", cy: "55%", delay: 1.5 },
@@ -176,7 +168,6 @@ export function Expertise() {
 
 			<div className="container-luxe relative z-10">
 				<div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[30%_1fr] lg:gap-12">
-					{/* ─── Column Left: Text ─── */}
 					<div className="flex flex-col">
 						<Reveal direction="down" delay={0.1}>
 							<span className="eyebrow mb-4 block !text-[9px] !tracking-[0.2em] !text-gold/80 sm:!text-[10px] md:!text-[11px]">
@@ -185,7 +176,7 @@ export function Expertise() {
 						</Reveal>
 
 						<Reveal delay={0.2}>
-							<h2 className="max-w-[280px] font-display text-2xl font-bold leading-[1.1] tracking-tight text-white sm:text-3xl md:max-w-none md:text-[2.25rem] lg:text-[2.5rem]">
+							<h2 className="font-display text-2xl font-bold leading-[1.1] tracking-tight text-white sm:text-3xl md:text-[2.25rem] lg:text-[2.5rem] lg:max-w-[280px]">
 								Ce qui{" "}
 								<span className="text-gradient-gold font-normal italic">
 									guide
@@ -195,8 +186,7 @@ export function Expertise() {
 						</Reveal>
 					</div>
 
-					{/* ─── Column Right: Values ─── */}
-					<div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-5 md:gap-4 lg:gap-6">
+					<div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5 md:gap-4 lg:gap-6">
 						{values.map((v, i) => (
 							<Reveal key={v.title} delay={0.1 * i} direction="up">
 								<motion.div
@@ -210,7 +200,7 @@ export function Expertise() {
 									<h3 className="mt-3 font-display text-sm font-semibold text-white">
 										{v.title}
 									</h3>
-									<p className="mt-1.5 text-[11px] leading-relaxed text-white/65 sm:text-xs">
+									<p className="mt-1.5 text-xs leading-relaxed text-white/65 sm:text-sm">
 										{v.description}
 									</p>
 								</motion.div>

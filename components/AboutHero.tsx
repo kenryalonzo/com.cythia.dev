@@ -10,7 +10,6 @@ import { Reveal } from "@/components/ui/Reveal";
 export function AboutHero() {
 	return (
 		<section className="relative w-full bg-ivory pt-20 pb-8 sm:pt-24 sm:pb-10 lg:py-12">
-			{/* ─── Background Silk Texture ─── */}
 			<div className="absolute inset-0 z-0">
 				<Image
 					src="/assets/images/left-image-effect.png"
@@ -23,13 +22,10 @@ export function AboutHero() {
 				/>
 			</div>
 
-			{/* ─── Filaments ─── */}
 			<Filaments intensity="subtle" />
 			<Filaments intensity="subtle" className="rotate-45 scale-110" />
 
-			{/* ─── Content ─── */}
 			<div className="container-luxe relative z-20 flex flex-col items-center gap-6 lg:flex-row lg:items-center lg:gap-0">
-				{/* ─── Left: Text (~40%) ─── */}
 				<div className="order-2 w-full lg:order-1 lg:w-[40%] lg:pr-8">
 					<Reveal direction="down" delay={0.1}>
 						<span className="eyebrow mb-3 block !text-[9px] !tracking-[0.2em] !text-gold-deep/80 sm:!text-[10px] md:!text-[11px]">
@@ -38,7 +34,7 @@ export function AboutHero() {
 					</Reveal>
 
 					<Reveal delay={0.2}>
-						<h1 className="max-w-[300px] font-display text-2xl font-bold leading-[1.1] tracking-tight text-royal sm:text-3xl md:max-w-none md:text-[2rem] lg:text-[2.25rem]">
+						<h1 className="font-display text-2xl font-bold leading-[1.1] tracking-tight text-royal sm:text-3xl md:text-[2rem] lg:text-[2.25rem] lg:max-w-[300px]">
 							Bien plus qu&apos;un institut,{" "}
 							<span className="text-gradient-gold font-normal italic">
 								une philosophie
@@ -50,7 +46,7 @@ export function AboutHero() {
 					</Reveal>
 
 					<Reveal delay={0.3}>
-						<p className="mt-3 max-w-sm text-xs leading-relaxed text-slate-ink/80 sm:text-sm md:text-base">
+						<p className="mt-3 max-w-sm text-sm leading-relaxed text-slate-ink/80 sm:text-base">
 							Cynthia Cosmétique est née d&apos;une conviction profonde : la
 							beauté véritable commence par le respect de la peau, de la
 							personne et de son histoire.
@@ -72,7 +68,6 @@ export function AboutHero() {
 					</Reveal>
 				</div>
 
-				{/* ─── Right: Quote (~25%) ─── */}
 				<div className="order-3 mt-6 w-full lg:order-3 lg:mt-0 lg:w-[25%] lg:pl-4">
 					<Reveal delay={0.5} direction="left">
 						<div className="relative flex flex-col">
@@ -99,7 +94,6 @@ export function AboutHero() {
 				</div>
 			</div>
 
-			{/* ─── Sticky Portrait — overlaps into next section ─── */}
 			<div className="pointer-events-none absolute inset-x-0 bottom-0 z-30 flex justify-center lg:justify-end lg:pr-[12%]">
 				<motion.div
 					initial={{ opacity: 0, y: 40 }}

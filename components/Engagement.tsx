@@ -17,9 +17,8 @@ export function Engagement() {
 		<Reveal
 			as="section"
 			variant="scroll"
-			className="relative overflow-hidden bg-[#f7f3ea] py-8 sm:py-10"
+			className="relative overflow-hidden bg-[#f7f3ea] py-10 sm:py-12"
 		>
-			{/* Background gold flowing lines */}
 			<svg
 				className="pointer-events-none absolute inset-0 h-full w-full opacity-25"
 				viewBox="0 0 1200 200"
@@ -53,7 +52,6 @@ export function Engagement() {
 					transition={{ duration: 3.5, ease: "easeInOut", delay: 0.4 }}
 				/>
 			</svg>
-			{/* Floating particles */}
 			{[
 				{ cx: "10%", cy: "30%", delay: 0 },
 				{ cx: "85%", cy: "25%", delay: 1.2 },
@@ -75,14 +73,12 @@ export function Engagement() {
 			))}
 			<div className="container-luxe">
 				<div className="flex flex-col gap-5 lg:flex-row lg:items-stretch lg:gap-6">
-					{/* ─── Left: Blue card with portrait ─── */}
 					<Reveal direction="left" delay={0.1} className="lg:w-[35%]">
 						<motion.div
 							whileHover={{ y: -3 }}
 							transition={{ type: "spring", stiffness: 300, damping: 24 }}
 							className="relative flex items-center overflow-hidden rounded-2xl bg-[#0a1d5a] p-5 sm:p-6"
 						>
-							{/* Gold shimmer */}
 							<div
 								className="pointer-events-none absolute inset-0 opacity-30"
 								aria-hidden
@@ -91,7 +87,6 @@ export function Engagement() {
 										"radial-gradient(ellipse 80% 60% at 30% 50%, rgba(201,162,39,0.15) 0%, transparent 60%)",
 								}}
 							/>
-							{/* Gold lines */}
 							<svg
 								className="pointer-events-none absolute inset-0 h-full w-full opacity-30"
 								viewBox="0 0 400 200"
@@ -126,7 +121,7 @@ export function Engagement() {
 									<span className="text-[8px] font-bold uppercase tracking-[0.2em] text-ivory/50">
 										Fondatrice
 									</span>
-									<p className="mt-2 max-w-[160px] text-[11px] leading-snug text-ivory/70 sm:text-xs">
+									<p className="mt-2 max-w-[160px] text-xs leading-snug text-ivory/70 sm:text-sm">
 										« Votre beauté mérite tout notre dévouement. »
 									</p>
 								</div>
@@ -134,7 +129,6 @@ export function Engagement() {
 						</motion.div>
 					</Reveal>
 
-					{/* ─── Center: Title + CTA ─── */}
 					<Reveal
 						direction="up"
 						delay={0.2}
@@ -160,7 +154,6 @@ export function Engagement() {
 						</Button>
 					</Reveal>
 
-					{/* ─── Right: Promises grid ─── */}
 					<Reveal direction="right" delay={0.3} className="lg:w-[35%]">
 						<div className="flex flex-col gap-2.5">
 							{promises.map((p, i) => (
@@ -174,7 +167,7 @@ export function Engagement() {
 										duration: 0.4,
 										ease: [0.22, 1, 0.36, 1],
 									}}
-									className="flex items-start gap-2 rounded-xl bg-white/60 px-3.5 py-2.5 ring-1 ring-gold/10"
+									className="flex items-start gap-2 rounded-xl bg-white/60 px-3.5 py-3 ring-1 ring-gold/10"
 								>
 									<span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-gold/15">
 										<Check
@@ -183,7 +176,7 @@ export function Engagement() {
 											strokeWidth={2.5}
 										/>
 									</span>
-									<span className="text-[11px] leading-snug text-slate-ink/75 sm:text-xs">
+									<span className="text-xs leading-snug text-slate-ink/75 sm:text-sm">
 										{p}
 									</span>
 								</motion.div>

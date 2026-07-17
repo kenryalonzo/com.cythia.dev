@@ -40,9 +40,8 @@ export function ImpactChiffres() {
 		<Reveal
 			as="section"
 			variant="scroll"
-			className="relative overflow-hidden bg-cream py-8 sm:py-10"
+			className="relative overflow-hidden bg-cream py-10 sm:py-12"
 		>
-			{/* Background gold flowing lines */}
 			<svg
 				className="pointer-events-none absolute inset-0 h-full w-full opacity-25"
 				viewBox="0 0 1200 200"
@@ -76,7 +75,6 @@ export function ImpactChiffres() {
 					transition={{ duration: 3, ease: "easeInOut", delay: 0.3 }}
 				/>
 			</svg>
-			{/* Floating particles */}
 			{[
 				{ cx: "15%", cy: "25%", delay: 0 },
 				{ cx: "75%", cy: "35%", delay: 1 },
@@ -97,7 +95,6 @@ export function ImpactChiffres() {
 					aria-hidden
 				/>
 			))}
-			{/* Radial glow */}
 			<div
 				className="pointer-events-none absolute inset-0 opacity-30"
 				aria-hidden
@@ -108,8 +105,7 @@ export function ImpactChiffres() {
 			/>
 
 			<div className="container-luxe relative">
-				<div className="flex flex-col items-center gap-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
-					{/* Title block */}
+				<div className="flex flex-col items-center gap-6 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
 					<Reveal direction="left" className="shrink-0">
 						<div className="flex items-center gap-3">
 							<span className="eyebrow !text-[9px] !tracking-[0.2em] !text-gold-deep/70">
@@ -122,8 +118,7 @@ export function ImpactChiffres() {
 						</div>
 					</Reveal>
 
-					{/* Stats */}
-					<div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 md:gap-10">
+					<div className="grid grid-cols-2 gap-x-8 gap-y-4 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-8 md:gap-10">
 						{stats.map((s, i) => (
 							<Reveal key={s.label} delay={0.06 * i} direction="up">
 								<motion.div
@@ -132,7 +127,7 @@ export function ImpactChiffres() {
 									className="group flex cursor-default flex-col items-center"
 								>
 									<CountUp target={s.number} />
-									<span className="mt-0.5 text-[10px] text-slate-ink/50 transition-colors group-hover:text-slate-ink/70 sm:text-[11px]">
+									<span className="mt-0.5 text-xs text-slate-ink/50 transition-colors group-hover:text-slate-ink/70 sm:text-[11px]">
 										{s.label}
 									</span>
 									<motion.div

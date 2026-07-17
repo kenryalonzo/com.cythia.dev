@@ -10,7 +10,6 @@ export function MissionVision() {
 			variant="scroll"
 			className="relative overflow-hidden bg-[#0a1d5a] py-10 sm:py-12"
 		>
-			{/* Background gold flowing lines */}
 			<svg
 				className="pointer-events-none absolute inset-0 h-full w-full opacity-25"
 				viewBox="0 0 1200 200"
@@ -35,7 +34,6 @@ export function MissionVision() {
 					transition={{ duration: 3, ease: "easeInOut" }}
 				/>
 			</svg>
-			{/* Particles */}
 			{[
 				{ cx: "15%", cy: "30%", delay: 0 },
 				{ cx: "80%", cy: "25%", delay: 1 },
@@ -57,15 +55,13 @@ export function MissionVision() {
 			))}
 
 			<div className="container-luxe relative z-10">
-				<div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12 lg:gap-20">
-					{/* ─── Mission ─── */}
+				<div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2 md:gap-10 lg:gap-16">
 					<Reveal direction="left" delay={0.1}>
-						<div className="flex items-center gap-5 sm:gap-6">
-							{/* Icon */}
+						<div className="flex items-start gap-4 sm:gap-6">
 							<motion.div
 								whileHover={{ scale: 1.05 }}
 								transition={{ type: "spring", stiffness: 200, damping: 15 }}
-								className="relative flex h-20 w-20 shrink-0 items-center justify-center sm:h-24 sm:w-24"
+								className="relative flex h-16 w-16 shrink-0 items-center justify-center sm:h-20 sm:w-20 md:h-24 md:w-24"
 							>
 								<div className="absolute inset-0 rounded-full border border-gold/30" />
 								<div
@@ -77,7 +73,7 @@ export function MissionVision() {
 								/>
 								<svg
 									viewBox="0 0 64 64"
-									className="relative z-10 h-10 w-10 text-gold sm:h-12 sm:w-12"
+									className="relative z-10 h-8 w-8 text-gold sm:h-10 sm:w-10 md:h-12 md:w-12"
 									fill="none"
 									stroke="currentColor"
 									strokeWidth="1.5"
@@ -94,10 +90,10 @@ export function MissionVision() {
 								<span className="eyebrow mb-2 block !text-[9px] !tracking-[0.2em] !text-gold sm:!text-[10px]">
 									Notre Mission
 								</span>
-								<h2 className="font-display text-lg font-bold italic leading-[1.15] tracking-tight text-ivory sm:text-xl">
+								<h2 className="font-display text-base font-bold italic leading-[1.15] tracking-tight text-ivory sm:text-lg md:text-xl">
 									Révéler la meilleure version de vous-même.
 								</h2>
-								<p className="mt-2 max-w-xs text-[11px] leading-relaxed text-ivory/55 sm:text-xs">
+								<p className="mt-2 max-w-xs text-xs leading-relaxed text-ivory/55 sm:text-sm">
 									Nous combinons expertise, technologies de pointe et produits
 									de haute qualité pour sublimer votre peau.
 								</p>
@@ -105,14 +101,12 @@ export function MissionVision() {
 						</div>
 					</Reveal>
 
-					{/* ─── Vision ─── */}
 					<Reveal direction="right" delay={0.2}>
-						<div className="flex items-center gap-5 sm:gap-6">
-							{/* Icon */}
+						<div className="flex items-start gap-4 sm:gap-6">
 							<motion.div
 								whileHover={{ scale: 1.05 }}
 								transition={{ type: "spring", stiffness: 200, damping: 15 }}
-								className="relative flex h-20 w-20 shrink-0 items-center justify-center sm:h-24 sm:w-24"
+								className="relative flex h-16 w-16 shrink-0 items-center justify-center sm:h-20 sm:w-20 md:h-24 md:w-24"
 							>
 								<div className="absolute inset-0 rounded-full border border-gold/30" />
 								<div
@@ -124,7 +118,7 @@ export function MissionVision() {
 								/>
 								<svg
 									viewBox="0 0 64 64"
-									className="relative z-10 h-10 w-10 text-gold sm:h-12 sm:w-12"
+									className="relative z-10 h-8 w-8 text-gold sm:h-10 sm:w-10 md:h-12 md:w-12"
 									fill="none"
 									stroke="currentColor"
 									strokeWidth="1.5"
@@ -142,10 +136,10 @@ export function MissionVision() {
 								<span className="eyebrow mb-2 block !text-[9px] !tracking-[0.2em] !text-gold sm:!text-[10px]">
 									Notre Vision
 								</span>
-								<h2 className="font-display text-lg font-bold italic leading-[1.15] tracking-tight text-ivory sm:text-xl">
+								<h2 className="font-display text-base font-bold italic leading-[1.15] tracking-tight text-ivory sm:text-lg md:text-xl">
 									Devenir la référence beauté en Afrique.
 								</h2>
-								<p className="mt-2 max-w-xs text-[11px] leading-relaxed text-ivory/55 sm:text-xs">
+								<p className="mt-2 max-w-xs text-xs leading-relaxed text-ivory/55 sm:text-sm">
 									Inspirer, éduquer et impacter des milliers de femmes en leur
 									offrant des soins d&apos;exception.
 								</p>

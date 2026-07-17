@@ -43,19 +43,14 @@ const timelineEvents = [
 	},
 ];
 
-/**
- * OurStory — Compact narrative and visual timeline section for the About page.
- * Features a slim layout with 5-card gallery and chronological history.
- */
 export function OurStory() {
 	return (
 		<Reveal
 			as="section"
 			variant="scroll"
 			id="histoire"
-			className="relative overflow-hidden bg-cream py-8 sm:py-10 md:py-12 lg:py-14"
+			className="relative overflow-hidden bg-cream py-10 sm:py-12 md:py-14"
 		>
-			{/* ─── Background silk texture (left side) ─── */}
 			<div
 				className="pointer-events-none absolute bottom-[-5%] left-[-5%] h-full w-[35%] opacity-30"
 				aria-hidden="true"
@@ -69,13 +64,11 @@ export function OurStory() {
 				/>
 			</div>
 
-			{/* ─── Filaments — subtle gold strokes across the section ─── */}
 			<Filaments intensity="subtle" />
 			<Filaments intensity="subtle" className="-rotate-12 scale-105" />
 
 			<div className="container-luxe relative z-10">
-				<div className="grid grid-cols-1 gap-10 lg:grid-cols-[35%_1fr] lg:gap-8 xl:gap-12">
-					{/* ─── Column 1: Narrative ─── */}
+				<div className="grid grid-cols-1 gap-8 lg:grid-cols-[35%_1fr] lg:gap-10 xl:gap-14">
 					<div className="flex flex-col">
 						<Reveal direction="down" delay={0.1}>
 							<span className="eyebrow mb-3 block !text-[9px] !tracking-[0.2em] !text-gold-deep/80 sm:!text-[10px] md:!text-[11px]">
@@ -84,13 +77,16 @@ export function OurStory() {
 						</Reveal>
 
 						<Reveal delay={0.2}>
-							<h2 className="max-w-[260px] font-display text-2xl font-bold leading-[1.1] tracking-tight text-royal sm:text-3xl md:max-w-none md:text-[2.25rem] lg:text-[2.5rem]">
-								Une passion devenue <br className="hidden sm:block lg:hidden" />
-								une référence.
+							<h2 className="font-display text-2xl font-bold leading-[1.1] tracking-tight text-royal sm:text-3xl md:text-[2.25rem] lg:text-[2.5rem] lg:max-w-[320px]">
+								Une passion devenue{" "}
+								<span className="text-gradient-gold font-normal italic">
+									une référence
+								</span>
+								.
 							</h2>
 						</Reveal>
 
-						<div className="mt-4 space-y-3 text-xs leading-relaxed text-slate-ink/75 sm:text-sm md:mt-5 md:space-y-4 md:text-[13px]">
+						<div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-ink/75 sm:text-sm md:mt-5 md:space-y-4 md:text-[13px]">
 							<Reveal delay={0.3}>
 								<p>
 									Tout a commencé par un rêve : aider chaque femme à se sentir
@@ -126,23 +122,21 @@ export function OurStory() {
 						</Reveal>
 					</div>
 
-					{/* ─── Column 2: Gallery & Timeline ─── */}
 					<div className="flex flex-col">
-						{/* Horizontal Gallery */}
-						<div className="grid grid-cols-3 gap-2 sm:grid-cols-5 sm:gap-2.5 md:gap-3">
+						<div className="flex gap-2 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-hidden sm:grid sm:grid-cols-5 sm:gap-2.5 sm:overflow-visible sm:pb-0 md:gap-3">
 							{timelineEvents.map((item, i) => (
 								<Reveal
 									key={item.year}
 									delay={0.1 * i}
 									direction="up"
-									className="h-full"
+									className="shrink-0 snap-start sm:h-full sm:shrink"
 								>
-									<div className="group relative aspect-[3/4] w-full overflow-hidden rounded-xl sm:rounded-2xl shadow-card ring-1 ring-slate-line/20 transition-all duration-700 hover:shadow-lift hover:-translate-y-1">
+									<div className="group relative aspect-[3/4] w-[200px] overflow-hidden rounded-xl sm:w-full sm:rounded-2xl shadow-card ring-1 ring-slate-line/20 transition-all duration-700 hover:shadow-lift hover:-translate-y-1 max-sm:first:ml-0">
 										<Image
 											src={item.image}
 											alt={item.title}
 											fill
-											sizes="(min-width: 1024px) 15vw, 20vw"
+											sizes="(min-width: 640px) 15vw, 200px"
 											className="object-cover transition-transform duration-1000 group-hover:scale-110"
 										/>
 										<div className="absolute inset-0 bg-gradient-to-t from-royal/40 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -151,9 +145,7 @@ export function OurStory() {
 							))}
 						</div>
 
-						{/* Timeline visualization */}
-						<div className="relative mt-8 px-1 sm:mt-10 md:mt-12 lg:mt-14">
-							{/* Background Track */}
+						<div className="relative mt-6 px-1 sm:mt-10 md:mt-12 lg:mt-14">
 							<div
 								className="absolute left-0 top-[7px] h-[1.5px] w-full bg-gold-deep/20"
 								aria-hidden="true"
@@ -171,8 +163,7 @@ export function OurStory() {
 								/>
 							</div>
 
-							{/* Markers and Event description grid */}
-							<div className="relative grid grid-cols-3 gap-1.5 sm:grid-cols-5 sm:gap-2">
+							<div className="relative grid grid-cols-5 gap-1 sm:gap-2">
 								{timelineEvents.map((item, i) => (
 									<Reveal
 										key={`${item.year}-meta`}
@@ -180,21 +171,19 @@ export function OurStory() {
 										direction="none"
 									>
 										<div className="flex flex-col items-center text-center">
-											{/* Indicator dot */}
 											<motion.div
 												whileHover={{ scale: 1.2 }}
-												className="relative z-10 mb-5 h-3.5 w-3.5 rounded-full border-[2px] border-cream bg-gold-deep shadow-gold ring-3 ring-gold/10 transition-colors sm:mb-6 sm:h-4 sm:w-4 sm:border-[2.5px] sm:ring-4"
+												className="relative z-10 mb-3 h-3 w-3 rounded-full border-[2px] border-cream bg-gold-deep shadow-gold ring-3 ring-gold/10 transition-colors sm:mb-6 sm:h-4 sm:w-4 sm:border-[2.5px] sm:ring-4"
 											/>
 
-											{/* Metadata labels */}
 											<div className="flex flex-col items-center gap-0.5 sm:gap-1">
-												<span className="font-display text-xs font-bold text-gold-deep sm:text-sm">
+												<span className="font-display text-[10px] font-bold text-gold-deep sm:text-sm">
 													{item.year}
 												</span>
-												<h3 className="font-display text-[11px] font-bold leading-tight text-royal sm:text-[13px] md:text-sm">
+												<h3 className="font-display text-[10px] font-bold leading-tight text-royal sm:text-[13px] md:text-sm">
 													{item.title}
 												</h3>
-												<p className="mt-0.5 line-clamp-3 max-w-[90px] text-[9px] leading-relaxed text-slate-ink/65 sm:max-w-[110px] sm:text-[10px] md:text-[11px]">
+												<p className="mt-0.5 hidden line-clamp-3 max-w-[90px] text-[9px] leading-relaxed text-slate-ink/65 sm:block sm:max-w-[110px] sm:text-[10px] md:text-[11px]">
 													{item.description}
 												</p>
 											</div>
