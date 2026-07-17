@@ -27,7 +27,6 @@ export function InstitutGallery() {
 					src="/assets/images/left-image-effect.png"
 					alt=""
 					fill
-					priority
 					sizes="100vw"
 					className="object-cover opacity-40 lg:opacity-60"
 					aria-hidden

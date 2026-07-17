@@ -138,6 +138,7 @@ export function OurStory() {
 											fill
 											sizes="(min-width: 640px) 15vw, 200px"
 											className="object-cover transition-transform duration-1000 group-hover:scale-110"
+											loading="lazy"
 										/>
 										<div className="absolute inset-0 bg-gradient-to-t from-royal/40 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 									</div>

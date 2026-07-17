@@ -18,6 +18,7 @@ const values: Value[] = [
 				stroke="currentColor"
 				strokeWidth="1.5"
 				className="h-6 w-6"
+				aria-hidden="true"
 			>
 				<circle cx="12" cy="12" r="10" />
 				<circle cx="12" cy="12" r="6" />
@@ -36,6 +37,7 @@ const values: Value[] = [
 				stroke="currentColor"
 				strokeWidth="1.5"
 				className="h-6 w-6"
+				aria-hidden="true"
 			>
 				<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
 				<circle cx="9" cy="7" r="4" />
@@ -53,6 +55,7 @@ const values: Value[] = [
 				stroke="currentColor"
 				strokeWidth="1.5"
 				className="h-6 w-6"
+				aria-hidden="true"
 			>
 				<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
 				<path d="M9 12l2 2 4-4" />
@@ -70,6 +73,7 @@ const values: Value[] = [
 				stroke="currentColor"
 				strokeWidth="1.5"
 				className="h-6 w-6"
+				aria-hidden="true"
 			>
 				<path d="M3 18v-6a9 9 0 0118 0v6" />
 				<path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z" />
@@ -87,6 +91,7 @@ const values: Value[] = [
 				stroke="currentColor"
 				strokeWidth="1.5"
 				className="h-6 w-6"
+				aria-hidden="true"
 			>
 				<path d="M22 10v6M2 10l10-5 10 5-10 5z" />
 				<path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5" />
@@ -118,6 +123,7 @@ export function Expertise() {
 					viewBox="0 0 1440 400"
 					preserveAspectRatio="xMidYMid slice"
 					fill="none"
+					aria-hidden="true"
 				>
 					<defs>
 						<linearGradient id="gold-values" x1="0" y1="0" x2="1" y2="0.5">
@@ -150,9 +156,9 @@ export function Expertise() {
 					{ cx: "45%", cy: "55%", delay: 1.5 },
 					{ cx: "70%", cy: "20%", delay: 0.8 },
 					{ cx: "85%", cy: "65%", delay: 2 },
-				].map((p, i) => (
+				].map((p) => (
 					<motion.div
-						key={i}
+						key={p.cx}
 						className="absolute h-1 w-1 rounded-full bg-gold"
 						style={{ left: p.cx, top: p.cy }}
 						animate={{ y: [0, -12, 0], opacity: [0.3, 0.8, 0.3] }}

@@ -21,6 +21,7 @@ function CountUp({ target }: { target: string }) {
 			viewport={{ once: true }}
 			transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
 			className="font-display text-xl font-bold tracking-tight text-royal sm:text-2xl"
+			aria-live="polite"
 		>
 			{prefix}
 			<motion.span
