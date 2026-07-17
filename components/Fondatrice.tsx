@@ -56,8 +56,8 @@ export function Fondatrice() {
 
 			<div className="container-luxe relative z-10">
 				<div className="flex flex-col items-center gap-8 lg:flex-row lg:items-center lg:gap-0">
-					{/* ─── Left: Text + Stats (~40%) ─── */}
-					<div className="flex w-full flex-col lg:w-[40%] lg:pr-8">
+					{/* ─── Left: Text + Stats (~45%) ─── */}
+					<div className="flex w-full flex-col lg:w-[45%] lg:pr-10">
 						<Reveal direction="down" delay={0.1}>
 							<span className="eyebrow mb-3 block !text-[9px] !tracking-[0.2em] !text-gold-deep/80 sm:!text-[10px] md:!text-[11px]">
 								Notre Fondatrice
@@ -65,7 +65,7 @@ export function Fondatrice() {
 						</Reveal>
 
 						<Reveal delay={0.2}>
-							<h2 className="max-w-[280px] font-display text-xl font-bold leading-[1.1] tracking-tight text-royal sm:text-2xl md:max-w-none md:text-[1.6rem] lg:text-[1.75rem]">
+							<h2 className="max-w-[320px] font-display text-xl font-bold leading-[1.1] tracking-tight text-royal sm:text-2xl md:max-w-none md:text-[1.75rem] lg:text-[2rem]">
 								Une vision,
 								<br />
 								une mission,
@@ -75,7 +75,7 @@ export function Fondatrice() {
 						</Reveal>
 
 						<Reveal delay={0.3}>
-							<p className="mt-3 max-w-xs text-xs leading-relaxed text-slate-ink/70 sm:text-sm">
+							<p className="mt-3 max-w-md text-xs leading-relaxed text-slate-ink/70 sm:text-sm md:text-base">
 								J&apos;ai créé Cynthia Cosmétique pour offrir bien plus
 								qu&apos;un soin : une expérience transformative qui révèle la
 								beauté et renforce la confiance.
@@ -84,13 +84,13 @@ export function Fondatrice() {
 
 						{/* Stats */}
 						<Reveal delay={0.4}>
-							<div className="mt-5 flex gap-4 sm:gap-6">
+							<div className="mt-5 flex gap-6 sm:gap-8">
 								{stats.map((s) => (
 									<div key={s.label} className="flex flex-col">
-										<span className="font-display text-lg font-bold text-gold-deep sm:text-xl">
+										<span className="font-display text-lg font-bold text-gold-deep sm:text-xl md:text-2xl">
 											{s.number}
 										</span>
-										<span className="mt-0.5 text-[9px] text-slate-ink/55 sm:text-[10px]">
+										<span className="mt-0.5 text-[9px] text-slate-ink/55 sm:text-[10px] md:text-xs">
 											{s.label}
 										</span>
 									</div>
@@ -99,12 +99,12 @@ export function Fondatrice() {
 						</Reveal>
 					</div>
 
-					{/* ─── Center: Portrait (~30%) ─── */}
-					<Reveal delay={0.2} className="w-full lg:w-[30%]">
+					{/* ─── Center: Portrait (~35%) ─── */}
+					<Reveal delay={0.2} className="w-full lg:w-[35%]">
 						<motion.div
 							whileHover={{ y: -3 }}
 							transition={{ type: "spring", stiffness: 300, damping: 24 }}
-							className="relative mx-auto aspect-[3/4] w-[200px] overflow-hidden rounded-2xl bg-[#0a1d5a] shadow-card sm:w-[220px]"
+							className="relative mx-auto aspect-[3/4] w-[220px] overflow-hidden rounded-2xl bg-[#0a1d5a] shadow-card sm:w-[260px] md:w-[280px]"
 						>
 							{/* Gold shimmer */}
 							<div
@@ -119,17 +119,17 @@ export function Fondatrice() {
 								src="/assets/images/cynthia-vision.png"
 								alt="Cynthia — Fondatrice de Cynthia Cosmétique"
 								fill
-								sizes="220px"
+								sizes="280px"
 								className="object-cover object-top"
 							/>
 						</motion.div>
 					</Reveal>
 
-					{/* ─── Right: Quote (~30%) ─── */}
+					{/* ─── Right: Quote (~20%) ─── */}
 					<Reveal
 						direction="right"
 						delay={0.3}
-						className="w-full lg:w-[30%] lg:pl-8"
+						className="w-full lg:w-[20%] lg:pl-8"
 					>
 						<div className="flex flex-col">
 							<span
