@@ -19,9 +19,9 @@ const promises = [
 export function Engagement() {
 	return (
 		<section className="relative w-full overflow-hidden">
-			<div className="flex min-h-[500px] flex-col lg:min-h-[550px] lg:flex-row">
+			<div className="flex min-h-[380px] flex-col lg:min-h-[420px] lg:flex-row">
 				{/* ─── Left: Dark navy with portrait + gold decorations ─── */}
-				<div className="relative flex w-full items-center justify-center bg-[#0a1d5a] py-12 sm:py-16 lg:w-[45%] lg:py-0">
+				<div className="relative flex w-full items-center justify-center bg-[#0a1d5a] py-8 sm:py-10 lg:w-[45%] lg:py-0">
 					{/* Background gold flowing lines */}
 					<div className="pointer-events-none absolute inset-0">
 						<div
@@ -129,12 +129,12 @@ export function Engagement() {
 
 					{/* Portrait */}
 					<Reveal direction="left" delay={0.2}>
-						<div className="relative h-[350px] w-[280px] sm:h-[420px] sm:w-[320px] lg:h-[480px] lg:w-[360px]">
+						<div className="relative h-[280px] w-[220px] sm:h-[340px] sm:w-[260px] lg:h-[380px] lg:w-[290px]">
 							<Image
 								src="/assets/images/profil-cynthia.png"
 								alt="Cynthia — Fondatrice"
 								fill
-								sizes="360px"
+								sizes="290px"
 								className="object-contain object-bottom"
 							/>
 						</div>
@@ -142,16 +142,16 @@ export function Engagement() {
 				</div>
 
 				{/* ─── Right: Cream with quote + promises ─── */}
-				<div className="flex w-full items-center bg-[#f7f3ea] py-12 sm:py-16 lg:w-[55%] lg:py-0">
-					<div className="mx-auto w-full max-w-lg px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20">
+				<div className="flex w-full items-center bg-[#f7f3ea] py-8 sm:py-10 lg:w-[55%] lg:py-0">
+					<div className="mx-auto w-full max-w-lg px-6 sm:px-8 md:px-12 lg:px-14 xl:px-16">
 						<Reveal direction="down" delay={0.1}>
-							<span className="eyebrow mb-4 block !text-[9px] !tracking-[0.2em] !text-gold-deep/80 sm:!text-[10px] md:!text-[11px]">
+							<span className="eyebrow mb-3 block !text-[9px] !tracking-[0.2em] !text-gold-deep/80 sm:!text-[10px] md:!text-[11px]">
 								Notre Engagement
 							</span>
 						</Reveal>
 
 						<Reveal delay={0.2}>
-							<h2 className="max-w-[300px] font-display text-2xl font-bold leading-[1.1] tracking-tight text-royal sm:text-3xl md:max-w-none md:text-[2.25rem] lg:text-[2.5rem]">
+							<h2 className="max-w-[300px] font-display text-xl font-bold leading-[1.1] tracking-tight text-royal sm:text-2xl md:max-w-none md:text-[1.75rem] lg:text-[2rem]">
 								Votre beauté mérite <br className="hidden sm:block" />
 								<span className="text-gradient-gold font-normal italic">
 									tout notre dévouement.
@@ -160,14 +160,14 @@ export function Engagement() {
 						</Reveal>
 
 						<Reveal delay={0.3}>
-							<div className="mt-5 sm:mt-6">
+							<div className="mt-4 sm:mt-5">
 								<span
-									className="mb-1 block font-display text-5xl leading-none text-gold-deep/30 sm:text-6xl"
+									className="mb-0.5 block font-display text-4xl leading-none text-gold-deep/30 sm:text-5xl"
 									aria-hidden
 								>
 									&#8220;
 								</span>
-								<p className="max-w-[380px] font-display text-sm leading-relaxed text-royal/90 sm:text-base md:text-lg">
+								<p className="max-w-[380px] font-display text-sm leading-relaxed text-royal/90 sm:text-base">
 									Chaque geste, chaque soin, chaque conseil est guidé par une
 									seule ambition : vous révéler la meilleure version de
 									vous-même.
@@ -176,22 +176,22 @@ export function Engagement() {
 						</Reveal>
 
 						<Reveal delay={0.35}>
-							<div className="mt-4 flex flex-col gap-0.5 sm:mt-5">
-								<span className="text-gradient-gold font-display text-2xl font-semibold italic">
+							<div className="mt-3 flex flex-col gap-0.5 sm:mt-4">
+								<span className="text-gradient-gold font-display text-xl font-semibold italic">
 									Cynthia
 								</span>
-								<span className="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-soft">
+								<span className="text-[9px] font-bold uppercase tracking-[0.25em] text-slate-soft">
 									Fondatrice
 								</span>
 							</div>
 						</Reveal>
 
 						<Reveal delay={0.4}>
-							<div className="my-5 h-px w-full max-w-[300px] bg-gold-deep/20 sm:my-6" />
+							<div className="my-4 h-px w-full max-w-[300px] bg-gold-deep/20 sm:my-5" />
 						</Reveal>
 
 						<Reveal delay={0.45}>
-							<div className="flex flex-col gap-3">
+							<div className="flex flex-col gap-2.5">
 								{promises.map((p, i) => (
 									<motion.div
 										key={p}
@@ -203,7 +203,7 @@ export function Engagement() {
 											duration: 0.4,
 											ease: [0.22, 1, 0.36, 1],
 										}}
-										className="flex items-start gap-2.5"
+										className="flex items-start gap-2"
 									>
 										<span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-gold/20">
 											<Check
@@ -221,7 +221,7 @@ export function Engagement() {
 						</Reveal>
 
 						<Reveal delay={0.55} direction="up">
-							<div className="mt-6 sm:mt-8">
+							<div className="mt-5 sm:mt-6">
 								<Button
 									href="#contact"
 									variant="royal"
