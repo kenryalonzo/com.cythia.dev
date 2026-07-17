@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { AboutHero } from "@/components/AboutHero";
+import { CtaBanner } from "@/components/CtaBanner";
 import { Engagement } from "@/components/Engagement";
 import { Expertise } from "@/components/Expertise";
 import { Footer } from "@/components/Footer";
@@ -33,6 +34,7 @@ export default function AProposPage() {
 				<Engagement />
 				<InstitutGallery />
 				<MissionVision />
+				<CtaBanner />
 			</main>
 			<Footer />
 		</>
