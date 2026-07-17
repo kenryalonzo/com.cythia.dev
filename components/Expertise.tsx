@@ -12,18 +12,31 @@ type Value = {
 const values: Value[] = [
 	{
 		icon: (
-			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-6 w-6">
+			<svg
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				strokeWidth="1.5"
+				className="h-6 w-6"
+			>
 				<circle cx="12" cy="12" r="10" />
 				<circle cx="12" cy="12" r="6" />
 				<circle cx="12" cy="12" r="2" />
 			</svg>
 		),
 		title: "Excellence",
-		description: "Nous visons l'excellence dans chaque soin, chaque détail, chaque rencontre.",
+		description:
+			"Nous visons l'excellence dans chaque soin, chaque détail, chaque rencontre.",
 	},
 	{
 		icon: (
-			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-6 w-6">
+			<svg
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				strokeWidth="1.5"
+				className="h-6 w-6"
+			>
 				<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
 				<circle cx="9" cy="7" r="4" />
 				<path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75" />
@@ -34,33 +47,54 @@ const values: Value[] = [
 	},
 	{
 		icon: (
-			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-6 w-6">
+			<svg
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				strokeWidth="1.5"
+				className="h-6 w-6"
+			>
 				<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
 				<path d="M9 12l2 2 4-4" />
 			</svg>
 		),
 		title: "Éthique",
-		description: "Des produits sains, des techniques responsables et un respect total de votre peau.",
+		description:
+			"Des produits sains, des techniques responsables et un respect total de votre peau.",
 	},
 	{
 		icon: (
-			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-6 w-6">
+			<svg
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				strokeWidth="1.5"
+				className="h-6 w-6"
+			>
 				<path d="M3 18v-6a9 9 0 0118 0v6" />
 				<path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z" />
 			</svg>
 		),
 		title: "Écoute",
-		description: "Nous prenons le temps de comprendre vos besoins pour des résultats qui vous ressemblent.",
+		description:
+			"Nous prenons le temps de comprendre vos besoins pour des résultats qui vous ressemblent.",
 	},
 	{
 		icon: (
-			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-6 w-6">
+			<svg
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				strokeWidth="1.5"
+				className="h-6 w-6"
+			>
 				<path d="M22 10v6M2 10l10-5 10 5-10 5z" />
 				<path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5" />
 			</svg>
 		),
 		title: "Transmission",
-		description: "Nous formons avec passion pour élever les compétences et changer des vies.",
+		description:
+			"Nous formons avec passion pour élever les compétences et changer des vies.",
 	},
 ];
 
@@ -70,7 +104,11 @@ const values: Value[] = [
  */
 export function Expertise() {
 	return (
-		<section className="relative overflow-hidden bg-[#0a1d5a] py-10 sm:py-12 md:py-14 lg:py-16">
+		<Reveal
+			as="section"
+			variant="scroll"
+			className="relative overflow-hidden bg-[#0a1d5a] py-10 sm:py-12 md:py-14 lg:py-16"
+		>
 			{/* ─── Background gold flowing lines ─── */}
 			<div className="pointer-events-none absolute inset-0">
 				{/* Gradient radial doré */}
@@ -181,6 +219,6 @@ export function Expertise() {
 					</div>
 				</div>
 			</div>
-		</section>
+		</Reveal>
 	);
 }

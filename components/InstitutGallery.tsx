@@ -17,7 +17,11 @@ const images = [
 
 export function InstitutGallery() {
 	return (
-		<section className="relative overflow-hidden bg-ivory py-10 sm:py-12 md:py-14 lg:py-16">
+		<Reveal
+			as="section"
+			variant="scroll"
+			className="relative overflow-hidden bg-ivory py-10 sm:py-12 md:py-14 lg:py-16"
+		>
 			{/* Background silk texture */}
 			<div className="absolute inset-0 z-0">
 				<Image
@@ -94,6 +98,6 @@ export function InstitutGallery() {
 					</div>
 				</div>
 			</div>
-		</section>
+		</Reveal>
 	);
 }

@@ -12,7 +12,11 @@ const stats = [
 
 export function Fondatrice() {
 	return (
-		<section className="relative overflow-hidden bg-[#f7f3ea] py-10 sm:py-12">
+		<Reveal
+			as="section"
+			variant="scroll"
+			className="relative overflow-hidden bg-[#f7f3ea] py-10 sm:py-12"
+		>
 			{/* Background gold flowing lines */}
 			<svg
 				className="pointer-events-none absolute inset-0 h-full w-full opacity-20"
@@ -164,6 +168,6 @@ export function Fondatrice() {
 					</Reveal>
 				</div>
 			</div>
-		</section>
+		</Reveal>
 	);
 }

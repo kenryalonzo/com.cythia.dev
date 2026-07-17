@@ -23,19 +23,22 @@ const timelineEvents = [
 	{
 		year: "2021",
 		title: "La confiance",
-		description: "Une clientèle fidèle et des transformations qui parlent d'elles-mêmes.",
+		description:
+			"Une clientèle fidèle et des transformations qui parlent d'elles-mêmes.",
 		image: "/assets/images/massage.png",
 	},
 	{
 		year: "2022",
 		title: "L'innovation",
-		description: "Technologies avancées et protocoles exclusifs pour des résultats visibles.",
+		description:
+			"Technologies avancées et protocoles exclusifs pour des résultats visibles.",
 		image: "/assets/images/microneeding.jpg",
 	},
 	{
 		year: "Aujourd'hui",
 		title: "Notre vision",
-		description: "Former, inspirer et continuer d'élever les standards de beauté.",
+		description:
+			"Former, inspirer et continuer d'élever les standards de beauté.",
 		image: "/assets/images/formation_pro.png",
 	},
 ];
@@ -46,12 +49,17 @@ const timelineEvents = [
  */
 export function OurStory() {
 	return (
-		<section
+		<Reveal
+			as="section"
+			variant="scroll"
 			id="histoire"
 			className="relative overflow-hidden bg-cream py-8 sm:py-10 md:py-12 lg:py-14"
 		>
 			{/* ─── Background silk texture (left side) ─── */}
-			<div className="pointer-events-none absolute bottom-[-5%] left-[-5%] h-full w-[35%] opacity-30" aria-hidden="true">
+			<div
+				className="pointer-events-none absolute bottom-[-5%] left-[-5%] h-full w-[35%] opacity-30"
+				aria-hidden="true"
+			>
 				<Image
 					src="/assets/images/forme-left.png"
 					alt=""
@@ -77,8 +85,7 @@ export function OurStory() {
 
 						<Reveal delay={0.2}>
 							<h2 className="max-w-[260px] font-display text-2xl font-bold leading-[1.1] tracking-tight text-royal sm:text-3xl md:max-w-none md:text-[2.25rem] lg:text-[2.5rem]">
-								Une passion devenue{" "}
-								<br className="hidden sm:block lg:hidden" />
+								Une passion devenue <br className="hidden sm:block lg:hidden" />
 								une référence.
 							</h2>
 						</Reveal>
@@ -147,7 +154,10 @@ export function OurStory() {
 						{/* Timeline visualization */}
 						<div className="relative mt-8 px-1 sm:mt-10 md:mt-12 lg:mt-14">
 							{/* Background Track */}
-							<div className="absolute left-0 top-[7px] h-[1.5px] w-full bg-gold-deep/20" aria-hidden="true">
+							<div
+								className="absolute left-0 top-[7px] h-[1.5px] w-full bg-gold-deep/20"
+								aria-hidden="true"
+							>
 								<motion.div
 									initial={{ scaleX: 0 }}
 									whileInView={{ scaleX: 1 }}
@@ -196,6 +206,6 @@ export function OurStory() {
 					</div>
 				</div>
 			</div>
-		</section>
+		</Reveal>
 	);
 }

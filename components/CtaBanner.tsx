@@ -8,7 +8,11 @@ import { waLink } from "@/lib/site";
 
 export function CtaBanner() {
 	return (
-		<section className="relative overflow-hidden bg-cream py-8 sm:py-10">
+		<Reveal
+			as="section"
+			variant="scroll"
+			className="relative overflow-hidden bg-cream py-8 sm:py-10"
+		>
 			{/* Background silk texture */}
 			<div className="absolute inset-0 z-0">
 				<Image
@@ -99,6 +103,6 @@ export function CtaBanner() {
 					</div>
 				</Reveal>
 			</div>
-		</section>
+		</Reveal>
 	);
 }

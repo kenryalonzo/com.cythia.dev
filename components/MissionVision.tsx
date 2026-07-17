@@ -5,7 +5,11 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function MissionVision() {
 	return (
-		<section className="relative overflow-hidden bg-[#0a1d5a] py-10 sm:py-12">
+		<Reveal
+			as="section"
+			variant="scroll"
+			className="relative overflow-hidden bg-[#0a1d5a] py-10 sm:py-12"
+		>
 			{/* Background gold flowing lines */}
 			<svg
 				className="pointer-events-none absolute inset-0 h-full w-full opacity-25"
@@ -150,6 +154,6 @@ export function MissionVision() {
 					</Reveal>
 				</div>
 			</div>
-		</section>
+		</Reveal>
 	);
 }

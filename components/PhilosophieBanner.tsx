@@ -5,7 +5,11 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function PhilosophieBanner() {
 	return (
-		<section className="relative overflow-hidden bg-ivory py-10 sm:py-12 md:py-14">
+		<Reveal
+			as="section"
+			variant="scroll"
+			className="relative overflow-hidden bg-ivory py-10 sm:py-12 md:py-14"
+		>
 			{/* Subtle gold line */}
 			<svg
 				className="pointer-events-none absolute inset-0 h-full w-full opacity-20"
@@ -66,6 +70,6 @@ export function PhilosophieBanner() {
 					</span>
 				</Reveal>
 			</div>
-		</section>
+		</Reveal>
 	);
 }

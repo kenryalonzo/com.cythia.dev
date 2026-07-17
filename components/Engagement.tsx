@@ -14,7 +14,11 @@ const promises = [
 
 export function Engagement() {
 	return (
-		<section className="relative overflow-hidden bg-[#f7f3ea] py-8 sm:py-10">
+		<Reveal
+			as="section"
+			variant="scroll"
+			className="relative overflow-hidden bg-[#f7f3ea] py-8 sm:py-10"
+		>
 			{/* Background gold flowing lines */}
 			<svg
 				className="pointer-events-none absolute inset-0 h-full w-full opacity-25"
@@ -188,6 +192,6 @@ export function Engagement() {
 					</Reveal>
 				</div>
 			</div>
-		</section>
+		</Reveal>
 	);
 }
