@@ -161,7 +161,8 @@ export default function RootLayout({
 		>
 			<head>
 				<link rel="preload" as="image" href="/assets/images/left-image-effect.webp" fetchPriority="high" />
-				<link rel="preload" as="image" href="/assets/images/hero-right-image.webp" fetchPriority="high" />
+				<link rel="preload" as="image" href="/assets/images/hero-right-image.webp" fetchPriority="high" media="(min-width: 768px)" />
+				<link rel="preload" as="image" href="/assets/images/hero-right-image-mobile.webp" fetchPriority="high" media="(max-width: 767px)" />
 			</head>
 			<body className="min-h-full flex flex-col bg-ivory">
 				<LoaderProvider>{children}</LoaderProvider>

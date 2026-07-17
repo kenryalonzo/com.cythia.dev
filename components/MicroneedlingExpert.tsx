@@ -54,7 +54,7 @@ export function MicroneedlingExpert() {
 							"radial-gradient(ellipse 80% 60% at 70% 50%, rgba(201,162,39,0.15) 0%, transparent 60%)",
 					}}
 				/>
-				{/* Lignes dorées fluides */}
+				{/* Lignes dorées — statiques sur mobile, animées sur desktop grace à motion */}
 				<svg
 					className="absolute inset-0 h-full w-full opacity-40"
 					viewBox="0 0 1440 400"
@@ -69,45 +69,17 @@ export function MicroneedlingExpert() {
 							<stop offset="100%" stopColor="#c9a227" stopOpacity="0" />
 						</linearGradient>
 					</defs>
-					<motion.path
+					<path
 						d="M-50 200 C 200 120, 400 280, 720 180 S 1200 100, 1500 220"
 						stroke="url(#gold-flow)"
 						strokeWidth="1.5"
-						initial={{ pathLength: 0, opacity: 0 }}
-						whileInView={{ pathLength: 1, opacity: 1 }}
-						viewport={{ once: true }}
-						transition={{ duration: 2.5, ease: "easeInOut" }}
 					/>
-					<motion.path
+					<path
 						d="M-50 260 C 300 340, 600 180, 900 280 S 1300 360, 1500 240"
 						stroke="url(#gold-flow)"
 						strokeWidth="1"
-						initial={{ pathLength: 0, opacity: 0 }}
-						whileInView={{ pathLength: 1, opacity: 0.7 }}
-						viewport={{ once: true }}
-						transition={{ duration: 2.8, ease: "easeInOut", delay: 0.3 }}
 					/>
 				</svg>
-				{/* Particules dorées */}
-				{[
-					{ cx: "20%", cy: "30%", delay: 0 },
-					{ cx: "50%", cy: "60%", delay: 1.5 },
-					{ cx: "75%", cy: "25%", delay: 0.8 },
-					{ cx: "85%", cy: "70%", delay: 2 },
-				].map((p, i) => (
-					<motion.div
-						key={i}
-						className="absolute h-1 w-1 rounded-full bg-gold"
-						style={{ left: p.cx, top: p.cy }}
-						animate={{ y: [0, -12, 0], opacity: [0.3, 0.8, 0.3] }}
-						transition={{
-							duration: 4,
-							repeat: Infinity,
-							ease: "easeInOut",
-							delay: p.delay,
-						}}
-					/>
-				))}
 			</div>
 
 			<div className="container-luxe relative z-10">

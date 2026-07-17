@@ -151,7 +151,7 @@ export function PrestationHero() {
       <div className="absolute inset-0 z-10 block md:hidden">
         <div className="relative h-full w-full">
           <Image
-            src="/assets/images/hero-right-image.webp"
+            src="/assets/images/hero-right-image-mobile.webp"
             alt=""
             fill
             sizes="100vw"

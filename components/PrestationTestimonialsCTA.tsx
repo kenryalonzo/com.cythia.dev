@@ -139,13 +139,11 @@ export function PrestationTestimonialsCTA() {
 					variant="scroll"
 					className="relative flex items-center bg-cream px-5 py-10 md:px-10 md:py-14"
 				>
-					{/* Lotus grand — droite */}
-					<motion.div
-						animate={{ y: [0, -6, 0], rotate: [0, 2, 0] }}
-						transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-						className="absolute -right-6 top-1/2 -translate-y-1/2 opacity-25 sm:-right-4 sm:opacity-60 md:opacity-100 lg:right-0"
-						aria-hidden="true"
-					>
+				{/* Lotus grand — droite */}
+				<div
+					className="absolute -right-6 top-1/2 -translate-y-1/2 opacity-25 sm:-right-4 sm:opacity-60 md:opacity-100 lg:right-0"
+					aria-hidden="true"
+				>
 						<Image
 							src="/assets/images/lotus-cote-droit.webp"
 							alt=""
@@ -154,8 +152,7 @@ export function PrestationTestimonialsCTA() {
 							style={{ width: "auto", height: "auto" }}
 							className="object-contain sm:w-[240px] md:w-[280px] drop-shadow-[0_0_30px_rgba(253,207,2,0.4)]"
 						/>
-					</motion.div>
-
+					</div>
 					<div className="relative z-10 mx-auto w-full max-w-[280px] sm:max-w-[340px] text-center lg:mx-0 lg:text-left">
 						<h2 className="font-display text-2xl font-bold leading-[1.15] tracking-tight text-royal sm:text-3xl">
 							<span className="text-gradient-gold">Prête à révéler</span>
@@ -220,12 +217,8 @@ export function PrestationTestimonialsCTA() {
 
 						<div className="mt-5 space-y-0">
 							{faqs.map((faq, i) => (
-								<motion.div
+								<div
 									key={faq.question}
-									initial={{ opacity: 0, x: -16 }}
-									whileInView={{ opacity: 1, x: 0 }}
-									viewport={{ once: true }}
-									transition={{ delay: i * 0.08, duration: 0.4, ease }}
 									className="border-b border-slate-line/30 last:border-b-0"
 								>
 									<button
@@ -263,7 +256,7 @@ export function PrestationTestimonialsCTA() {
 											</motion.div>
 										)}
 									</AnimatePresence>
-								</motion.div>
+								</div>
 							))}
 						</div>
 					</div>
