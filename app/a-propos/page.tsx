@@ -5,6 +5,7 @@ import { Expertise } from "@/components/Expertise";
 import { Footer } from "@/components/Footer";
 import { ImpactChiffres } from "@/components/ImpactChiffres";
 import { InstitutGallery } from "@/components/InstitutGallery";
+import { MissionVision } from "@/components/MissionVision";
 import { Navbar } from "@/components/Navbar";
 import { OurStory } from "@/components/OurStory";
 
@@ -31,6 +32,7 @@ export default function AProposPage() {
 				<ImpactChiffres />
 				<Engagement />
 				<InstitutGallery />
+				<MissionVision />
 			</main>
 			<Footer />
 		</>
