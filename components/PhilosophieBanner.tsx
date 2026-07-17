@@ -37,6 +37,8 @@ export function PhilosophieBanner() {
 			</svg>
 
 			<div className="container-luxe relative z-10 text-center">
+				<h2 className="sr-only">Notre philosophie</h2>
+
 				<Reveal>
 					<span
 						className="mb-3 block font-display text-5xl leading-none text-gold-deep/20 sm:text-6xl"

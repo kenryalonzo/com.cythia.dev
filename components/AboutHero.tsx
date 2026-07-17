@@ -33,6 +33,12 @@ export function AboutHero() {
 			<Filaments intensity="subtle" />
 			<Filaments intensity="subtle" className="rotate-45 scale-110" />
 
+			{/* Single h1 for SEO — visible only to screen readers */}
+			<h1 className="sr-only">
+				Bien plus qu&apos;un institut, une philosophie de la beauté — Cynthia
+				Cosmétique
+			</h1>
+
 			{/* ═══════════════════════════════════════════
 				   MOBILE — PrestationHero concept
 				   ═══════════════════════════════════════════ */}
@@ -75,12 +81,15 @@ export function AboutHero() {
 						</Reveal>
 
 						<Reveal delay={0.3}>
-							<h1 className="font-display text-2xl font-bold leading-[1.08] tracking-tight text-royal">
+							<div
+								aria-hidden="true"
+								className="font-display text-2xl font-bold leading-[1.08] tracking-tight text-royal"
+							>
 								Bien plus qu&apos;un institut,{" "}
 								<span className="text-gradient-gold font-normal italic">
 									une philosophie
 								</span>
-							</h1>
+							</div>
 						</Reveal>
 
 						<Reveal delay={0.4} direction="none">
@@ -138,7 +147,10 @@ export function AboutHero() {
 						</Reveal>
 
 						<Reveal delay={0.2}>
-							<h1 className="font-display text-2xl font-bold leading-[1.1] tracking-tight text-royal sm:text-3xl md:text-[2rem] lg:text-[2.25rem] lg:max-w-[300px]">
+							<div
+								aria-hidden="true"
+								className="font-display text-2xl font-bold leading-[1.1] tracking-tight text-royal sm:text-3xl md:text-[2rem] lg:text-[2.25rem] lg:max-w-[300px]"
+							>
 								Bien plus qu&apos;un institut,{" "}
 								<span className="text-gradient-gold font-normal italic">
 									une philosophie
@@ -146,7 +158,7 @@ export function AboutHero() {
 								<span className="text-gradient-gold font-normal italic">
 									de la beauté.
 								</span>
-							</h1>
+							</div>
 						</Reveal>
 
 						<Reveal delay={0.3}>
