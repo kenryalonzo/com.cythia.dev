@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import { AboutHero } from "@/components/AboutHero";
 import { OurStory } from "@/components/OurStory";
+import { Expertise } from "@/components/Expertise";
 
 export const metadata: Metadata = {
 	title: "À propos",
@@ -23,7 +24,8 @@ export default function AProposPage() {
 			<main className="flex flex-1 flex-col">
 				<AboutHero />
 				<OurStory />
-				{/* Autres sections à venir : Expertise, Engagement */}
+				<Expertise />
+				{/* Autres sections à venir : Engagement */}
 			</main>
 			<Footer />
 		</>

@@ -47,7 +47,7 @@ export function OurStory() {
 	return (
 		<section
 			id="histoire"
-			className="relative overflow-hidden bg-cream py-10 sm:py-14 md:py-16 lg:py-20"
+			className="relative overflow-hidden bg-cream py-8 sm:py-10 md:py-12 lg:py-14"
 		>
 			{/* ─── Background silk texture (left side) ─── */}
 			<div className="pointer-events-none absolute bottom-[-5%] left-[-5%] h-full w-[35%] opacity-30" aria-hidden="true">
