@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import { AboutHero } from "@/components/AboutHero";
+import { OurStory } from "@/components/OurStory";
 
 export const metadata: Metadata = {
 	title: "À propos",
@@ -21,7 +22,8 @@ export default function AProposPage() {
 			<Navbar />
 			<main className="flex flex-1 flex-col">
 				<AboutHero />
-				{/* Autres sections à venir : Notre Histoire, Expertise, Engagement */}
+				<OurStory />
+				{/* Autres sections à venir : Expertise, Engagement */}
 			</main>
 			<Footer />
 		</>
