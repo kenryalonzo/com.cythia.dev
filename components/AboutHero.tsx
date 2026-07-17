@@ -13,7 +13,7 @@ import { Reveal } from "@/components/ui/Reveal";
  */
 export function AboutHero() {
 	return (
-		<section className="relative min-h-[600px] w-full overflow-hidden bg-ivory pt-24 pb-16 lg:h-[90vh] lg:min-h-[750px] lg:pt-0 lg:pb-0">
+		<section className="relative w-full overflow-hidden bg-ivory pt-24 pb-12 sm:pt-28 sm:pb-16 lg:py-16 xl:py-20">
 			{/* ─── Layer 1: Background Silk Texture (left side flowing up) ─── */}
 			<div className="absolute inset-0 z-0">
 				<Image
@@ -38,16 +38,20 @@ export function AboutHero() {
 					</Reveal>
 
 					<Reveal delay={0.2}>
-						<h1 className="font-display text-3xl font-bold leading-[1.08] tracking-tight text-royal sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4rem]">
+						<h1 className="max-w-[320px] font-display text-3xl font-bold leading-[1.1] tracking-tight text-royal sm:text-4xl sm:max-w-[380px] md:text-5xl md:max-w-[450px] lg:text-[3.2rem] lg:max-w-[420px] xl:text-[3.8rem] xl:max-w-[500px]">
 							Bien plus qu&apos;un institut,{" "}
-							<span className="text-gradient-gold block font-normal italic sm:inline-block">
-								une philosophie de la beauté.
+							<span className="text-gradient-gold font-normal italic">
+								une philosophie
+							</span>{" "}
+							<br className="hidden sm:block" />
+							<span className="text-gradient-gold font-normal italic">
+								de la beauté.
 							</span>
 						</h1>
 					</Reveal>
 
 					<Reveal delay={0.3}>
-						<p className="mt-6 max-w-md text-sm leading-relaxed text-slate-ink/80 sm:text-base md:text-lg">
+						<p className="mt-4 max-w-md text-sm leading-relaxed text-slate-ink/80 sm:text-base md:text-lg">
 							Cynthia Cosmétique est née d&apos;une conviction profonde : la beauté
 							véritable commence par le respect de la peau, de la personne et de son
 							histoire.
@@ -55,7 +59,7 @@ export function AboutHero() {
 					</Reveal>
 
 					<Reveal delay={0.4} direction="up">
-						<div className="mt-8">
+						<div className="mt-6">
 							<Button
 								href="#histoire"
 								variant="outline-gold"
@@ -75,7 +79,7 @@ export function AboutHero() {
 						initial={{ opacity: 0, scale: 0.96, y: 30 }}
 						animate={{ opacity: 1, scale: 1, y: 0 }}
 						transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-						className="relative aspect-[3/4] w-full lg:aspect-[3/4] lg:h-[80vh]"
+						className="relative aspect-[3/4] w-full lg:aspect-[3/4] lg:h-[60vh]"
 					>
 						<Image
 							src="/assets/images/profil-cynthia.png"
@@ -105,7 +109,7 @@ export function AboutHero() {
 								l&apos;éclat naturel.
 							</p>
 
-							<div className="mt-8 flex flex-col gap-1">
+							<div className="mt-6 flex flex-col gap-1">
 								<span className="text-gradient-gold font-display text-3xl font-semibold italic">
 									Cynthia
 								</span>
