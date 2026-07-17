@@ -38,13 +38,68 @@ function CountUp({ target }: { target: string }) {
 export function ImpactChiffres() {
 	return (
 		<section className="relative overflow-hidden bg-cream py-8 sm:py-10">
-			{/* Subtle gold shimmer */}
+			{/* Background gold flowing lines */}
+			<svg
+				className="pointer-events-none absolute inset-0 h-full w-full opacity-25"
+				viewBox="0 0 1200 200"
+				fill="none"
+				preserveAspectRatio="xMidYMid slice"
+				aria-hidden="true"
+			>
+				<defs>
+					<linearGradient id="gold-impact-line" x1="0" y1="0" x2="1" y2="0">
+						<stop offset="0%" stopColor="#c9a227" stopOpacity="0" />
+						<stop offset="50%" stopColor="#fdcf02" stopOpacity="0.5" />
+						<stop offset="100%" stopColor="#c9a227" stopOpacity="0" />
+					</linearGradient>
+				</defs>
+				<motion.path
+					d="M-50 100 C 200 40, 500 160, 700 70 S 1000 130, 1250 80"
+					stroke="url(#gold-impact-line)"
+					strokeWidth="1"
+					initial={{ pathLength: 0, opacity: 0 }}
+					whileInView={{ pathLength: 1, opacity: 1 }}
+					viewport={{ once: true }}
+					transition={{ duration: 2.5, ease: "easeInOut" }}
+				/>
+				<motion.path
+					d="M-50 150 C 250 190, 450 70, 700 140 S 950 60, 1250 110"
+					stroke="url(#gold-impact-line)"
+					strokeWidth="0.7"
+					initial={{ pathLength: 0, opacity: 0 }}
+					whileInView={{ pathLength: 1, opacity: 0.5 }}
+					viewport={{ once: true }}
+					transition={{ duration: 3, ease: "easeInOut", delay: 0.3 }}
+				/>
+			</svg>
+			{/* Floating particles */}
+			{[
+				{ cx: "15%", cy: "25%", delay: 0 },
+				{ cx: "75%", cy: "35%", delay: 1 },
+				{ cx: "45%", cy: "65%", delay: 0.5 },
+				{ cx: "90%", cy: "20%", delay: 1.8 },
+			].map((p) => (
+				<motion.div
+					key={`imp-p-${p.cx}-${p.cy}`}
+					className="absolute h-1 w-1 rounded-full bg-gold/35"
+					style={{ left: p.cx, top: p.cy }}
+					animate={{ y: [0, -10, 0], opacity: [0.2, 0.5, 0.2] }}
+					transition={{
+						duration: 5,
+						repeat: Infinity,
+						ease: "easeInOut",
+						delay: p.delay,
+					}}
+					aria-hidden
+				/>
+			))}
+			{/* Radial glow */}
 			<div
-				className="pointer-events-none absolute inset-0 opacity-40"
+				className="pointer-events-none absolute inset-0 opacity-30"
 				aria-hidden
 				style={{
 					background:
-						"linear-gradient(90deg, transparent 0%, rgba(201,162,39,0.05) 50%, transparent 100%)",
+						"radial-gradient(ellipse 60% 80% at 50% 50%, rgba(201,162,39,0.08) 0%, transparent 70%)",
 				}}
 			/>
 
@@ -70,7 +125,7 @@ export function ImpactChiffres() {
 								<motion.div
 									whileHover={{ y: -3, scale: 1.04 }}
 									transition={{ type: "spring", stiffness: 400, damping: 20 }}
-									className="group flex flex-col items-center cursor-default"
+									className="group flex cursor-default flex-col items-center"
 								>
 									<CountUp target={s.number} />
 									<span className="mt-0.5 text-[10px] text-slate-ink/50 transition-colors group-hover:text-slate-ink/70 sm:text-[11px]">

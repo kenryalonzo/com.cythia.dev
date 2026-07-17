@@ -14,7 +14,61 @@ const promises = [
 
 export function Engagement() {
 	return (
-		<section className="relative bg-[#f7f3ea] py-8 sm:py-10">
+		<section className="relative overflow-hidden bg-[#f7f3ea] py-8 sm:py-10">
+			{/* Background gold flowing lines */}
+			<svg
+				className="pointer-events-none absolute inset-0 h-full w-full opacity-25"
+				viewBox="0 0 1200 200"
+				fill="none"
+				preserveAspectRatio="xMidYMid slice"
+				aria-hidden="true"
+			>
+				<defs>
+					<linearGradient id="gold-eng-bg" x1="0" y1="0" x2="1" y2="0">
+						<stop offset="0%" stopColor="#c9a227" stopOpacity="0" />
+						<stop offset="50%" stopColor="#fdcf02" stopOpacity="0.4" />
+						<stop offset="100%" stopColor="#c9a227" stopOpacity="0" />
+					</linearGradient>
+				</defs>
+				<motion.path
+					d="M-50 100 C 200 50, 400 150, 600 80 S 900 120, 1250 70"
+					stroke="url(#gold-eng-bg)"
+					strokeWidth="1"
+					initial={{ pathLength: 0, opacity: 0 }}
+					whileInView={{ pathLength: 1, opacity: 1 }}
+					viewport={{ once: true }}
+					transition={{ duration: 3, ease: "easeInOut" }}
+				/>
+				<motion.path
+					d="M-50 140 C 300 180, 500 60, 750 130 S 1000 90, 1250 120"
+					stroke="url(#gold-eng-bg)"
+					strokeWidth="0.8"
+					initial={{ pathLength: 0, opacity: 0 }}
+					whileInView={{ pathLength: 1, opacity: 0.6 }}
+					viewport={{ once: true }}
+					transition={{ duration: 3.5, ease: "easeInOut", delay: 0.4 }}
+				/>
+			</svg>
+			{/* Floating particles */}
+			{[
+				{ cx: "10%", cy: "30%", delay: 0 },
+				{ cx: "85%", cy: "25%", delay: 1.2 },
+				{ cx: "50%", cy: "70%", delay: 0.6 },
+			].map((p) => (
+				<motion.div
+					key={`eng-p-${p.cx}-${p.cy}`}
+					className="absolute h-1 w-1 rounded-full bg-gold/40"
+					style={{ left: p.cx, top: p.cy }}
+					animate={{ y: [0, -8, 0], opacity: [0.2, 0.6, 0.2] }}
+					transition={{
+						duration: 5,
+						repeat: Infinity,
+						ease: "easeInOut",
+						delay: p.delay,
+					}}
+					aria-hidden
+				/>
+			))}
 			<div className="container-luxe">
 				<div className="flex flex-col gap-5 lg:flex-row lg:items-stretch lg:gap-6">
 					{/* ─── Left: Blue card with portrait ─── */}
@@ -54,7 +108,7 @@ export function Engagement() {
 							<div className="relative z-10 flex items-center gap-4">
 								<div className="relative h-[100px] w-[80px] shrink-0 sm:h-[120px] sm:w-[95px]">
 									<Image
-										src="/assets/images/profil-cynthia.png"
+										src="/assets/images/cynthia-image.png"
 										alt="Cynthia"
 										fill
 										sizes="95px"
