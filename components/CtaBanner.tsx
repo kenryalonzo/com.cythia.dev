@@ -8,7 +8,7 @@ import { waLink } from "@/lib/site";
 
 export function CtaBanner() {
 	return (
-		<section className="relative overflow-hidden bg-cream py-10 sm:py-12">
+		<section className="relative overflow-hidden bg-cream py-8 sm:py-10">
 			{/* Background silk texture */}
 			<div className="absolute inset-0 z-0">
 				<Image
@@ -64,8 +64,10 @@ export function CtaBanner() {
 
 			<div className="container-luxe relative z-10 text-center">
 				<Reveal>
-					<h2 className="mx-auto max-w-lg font-display text-2xl font-bold leading-[1.1] tracking-tight text-royal sm:text-3xl md:text-4xl">
-						Prête à commencer votre{" "}
+					<h2 className="mx-auto max-w-lg font-display text-xl font-bold leading-[1.1] tracking-tight text-royal sm:text-2xl md:text-3xl">
+						Prête à commencer
+						<br />
+						votre{" "}
 						<span className="text-gradient-gold font-normal italic">
 							transformation
 						</span>{" "}
@@ -74,14 +76,14 @@ export function CtaBanner() {
 				</Reveal>
 
 				<Reveal delay={0.1}>
-					<p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-slate-ink/70 sm:text-base">
+					<p className="mx-auto mt-2 max-w-md text-xs leading-relaxed text-slate-ink/70 sm:text-sm">
 						Prenez rendez-vous dès maintenant et laissez-nous prendre soin de
 						vous.
 					</p>
 				</Reveal>
 
 				<Reveal delay={0.2} direction="up">
-					<div className="mt-6">
+					<div className="mt-4">
 						<motion.a
 							href={waLink()}
 							target="_blank"
@@ -89,10 +91,10 @@ export function CtaBanner() {
 							whileHover={{ scale: 1.05, y: -2 }}
 							whileTap={{ scale: 0.97 }}
 							transition={{ type: "spring", stiffness: 400, damping: 18 }}
-							className="animate-pulse-glow inline-flex items-center gap-2.5 rounded-full bg-gold px-7 py-3.5 font-sans text-xs font-bold uppercase tracking-[0.06em] text-royal shadow-gold transition-colors hover:bg-gold-warm sm:px-8 sm:text-sm"
+							className="animate-pulse-glow inline-flex items-center gap-2 rounded-full bg-gold px-6 py-2.5 font-sans text-[10px] font-bold uppercase tracking-[0.06em] text-royal shadow-gold transition-colors hover:bg-gold-warm sm:px-7 sm:text-xs"
 						>
 							Réserver via WhatsApp
-							<WhatsAppIcon className="h-4 w-4 sm:h-5 sm:w-5" />
+							<WhatsAppIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
 						</motion.a>
 					</div>
 				</Reveal>

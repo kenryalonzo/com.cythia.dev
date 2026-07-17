@@ -9,6 +9,7 @@ import { InstitutGallery } from "@/components/InstitutGallery";
 import { MissionVision } from "@/components/MissionVision";
 import { Navbar } from "@/components/Navbar";
 import { OurStory } from "@/components/OurStory";
+import { PhilosophieBanner } from "@/components/PhilosophieBanner";
 
 export const metadata: Metadata = {
 	title: "À propos",
@@ -34,6 +35,7 @@ export default function AProposPage() {
 				<Engagement />
 				<InstitutGallery />
 				<MissionVision />
+				<PhilosophieBanner />
 				<CtaBanner />
 			</main>
 			<Footer />
