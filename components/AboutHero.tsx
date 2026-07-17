@@ -9,7 +9,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function AboutHero() {
 	return (
-		<section className="relative w-full overflow-hidden bg-ivory pt-20 pb-8 sm:pt-24 sm:pb-10 lg:py-12">
+		<section className="relative w-full bg-ivory pt-20 pb-8 sm:pt-24 sm:pb-10 lg:py-12">
 			{/* ─── Background Silk Texture ─── */}
 			<div className="absolute inset-0 z-0">
 				<Image
@@ -72,25 +72,6 @@ export function AboutHero() {
 					</Reveal>
 				</div>
 
-				{/* ─── Center: Portrait (~35%) ─── */}
-				<div className="order-1 w-full max-w-[200px] sm:max-w-[240px] md:max-w-[280px] lg:order-2 lg:flex lg:w-[35%] lg:max-w-none lg:justify-center lg:-mx-6">
-					<motion.div
-						initial={{ opacity: 0, scale: 0.96, y: 20 }}
-						animate={{ opacity: 1, scale: 1, y: 0 }}
-						transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-						className="relative aspect-[3/4] w-full lg:h-[50vh]"
-					>
-						<Image
-							src="/assets/images/profil-cynthia.png"
-							alt="Cynthia — Fondatrice de Cynthia Cosmétique"
-							fill
-							priority
-							sizes="(min-width: 1024px) 35vw, (min-width: 768px) 50vw, 80vw"
-							className="object-contain object-bottom"
-						/>
-					</motion.div>
-				</div>
-
 				{/* ─── Right: Quote (~25%) ─── */}
 				<div className="order-3 mt-6 w-full lg:order-3 lg:mt-0 lg:w-[25%] lg:pl-4">
 					<Reveal delay={0.5} direction="left">
@@ -116,6 +97,25 @@ export function AboutHero() {
 						</div>
 					</Reveal>
 				</div>
+			</div>
+
+			{/* ─── Sticky Portrait — overlaps into next section ─── */}
+			<div className="pointer-events-none absolute inset-x-0 bottom-0 z-30 flex justify-center lg:justify-end lg:pr-[12%]">
+				<motion.div
+					initial={{ opacity: 0, y: 40 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+					className="relative h-[250px] w-[180px] sm:h-[300px] sm:w-[220px] md:h-[350px] md:w-[260px] lg:h-[420px] lg:w-[300px]"
+				>
+					<Image
+						src="/assets/images/profil-cynthia.png"
+						alt="Cynthia — Fondatrice de Cynthia Cosmétique"
+						fill
+						priority
+						sizes="300px"
+						className="object-contain object-bottom"
+					/>
+				</motion.div>
 			</div>
 		</section>
 	);
