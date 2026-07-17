@@ -37,7 +37,7 @@ export function EpilationFormations() {
 					className="relative overflow-hidden rounded-3xl ring-1 ring-slate-line/20"
 				>
 					{/* Image background — 100% */}
-					<div className="absolute inset-0 z-0">
+					<div className="absolute inset-0 z-0" aria-hidden="true">
 						<Image
 							src="/assets/images/epilation_impecable.png"
 							alt=""
@@ -102,14 +102,14 @@ export function EpilationFormations() {
 					className="relative overflow-hidden rounded-3xl ring-1 ring-slate-line/20"
 				>
 					{/* Image background — 100% */}
-					<div className="absolute inset-0 z-0">
-						<Image
-							src="/assets/images/formation_pro.png"
-							alt=""
-							fill
-							sizes="(max-width: 1024px) 100vw, 50vw"
-							className="object-cover object-right"
-						/>
+				<div className="absolute inset-0 z-0" aria-hidden="true">
+					<Image
+						src="/assets/images/formation_pro.png"
+						alt=""
+						fill
+						sizes="(max-width: 1024px) 100vw, 50vw"
+						className="object-cover"
+					/>
 					</div>
 
 				{/* Overlay doré coin supérieur droit — moitié de la carte */}

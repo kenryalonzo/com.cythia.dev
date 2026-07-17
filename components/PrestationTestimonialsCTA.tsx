@@ -144,6 +144,7 @@ export function PrestationTestimonialsCTA() {
 						animate={{ y: [0, -6, 0], rotate: [0, 2, 0] }}
 						transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
 						className="absolute -right-6 top-1/2 -translate-y-1/2 opacity-25 sm:-right-4 sm:opacity-60 md:opacity-100 lg:right-0"
+						aria-hidden="true"
 					>
 						<Image
 							src="/assets/images/lotus-cote-droit.png"
@@ -200,7 +201,7 @@ export function PrestationTestimonialsCTA() {
 				className="relative overflow-hidden bg-ivory"
 			>
 				{/* Image de fond */}
-				<div className="absolute inset-0 z-0">
+				<div className="absolute inset-0 z-0" aria-hidden="true">
 					<Image
 						src="/assets/images/background_last_section.png"
 						alt=""
@@ -232,6 +233,8 @@ export function PrestationTestimonialsCTA() {
 										onClick={() =>
 											setOpenIndex(openIndex === i ? null : i)
 										}
+										aria-expanded={openIndex === i}
+										aria-controls={`faq-panel-${i}`}
 										className="flex w-full items-center justify-between gap-4 py-3.5 text-left"
 									>
 										<span className="font-display text-sm font-medium text-royal">
@@ -248,6 +251,7 @@ export function PrestationTestimonialsCTA() {
 									<AnimatePresence initial={false}>
 										{openIndex === i && (
 											<motion.div
+												id={`faq-panel-${i}`}
 												initial={{ height: 0 }}
 												animate={{ height: "auto" }}
 												exit={{ height: 0 }}

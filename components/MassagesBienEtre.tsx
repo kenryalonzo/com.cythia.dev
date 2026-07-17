@@ -100,6 +100,7 @@ export function MassagesBienEtre() {
 					viewBox="0 0 1440 400"
 					preserveAspectRatio="xMidYMid slice"
 					fill="none"
+					aria-hidden="true"
 				>
 					<defs>
 						<linearGradient id="gold-massage" x1="0" y1="0" x2="1" y2="0.5">

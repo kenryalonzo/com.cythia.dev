@@ -10,7 +10,7 @@ const benefits = [
 	{
 		text: "Réduction des cicatrices et imperfections",
 		icon: (
-			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-4 w-4">
+			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-4 w-4" aria-hidden="true">
 				<path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
 			</svg>
 		),
@@ -18,7 +18,7 @@ const benefits = [
 	{
 		text: "Resserrement des pores",
 		icon: (
-			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-4 w-4">
+			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-4 w-4" aria-hidden="true">
 				<path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
 			</svg>
 		),
@@ -26,15 +26,15 @@ const benefits = [
 	{
 		text: "Amélioration de la texture de la peau",
 		icon: (
-			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-4 w-4">
+			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-4 w-4" aria-hidden="true">
 				<path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
 			</svg>
 		),
 	},
 	{
-		text: "Résultats progressifs et durables",
+		text: "Stimulation du collagène",
 		icon: (
-			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-4 w-4">
+			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-4 w-4" aria-hidden="true">
 				<path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
 			</svg>
 		),
@@ -60,6 +60,7 @@ export function MicroneedlingExpert() {
 					viewBox="0 0 1440 400"
 					preserveAspectRatio="xMidYMid slice"
 					fill="none"
+					aria-hidden="true"
 				>
 					<defs>
 						<linearGradient id="gold-flow" x1="0" y1="0" x2="1" y2="0.5">

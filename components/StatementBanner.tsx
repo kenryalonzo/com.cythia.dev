@@ -101,6 +101,7 @@ export function StatementBanner() {
 						animate={{ y: [0, -4, 0], scale: [1, 1.03, 1] }}
 						transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
 						className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-gold-soft ring-2 ring-gold/40 shadow-gold"
+						aria-hidden="true"
 					>
 						<Image
 							src="/assets/images/lotus-middle.png"
@@ -109,7 +110,7 @@ export function StatementBanner() {
 							height={36}
 							style={{ width: "auto", height: "auto" }}
 							className="object-contain"
-							priority
+							loading="lazy"
 						/>
 					</motion.div>
 				</div>
