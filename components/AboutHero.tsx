@@ -213,25 +213,45 @@ export function AboutHero() {
 
         {/* Sticky Portrait — overlaps into next section */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-30 flex justify-end pr-[12%]">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 1.2,
-              ease: [0.22, 1, 0.36, 1],
-              delay: 0.1,
-            }}
-            className="relative h-[420px] w-[300px]"
-          >
-            <Image
-							src="/assets/images/cynthia-vision-noBg.webp"
-							alt="Cynthia — Fondatrice de Cynthia Cosmétique"
-              fill
-              priority
-              sizes="300px"
-              className="object-contain object-bottom"
+          <div className="relative h-[420px] w-[300px]">
+            {/* Halo doré extérieur */}
+            <div
+              className="absolute -inset-4 rounded-[2rem] opacity-60 blur-2xl"
+              style={{
+                background:
+                  "radial-gradient(ellipse at center, rgba(253,207,2,0.35) 0%, rgba(253,207,2,0.1) 40%, transparent 70%)",
+              }}
+              aria-hidden
             />
-          </motion.div>
+            {/* Cercle doré subtil */}
+            <div
+              className="absolute -inset-1 rounded-full opacity-30 blur-sm"
+              style={{
+                background:
+                  "conic-gradient(from 180deg, transparent, rgba(253,207,2,0.2), transparent, rgba(253,207,2,0.15), transparent)",
+              }}
+              aria-hidden
+            />
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 1.2,
+                ease: [0.22, 1, 0.36, 1],
+                delay: 0.1,
+              }}
+              className="relative h-full w-full"
+            >
+              <Image
+                src="/assets/images/cynthia-vision-noBg.webp"
+                alt="Cynthia — Fondatrice de Cynthia Cosmétique"
+                fill
+                priority
+                sizes="300px"
+                className="object-contain object-bottom"
+              />
+            </motion.div>
+          </div>
         </div>
       </div>
     </Reveal>

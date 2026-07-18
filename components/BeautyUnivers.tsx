@@ -23,7 +23,8 @@ const categories = [
     title: "SOINS\nDU VISAGE",
     subtitle: "4 soins experts",
     image: "/assets/images/soin-visage.jpg",
-    waMsg: "Bonjour Cynthia, je souhaite en savoir plus sur vos soins du visage.",
+    waMsg:
+      "Bonjour Cynthia, je souhaite en savoir plus sur vos soins du visage.",
     icon: Sparkles,
   },
   {
@@ -37,7 +38,8 @@ const categories = [
     title: "BEAUTÉ\nDU REGARD",
     subtitle: "5 prestations",
     image: "/assets/images/beaute-au-regard.jpg",
-    waMsg: "Bonjour Cynthia, je souhaite des informations sur la beauté du regard.",
+    waMsg:
+      "Bonjour Cynthia, je souhaite des informations sur la beauté du regard.",
     icon: Eye,
   },
   {
@@ -57,8 +59,9 @@ const categories = [
   {
     title: "FORMATIONS\nPROFESSIONNELLES",
     subtitle: "3 programmes",
-    image: "/assets/images/formation-soin.jpg",
-    waMsg: "Bonjour Cynthia, je suis intéressé(e) par vos formations professionnelles.",
+    image: "/assets/images/formation_pro.webp",
+    waMsg:
+      "Bonjour Cynthia, je suis intéressé(e) par vos formations professionnelles.",
     icon: GraduationCap,
   },
 ];
@@ -90,7 +93,11 @@ export function BeautyUnivers() {
   };
 
   return (
-    <Reveal as="section" variant="scroll" className="relative overflow-hidden bg-ivory pt-10 pb-12 md:pt-16 md:pb-16">
+    <Reveal
+      as="section"
+      variant="scroll"
+      className="relative overflow-hidden bg-ivory pt-10 pb-12 md:pt-16 md:pb-16"
+    >
       {/* ─── Layer 0: Decorative Silk Backgrounds with float animation ─── */}
       <motion.div
         animate={{ y: [0, -12, 0] }}
@@ -196,14 +203,18 @@ export function BeautyUnivers() {
                         <ArrowRight size={14} strokeWidth={3} />
                       </div>
                     </div>
-                    </a>
+                  </a>
                 </Reveal>
               );
             })}
           </div>
 
           {/* ─── Carousel Indicators (Mobile/Tablet) ─── */}
-          <div className="mt-8 flex justify-center gap-2 lg:hidden" role="tablist" aria-label="Sélection d'un univers">
+          <div
+            className="mt-8 flex justify-center gap-2 lg:hidden"
+            role="tablist"
+            aria-label="Sélection d'un univers"
+          >
             {[0, 1, 2].map((dot) => (
               <button
                 key={dot}
