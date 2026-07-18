@@ -31,7 +31,7 @@ const contactItems = [
   {
     icon: Mail,
     label: "Email",
-    lines: ["contact@cynthiacosmetique.com"],
+    lines: ["cynthiacosmetique237@gmail.com"],
   },
   {
     icon: Clock,
